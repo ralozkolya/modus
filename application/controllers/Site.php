@@ -5,6 +5,7 @@ class Site extends CI_Controller {
 
 	private $data = array(
 		'title' => 'Modus',
+		'slug' => NULL,
 	);
 
 	public function __construct() {
@@ -13,12 +14,14 @@ class Site extends CI_Controller {
 
 		$this->load->helper(array('language', 'cookie'));
 		$this->load->library('Auth');
+		$this->load->model(array('Page'));
 
 		set_language();
 
 		$this->load->language(array('general'));
 
 		$this->data['user'] = $this->auth->get_current_user();
+		$this->data['navigation'] = $this->Page->get_navigation();
 	}
 
 	public function index()	{

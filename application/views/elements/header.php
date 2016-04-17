@@ -20,9 +20,13 @@
 				<?php var_dump($user); ?>
 			<?php else: ?>
 				<span class="fa fa-user"></span>
-				<?php echo lang('login'); ?>
+				<a class="unstyled" href="#">
+					<?php echo lang('login'); ?>
+				</a>
 				<span class="fa fa-shopping-cart"></span>
-				<?php echo lang('cart'); ?>
+				<a class="unstyled" href="#">
+					<?php echo lang('cart'); ?>
+				</a>
 			<?php endif; ?>
 			<span class="langs">
 				<a
@@ -35,7 +39,41 @@
 					class="unstyled <?php if(get_lang() === RU) echo 'active'; ?>"
 					href="<?php echo lang_link(RU); ?>">RU</a>
 			</span>
-		</div>
+		</div><!-- first-row -->
+		<ul class="second-row navigation bpg-excelsior-caps">
+			<?php foreach($navigation as $n): ?>
+				<li>
+					<a href="#" <?php if($n->slug = $slug) echo 'class="active"'; ?>>
+						<?php echo $n->title; ?>
+					</a>
+				</li>
+			<?php endforeach; ?>
+		</ul><!-- second-row -->
+		<form class="third-row bpg-excelsior-caps" action="#">
+			<div class="input-group">
+				<span class="input-group-btn">
+					<button type="button"
+						class="btn btn-default dropdown-toggle bpg-excelsior-caps"
+						data-toggle="dropdown">
+						<span class="search-toggle"><?php echo lang('category'); ?></span>
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="#">Lorem Ipsum</a></li>
+						<li><a href="#">Lorem Ipsum</a></li>
+						<li><a href="#">Lorem Ipsum</a></li>
+					</ul>
+				</span>
+
+				<input class="form-control" type="text">
+
+				<span class="input-group-btn">
+					<button class="btn btn-warning search-button" type="submit">
+						<span class="fa fa-search"></span>
+					</button>
+				</span>
+			</div>
+		</form><!-- third-row -->
 	</div><!-- header-main -->
 
 	<div class="slider">

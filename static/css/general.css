@@ -23,6 +23,10 @@ html, body {
 	width: 100%;
 	position: absolute;
 	bottom: 0;
+	border-top: solid 70px #757575;
+	background: #424242;
+	color: #757575;
+	padding: 10px 0;
 }
 
 /*	GENERAL	*/
@@ -31,7 +35,6 @@ html, body {
 	padding: 5px 60px;
 	color: white;
 	background: #464646;
-	text-transform: uppercase;
 	font-size: 12px;
 }
 
@@ -76,6 +79,37 @@ html, body {
 	border-radius: 3px;
 }
 
+.navigation {
+	list-style: none;
+	padding: 10px 0;
+	margin: 0;
+}
+
+.navigation > li {
+	padding: 5px;
+}
+
+.navigation > li:last-child {
+	padding-right: 0;
+}
+
+.navigation a {
+	color: #c2c2c2;
+	text-decoration: none;
+	padding: 5px 0;
+}
+
+.navigation a.active, .navigation a:hover {
+	border-bottom: solid 2px #c2c2c2;
+}
+
+.search-button {
+	background: #f7931e;
+}
+
+.search-button:hover {
+	background: #e1871d;
+}
 
 /*	HELPERS	*/
 
@@ -89,6 +123,22 @@ html, body {
 
 @media (min-width: 768px) {
 	.first-row {
-		float: right;
+		text-align: right;
+	}
+
+	.second-row {
+		text-align: right;
+	}
+
+	.navigation > li {
+		display: inline-block;
+	}
+
+	.logo {
+		float: left;
+	}
+
+	.third-row {
+		margin-left: 150px;
 	}
 }

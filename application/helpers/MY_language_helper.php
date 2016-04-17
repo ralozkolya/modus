@@ -66,16 +66,16 @@ function lang_link($lang) {
 }
 
 function get_lang() {
-	$CI =& get_instance();
+	
+	$ci =& get_instance();
 
-	return $CI->config->item('language');
+	return $ci->config->item('language');
 }
 
 function get_lang_code($lang) {
-	return $lang === EN ? 'en' : 'ka';
 	switch($lang) {
 		case EN: return 'en';
-		case GE: return 'ge';
+		case GE: return 'ka';
 		case RU: return 'ru';
 	}
 }

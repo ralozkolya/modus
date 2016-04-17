@@ -6,3 +6,4 @@ $lang['address_2'] = 'Batumi, Gogebashvili St. 45 (+995) 32 2 123 456';
 
 $lang['login'] = 'Login';
 $lang['cart'] = 'Cart';
+$lang['category'] = 'Category';

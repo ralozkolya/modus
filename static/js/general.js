@@ -4,4 +4,8 @@ $(function(){
 		arrows: false,
 		delay: 7000,
 	});
+
+	$('.dropdown-menu a').click(function(){
+		$('.search-toggle').html($(this).html());
+	});
 });

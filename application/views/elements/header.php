@@ -41,11 +41,7 @@
 	<div class="slider">
 		<ul>
 			<li>
-				<?php $url = static_url().'uploads/banners/1.png'; ?>
-				<div class="slide" style="background-image: url('<?php echo $url; ?>');"></div>
-			</li>
-			<li>
-				<?php $url = static_url().'uploads/banners/1.png'; ?>
+				<?php $url = static_url().'uploads/banners/2.png'; ?>
 				<div class="slide" style="background-image: url('<?php echo $url; ?>');"></div>
 			</li>
 			<li>

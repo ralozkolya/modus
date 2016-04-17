@@ -1,0 +1,25 @@
+html, body {
+	height: 100%;
+}
+
+.wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+.header {
+	position: relative;
+	height: 50px;
+	z-index: 50;
+}
+
+.content {
+	padding-top: 20px;
+	padding-bottom: 140px;
+}
+
+.footer {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}

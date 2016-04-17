@@ -4,6 +4,12 @@
 	<?php $this->load->view('elements/head'); ?>
 </head>
 <body>
-	
+
+	<?php $this->load->view('elements/header'); ?>
+
+	<div class="content">Content</div>
+
+	<?php $this->load->view('elements/footer'); ?>
+
 </body>
 </html>

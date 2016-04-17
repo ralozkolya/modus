@@ -1,0 +1,22 @@
+.unslider {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	overflow: hidden;
+}
+
+.slide {
+	height: 400px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.header {
+	height: 400px;
+}
+
+.header-top, .header-main {
+	position: relative;
+	z-index: 100;
+}

@@ -15,4 +15,21 @@
 			<img class="logo" alt="Logo" src="<?php echo static_url().'img/logo.png'; ?>">
 		</a>
 	</div><!-- header-main -->
-</div><!-- /header -->
+
+	<div class="slider">
+		<ul>
+			<li>
+				<?php $url = static_url().'uploads/banners/1.png'; ?>
+				<div class="slide" style="background-image: url('<?php echo $url; ?>');"></div>
+			</li>
+			<li>
+				<?php $url = static_url().'uploads/banners/1.png'; ?>
+				<div class="slide" style="background-image: url('<?php echo $url; ?>');"></div>
+			</li>
+			<li>
+				<?php $url = static_url().'uploads/banners/1.png'; ?>
+				<div class="slide" style="background-image: url('<?php echo $url; ?>');"></div>
+			</li>
+		</ul>
+	</div><!-- slider -->
+</div><!-- header -->

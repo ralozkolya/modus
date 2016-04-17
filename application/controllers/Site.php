@@ -19,6 +19,9 @@ class Site extends CI_Controller {
 	}
 
 	public function index()	{
+
+		$this->data['address_1'] = lang('address_1');
+		$this->data['address_2'] = lang('address_2');
 		
 		$this->load->view('pages/home', $this->data);
 	}

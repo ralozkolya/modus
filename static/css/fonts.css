@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'BPG Excelsior Caps';
+    src: url('../font/bpg_excelsior_caps_gplgnu.eot');
+    src: url('../font/bpg_excelsior_caps_gplgnu.eot?#iefix') format('embedded-opentype'),
+         url('../font/bpg_excelsior_caps_gplgnu.woff2') format('woff2'),
+         url('../font/bpg_excelsior_caps_gplgnu.woff') format('woff'),
+         url('../font/bpg_excelsior_caps_gplgnu.ttf') format('truetype'),
+         url('../font/bpg_excelsior_caps_gplgnu.svg#bpg_excelsior_caps_gplgnuRg') format('svg');
+}
+
+
+/*	HELPER CLASSES	*/
+
+.bpg-excelsior-caps {
+	font-family: 'BPG Excelsior Caps' !important;
+}

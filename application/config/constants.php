@@ -31,6 +31,7 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 
 define('EN', 'en-US');
 define('GE', 'ka-GE');
+define('RU', 'ru-RU');
 
 define('V', 1);
 

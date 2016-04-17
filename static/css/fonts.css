@@ -22,10 +22,10 @@
 /*	HELPER CLASSES	*/
 
 .bpg-excelsior-caps {
-	font-family: 'BPG Excelsior Caps' !important;
+	font-family: 'BPG Excelsior Caps', Arial, Sans-serif !important;
 	text-transform: uppercase;
 }
 
 .bpg-excelsior {
-	font-family: 'BPG Excelsior' !important;
+	font-family: 'BPG Excelsior', Arial, Sans-serif !important;
 }

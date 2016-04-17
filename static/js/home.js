@@ -1,5 +1,5 @@
 $(function(){
-	
+
 	$('.slider').unslider({
 		autoplay: true,
 		arrows: false,
@@ -7,6 +7,9 @@ $(function(){
 	});
 
 	$('.grid').isotope({
-		layoutMode: 'masonry',
+		layoutMode: 'packery',
+		packery: {
+			gutter: 5,
+		},
 	});
 });

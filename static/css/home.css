@@ -1,3 +1,5 @@
+/*	SLIDER	*/
+
 .unslider {
 	position: absolute;
 	top: 0;
@@ -12,11 +14,43 @@
 	background-size: cover;
 }
 
+
+/*	OVERRIDE HEADER HEIGHT	*/
+
 .header {
 	height: 400px;
 }
 
+
+/*	HEADER SHOULD BE ABOVE SLIDER	*/
+
 .header-top, .header-main {
 	position: relative;
 	z-index: 100;
+}
+
+
+/*	CATEGORIES GRID	*/
+
+.grid {
+	height: 150px;
+}
+
+.grid-item {
+	width: 25%;
+	height: 150px;
+	background: red;
+	border: solid black 1px;
+}
+
+.grid-item.wide {
+	width: 28%;
+}
+
+.grid-item.narrow {
+	width: 17%;
+}
+
+.grid-item.double-height {
+	height: 305px;
 }

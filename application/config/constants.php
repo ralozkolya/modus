@@ -39,3 +39,13 @@ $secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || $_SERVER
 $protocol = $secure ? 'https://' : 'http://';
 define('SECURE', $secure);
 define('PROTOCOL', $protocol);
+
+
+// Auth Library
+	
+define('ID', 'id');
+define('USERS', 'users');
+define('USERNAME', 'username');
+define('PASSWORD', 'password');
+
+define('USER', 'user');

@@ -12,10 +12,13 @@ class Site extends CI_Controller {
 		parent::__construct();
 
 		$this->load->helper(array('language', 'cookie'));
+		$this->load->library('Auth');
 
 		set_language();
 
 		$this->load->language(array('general'));
+
+		$this->data['user'] = $this->auth->get_current_user();
 	}
 
 	public function index()	{

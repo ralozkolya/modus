@@ -32,7 +32,7 @@ html, body {
 	color: white;
 	background: #464646;
 	text-transform: uppercase;
-	font-size: 11px;
+	font-size: 12px;
 }
 
 .header-top .fa {
@@ -51,7 +51,29 @@ html, body {
 
 .header-main {
 	padding: 10px 60px;
-	background: rgba(65, 58, 52, 0.6);
+	background: rgba(0, 0, 0, 0.6);
+}
+
+.first-row {
+	color: #f7931e;
+}
+
+.first-row .fa {
+	margin: 0 5px;
+}
+
+.langs {
+	color: #a1a1a1;
+	margin-left: 10px;
+}
+
+.langs > a {
+	padding: 3px;
+}
+
+.langs > .active {
+	border: solid 1px #a1a1a1;
+	border-radius: 3px;
 }
 
 
@@ -60,4 +82,13 @@ html, body {
 .unstyled {
 	color: inherit !important;
 	text-decoration: none !important;
+}
+
+
+/*	MEDIA QUERIES	*/
+
+@media (min-width: 768px) {
+	.first-row {
+		float: right;
+	}
 }

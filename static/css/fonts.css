@@ -1,11 +1,21 @@
 @font-face {
-    font-family: 'BPG Excelsior Caps';
-    src: url('../font/bpg_excelsior_caps_gplgnu.eot');
-    src: url('../font/bpg_excelsior_caps_gplgnu.eot?#iefix') format('embedded-opentype'),
-         url('../font/bpg_excelsior_caps_gplgnu.woff2') format('woff2'),
-         url('../font/bpg_excelsior_caps_gplgnu.woff') format('woff'),
-         url('../font/bpg_excelsior_caps_gplgnu.ttf') format('truetype'),
-         url('../font/bpg_excelsior_caps_gplgnu.svg#bpg_excelsior_caps_gplgnuRg') format('svg');
+	font-family: 'BPG Excelsior Caps';
+	src: url('../font/bpg_excelsior_caps_gplgnu.eot');
+	src: url('../font/bpg_excelsior_caps_gplgnu.eot?#iefix') format('embedded-opentype'),
+		 url('../font/bpg_excelsior_caps_gplgnu.woff2') format('woff2'),
+		 url('../font/bpg_excelsior_caps_gplgnu.woff') format('woff'),
+		 url('../font/bpg_excelsior_caps_gplgnu.ttf') format('truetype'),
+		 url('../font/bpg_excelsior_caps_gplgnu.svg#bpg_excelsior_caps_gplgnuRg') format('svg');
+}
+
+@font-face {
+	font-family: 'BPG Excelsior';
+	src: url('../font/bpg_gel_excelsior.eot');
+	src: url('../font/bpg_gel_excelsior.eot?#iefix') format('embedded-opentype'),
+		 url('../font/bpg_gel_excelsior.woff2') format('woff2'),
+		 url('../font/bpg_gel_excelsior.woff') format('woff'),
+		 url('../font/bpg_gel_excelsior.ttf') format('truetype'),
+		 url('../font/bpg_gel_excelsior.svg#bpg_excelsior_caps_gplgnuRg') format('svg');
 }
 
 
@@ -13,4 +23,8 @@
 
 .bpg-excelsior-caps {
 	font-family: 'BPG Excelsior Caps' !important;
+}
+
+.bpg-excelsior {
+	font-family: 'BPG Excelsior' !important;
 }

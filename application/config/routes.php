@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$route[GE.'|'.EN] = 'site';
+$route[GE.'|'.EN.'|'.RU] = 'site';
 
 $route['default_controller'] = 'site';
 $route['404_override'] = '';

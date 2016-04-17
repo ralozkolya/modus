@@ -11,7 +11,6 @@ html, body {
 
 .header {
 	position: relative;
-	height: 50px;
 	z-index: 50;
 }
 
@@ -48,4 +47,17 @@ html, body {
 	-ms-transform: translateY(-2px);
 	-o-transform: translateY(-2px);
 	transform: translateY(-2px);
+}
+
+.header-main {
+	padding: 10px 60px;
+	background: rgba(65, 58, 52, 0.6);
+}
+
+
+/*	HELPERS	*/
+
+.unstyled {
+	color: inherit !important;
+	text-decoration: none !important;
 }

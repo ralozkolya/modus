@@ -9,3 +9,5 @@ $lang['cart'] = 'Корзина';
 $lang['category'] = 'Категория';
 
 $lang['new_products'] = 'Новая продукция';
+$lang['brands'] = 'Бренды';
+$lang['no_brands'] = 'Не удалось найти бренды';

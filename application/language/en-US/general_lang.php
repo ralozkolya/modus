@@ -9,3 +9,5 @@ $lang['cart'] = 'Cart';
 $lang['category'] = 'Category';
 
 $lang['new_products'] = 'New products';
+$lang['brands'] = 'Brands';
+$lang['no_brands'] = 'No Brands found';

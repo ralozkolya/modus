@@ -9,3 +9,5 @@ $lang['cart'] = 'კალათა';
 $lang['category'] = 'კატეგორია';
 
 $lang['new_products'] = 'ახალი პროდუქცია';
+$lang['brands'] = 'ბრენდები';
+$lang['no_brands'] = 'ვერცერთი ბრენდი ვერ მოიძებნა';

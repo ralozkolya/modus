@@ -1,5 +1,5 @@
 <div class="header">
-	<div class="header-top clearfix hidden-xs">
+	<div class="header-top clearfix hidden-xs white">
 		<a href="#" class="unstyled">
 			<span class="fa fa-facebook"></span>
 		</a>

@@ -33,7 +33,6 @@ html, body {
 
 .header-top {
 	padding: 5px 60px;
-	color: white;
 	background: #464646;
 	font-size: 12px;
 }
@@ -111,6 +110,18 @@ html, body {
 	background: #e1871d;
 }
 
+.sidebar-categories {
+	list-style: none;
+	padding: 0;
+}
+
+.sidebar-categories > li {
+	border-top: solid 1px #ccc;
+	color: #ccc;
+	padding: 5px 0;
+}
+
+
 /*	HELPERS	*/
 
 .unstyled {
@@ -118,6 +129,9 @@ html, body {
 	text-decoration: none !important;
 }
 
+.white {
+	color: white;
+}
 
 /*	MEDIA QUERIES	*/
 

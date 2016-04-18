@@ -7,3 +7,5 @@ $lang['address_2'] = 'ბათუმი, გოგებაშვილის �
 $lang['login'] = 'შესვლა';
 $lang['cart'] = 'კალათა';
 $lang['category'] = 'კატეგორია';
+
+$lang['new_products'] = 'ახალი პროდუქცია';

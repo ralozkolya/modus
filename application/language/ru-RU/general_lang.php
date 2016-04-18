@@ -7,3 +7,5 @@ $lang['address_2'] = 'Батуми, Ул. Гогебашвили 45 (+995) 32 2 
 $lang['login'] = 'Войти';
 $lang['cart'] = 'Корзина';
 $lang['category'] = 'Категория';
+
+$lang['new_products'] = 'Новая продукция';

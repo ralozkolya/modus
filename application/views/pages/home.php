@@ -22,22 +22,16 @@
 		<div class="content">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-2 sidebar">Coming soon</div>
-					<div class="col-md-10">
+					<div class="col-md-3 sidebar">
+						<?php $this->load->view('elements/sidebar'); ?>
+					</div>
+					<div class="col-md-9">
 						<div class="container-fluid">
 							<div class="row">
-								<div class="grid">
-									<div class="grid-item narrow">asd</div>
-									<div class="grid-item wide">asd</div>
-									<div class="grid-item double-height">asd</div>
-									<div class="grid-item">asd</div>
-									<div class="grid-item wide">asd</div>
-									<div class="grid-item narrow">asd</div>
-									<div class="grid-item">asd</div>
-								</div>
+								<?php $this->load->view('elements/category_grid'); ?>
 							</div>
 							<div class="row">
-								<h3><?php echo lang('new_products'); ?></h3>
+								<?php $this->load->view('elements/latest_products'); ?>
 							</div>
 						</div>
 					</div>

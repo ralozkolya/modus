@@ -9,10 +9,12 @@
 			$bg = static_url().'uploads/categories/thumbs/'.$c->image;
 		?>
 		<div class="<?php echo $class; ?>" style="background-image: url('<?php echo $bg; ?>');">
-			<div class="overlay text-center bpg-excelsior-caps white">
-				<div class="fa fa-cart-plus"></div>
-				<div><?php echo $c->name; ?></div>
-			</div>
+			<a href="#">
+				<div class="overlay text-center bpg-excelsior-caps white">
+					<div class="fa fa-cart-plus"></div>
+					<div><?php echo $c->name; ?></div>
+				</div>
+			</a>
 		</div>
 	<?php endforeach; ?>
 </div>

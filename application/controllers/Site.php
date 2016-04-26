@@ -36,6 +36,8 @@ class Site extends CI_Controller {
 		$this->data['latest_products'] = $this->Product->get_latest();
 		$this->data['brands'] = $this->Brand->get_pinned();
 		
+		$this->data['slug'] = 'home';
+		
 		$this->load->view('pages/home', $this->data);
 	}
 

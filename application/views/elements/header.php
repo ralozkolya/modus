@@ -20,7 +20,7 @@
 				<?php var_dump($user); ?>
 			<?php else: ?>
 				<span class="fa fa-user"></span>
-				<a class="unstyled" href="#">
+				<a class="unstyled" href="#" id="login-link">
 					<?php echo lang('login'); ?>
 				</a>
 				<span class="fa fa-shopping-cart"></span>
@@ -43,7 +43,7 @@
 		<ul class="second-row navigation bpg-excelsior-caps">
 			<?php foreach($navigation as $n): ?>
 				<li>
-					<a href="#" <?php if($n->slug = $slug) echo 'class="active"'; ?>>
+					<a href="#" <?php if($n->slug === $slug) echo 'class="active"'; ?>>
 						<?php echo $n->title; ?>
 					</a>
 				</li>

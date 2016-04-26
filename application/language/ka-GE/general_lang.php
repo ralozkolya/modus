@@ -11,3 +11,7 @@ $lang['category'] = 'კატეგორია';
 $lang['new_products'] = 'ახალი პროდუქცია';
 $lang['brands'] = 'ბრენდები';
 $lang['no_brands'] = 'ვერცერთი ბრენდი ვერ მოიძებნა';
+
+$lang['email'] = 'ელ. ფოსტა';
+$lang['password'] = 'პაროლი';
+$lang['password_recovery'] = 'პაროლის აღდგენა';

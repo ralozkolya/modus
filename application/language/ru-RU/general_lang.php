@@ -11,3 +11,6 @@ $lang['category'] = 'Категория';
 $lang['new_products'] = 'Новая продукция';
 $lang['brands'] = 'Бренды';
 $lang['no_brands'] = 'Не удалось найти бренды';
+
+$lang['email'] = 'Емайл';
+$lang['password'] = 'Восстановление Пароля';

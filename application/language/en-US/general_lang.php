@@ -11,3 +11,7 @@ $lang['category'] = 'Category';
 $lang['new_products'] = 'New products';
 $lang['brands'] = 'Brands';
 $lang['no_brands'] = 'No Brands found';
+
+$lang['email'] = 'Email';
+$lang['password'] = 'Password';
+$lang['password_recovery'] = 'Password recovery';

@@ -35,8 +35,6 @@ class MY_Model extends CI_Model {
 
 	public function get_list($limit = NULL, $offset = NULL) {
 
-		$r = $this->db->get($this->table);
-
 		if($limit) {
 			if($offset) {
 				$this->db->limit($limit, $offset);
@@ -46,6 +44,8 @@ class MY_Model extends CI_Model {
 				$this->db->limit($limit);
 			}
 		}
+
+		$r = $this->db->get($this->table);
 
 		return $r->result();
 	}

@@ -12,5 +12,8 @@ $lang['new_products'] = 'Новая продукция';
 $lang['brands'] = 'Бренды';
 $lang['no_brands'] = 'Не удалось найти бренды';
 
+$lang['news'] = 'Новости';
+$lang['no_news'] = 'Не удалось найти новости';
+
 $lang['email'] = 'Емайл';
 $lang['password'] = 'Восстановление Пароля';

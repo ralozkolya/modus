@@ -26,7 +26,7 @@ class Site extends CI_Controller {
 
 	public function index()	{
 
-		$this->load->model(array('Product', 'Category', 'Brand'));
+		$this->load->model(array('Product', 'Category', 'Brand', 'News'));
 
 		$this->data['address_1'] = lang('address_1');
 		$this->data['address_2'] = lang('address_2');
@@ -35,6 +35,7 @@ class Site extends CI_Controller {
 		$this->data['categories'] = $this->Category->get_list();
 		$this->data['latest_products'] = $this->Product->get_latest();
 		$this->data['brands'] = $this->Brand->get_pinned();
+		$this->data['news'] = $this->News->get_latest();
 		
 		$this->data['slug'] = 'home';
 		

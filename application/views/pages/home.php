@@ -36,6 +36,9 @@
 							<div class="row">
 								<?php $this->load->view('elements/pinned_brands'); ?>
 							</div>
+							<div class="row">
+								<?php $this->load->view('elements/news'); ?>
+							</div>
 						</div>
 					</div>
 				</div>

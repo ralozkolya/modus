@@ -115,10 +115,24 @@ html, body {
 	padding: 0;
 }
 
-.sidebar-categories > li {
+.sidebar-category {
 	border-top: solid 1px #ccc;
 	color: #ccc;
 	padding: 5px 0;
+	cursor: pointer;
+}
+
+.sidebar-category > .fa {
+	transition: all .2s;
+}
+
+.sidebar-category.open > .fa {
+	transform: rotate(180deg);
+}
+
+.sidebar-category > ul {
+	list-style: none;
+	display: none;
 }
 
 .login-overlay {

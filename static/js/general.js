@@ -19,4 +19,9 @@ $(function(){
 		$('.login-overlay').fadeOut();
 	});
 
+	$('.sidebar-category').click(function(){
+		$(this).toggleClass('open');
+		$('ul', this).stop().slideToggle();
+	});
+
 });

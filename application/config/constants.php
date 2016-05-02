@@ -49,3 +49,6 @@ define('USERNAME', 'username');
 define('PASSWORD', 'password');
 
 define('USER', 'user');
+
+
+define('PRODUCTS_PER_PAGE', 24);

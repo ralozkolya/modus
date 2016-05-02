@@ -28,11 +28,8 @@ class Site extends CI_Controller {
 
 		$this->load->model(array('Product', 'Category', 'Brand', 'News'));
 
-		$this->data['address_1'] = lang('address_1');
-		$this->data['address_2'] = lang('address_2');
-
 		$this->data['pinned_categories'] = $this->Category->get_pinned();
-		$this->data['categories'] = $this->Category->get_list();
+		$this->data['categories'] = $this->Category->get_list_with_subcategories();
 		$this->data['latest_products'] = $this->Product->get_latest();
 		$this->data['brands'] = $this->Brand->get_pinned();
 		$this->data['news'] = $this->News->get_latest();

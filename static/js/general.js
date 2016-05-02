@@ -19,7 +19,7 @@ $(function(){
 		$('.login-overlay').fadeOut();
 	});
 
-	$('.sidebar-category').click(function(){
+	$('.sidebar-category').click(function(e){
 		$(this).toggleClass('open');
 		$('ul', this).stop().slideToggle();
 	});

@@ -182,6 +182,11 @@ html, body {
 	border: none;
 	background: transparent;
 	margin: 5px 0;
+	font-size: 18px;
+}
+
+.password-recovery {
+	color: #c97b23 !important;
 }
 
 /*	HELPERS	*/

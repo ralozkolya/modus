@@ -19,7 +19,7 @@
 					<input class="submit-button bpg-excelsior" type="submit" value="<?php echo lang('login'); ?>">
 				</div>
 				<div>
-					<a class="unstyled bpg-excelsior" href="#"><?php echo lang('password_recovery'); ?></a>
+					<a class="bpg-excelsior password-recovery" href="#"><?php echo lang('password_recovery'); ?></a>
 				</div>
 			</form>
 		</div>

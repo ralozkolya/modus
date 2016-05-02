@@ -5,9 +5,9 @@
 		</a>
 		<span class="pull-right">
 			<span class="fa fa-map-marker"></span>
-			<span class="bpg-excelsior-caps"><?php echo $address_1; ?></span>
+			<span class="bpg-excelsior-caps"><?php echo lang('address_1'); ?></span>
 			<span class="fa fa-map-marker"></span>
-			<span class="bpg-excelsior-caps"><?php echo $address_2; ?></span>
+			<span class="bpg-excelsior-caps"><?php echo lang('address_2'); ?></span>
 		</span>
 	</div><!-- header-top -->
 
@@ -43,7 +43,8 @@
 		<ul class="second-row navigation bpg-excelsior-caps">
 			<?php foreach($navigation as $n): ?>
 				<li>
-					<a href="#" <?php if($n->slug === $slug) echo 'class="active"'; ?>>
+					<a href="<?php echo locale_url().$n->slug; ?>"
+						<?php if($n->slug === $slug) echo 'class="active"'; ?>>
 						<?php echo $n->title; ?>
 					</a>
 				</li>

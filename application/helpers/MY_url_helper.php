@@ -9,5 +9,5 @@ function static_url() {
 function locale_url() {
 
 	$ci =& get_instance();
-	return base_url().$ci->config->item('language');
+	return base_url().$ci->config->item('language').'/';
 }

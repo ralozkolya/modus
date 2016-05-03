@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $lang = '('.GE.'|'.EN.'|'.RU.')';
 
 $route[$lang] = 'site';
+$route[$lang.'/home'] = 'site';
 
 $route[$lang.'/(.*)'] = 'site/$2';
 

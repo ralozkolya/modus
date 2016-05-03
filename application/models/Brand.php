@@ -24,7 +24,7 @@ class Brand extends MY_Model {
 
 		$lang = get_lang_code(get_lang());
 
-		$brands = array();
+		/*$brands = array();
 
 		foreach($products as $p) {
 			$brands[] = $p->brand;
@@ -36,7 +36,7 @@ class Brand extends MY_Model {
 
 		else {
 			return NULL;
-		}
+		}*/
 
 		$this->db->select(array(
 			$lang.'_name as name',

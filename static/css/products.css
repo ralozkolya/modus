@@ -9,3 +9,18 @@ h1, h2, h3, h4, h5, h6 {
 .brand-label {
 	font-weight: normal;
 }
+
+.price-container {
+	width: 50%;
+	float: left;
+	padding: 5px;
+}
+
+.price-container > input {
+	width: 100%;
+	background: #eee;
+	border-radius: 10px;
+	border: none;
+	padding: 5px;
+	outline: none;
+}

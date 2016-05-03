@@ -22,3 +22,6 @@ $lang['password_recovery'] = 'პაროლის აღდგენა';
 
 $lang['products'] = 'პროდუქტები';
 $lang['brand'] = 'ბრენდი';
+$lang['price'] = 'ღირებულება';
+$lang['from'] = '-დან';
+$lang['to'] = '-მდე';

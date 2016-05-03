@@ -63,6 +63,14 @@ class Product extends MY_Model {
 			$this->db->where_in('brand', $get['brand']);
 		}
 
+		if(!empty($get['from'])) {
+			$this->db->where('price >=', $get['from']);
+		}
+
+		if(!empty($get['to'])) {
+			$this->db->where('price <=', $get['to']);
+		}
+
 		$this->db->select(array(
 			$lang.'_name as name',
 			'brand',

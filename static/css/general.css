@@ -2,6 +2,7 @@ html, body {
 	height: 100%;
 }
 
+
 /*	GENERAL MARKUP WITH STICKY FOOTER	*/
 
 .wrapper {
@@ -28,6 +29,19 @@ html, body {
 	color: #757575;
 	padding: 10px 0;
 }
+
+
+/*	HELPERS	*/
+
+.unstyled {
+	color: inherit !important;
+	text-decoration: none !important;
+}
+
+.white {
+	color: white;
+}
+
 
 /*	GENERAL	*/
 
@@ -142,6 +156,10 @@ html, body {
 	display: none;
 }
 
+.sidebar .active {
+	color: #f7931e !important;
+}
+
 .login-overlay {
 	display: none;
 	position: fixed;
@@ -196,16 +214,6 @@ html, body {
 	color: #c97b23 !important;
 }
 
-/*	HELPERS	*/
-
-.unstyled {
-	color: inherit !important;
-	text-decoration: none !important;
-}
-
-.white {
-	color: white;
-}
 
 /*	MEDIA QUERIES	*/
 

@@ -22,3 +22,6 @@ $lang['password_recovery'] = 'Password recovery';
 
 $lang['products'] = 'Products';
 $lang['brand'] = 'Brand';
+$lang['price'] = 'Price';
+$lang['from'] = 'From';
+$lang['to'] = 'To';

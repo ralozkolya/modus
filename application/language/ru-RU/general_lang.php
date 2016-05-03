@@ -21,3 +21,6 @@ $lang['password'] = 'Восстановление Пароля';
 
 $lang['products'] = 'Продукты';
 $lang['brand'] = 'Бренд';
+$lang['price'] = 'Стоймость';
+$lang['from'] = 'От';
+$lang['to'] = 'До';

@@ -5,3 +5,7 @@ h1, h2, h3, h4, h5, h6 {
 	border-bottom: solid 1px #f7931e;
 	padding-bottom: 5px;
 }
+
+.brand-label {
+	font-weight: normal;
+}

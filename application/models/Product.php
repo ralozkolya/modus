@@ -36,7 +36,7 @@ class Product extends MY_Model {
 			$c = $this->Category->get($category);
 
 			if($c->parent) {
-				$this->db->where(array('category' => $category));
+				$this->db->where('category', $category);
 			}
 
 			else {
@@ -53,7 +53,7 @@ class Product extends MY_Model {
 					$this->db->where_in('category', $ids);
 				}
 
-				$this->db->or_where(array('category' => $category));
+				$this->db->or_where('category', $category);
 
 				$this->db->group_end();
 			}

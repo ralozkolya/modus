@@ -47,11 +47,15 @@ class Product extends MY_Model {
 					$ids[] = $s->id;
 				}
 
+				$this->db->group_start();
+
 				if(!empty($ids)) {
 					$this->db->where_in('category', $ids);
 				}
 
 				$this->db->or_where(array('category' => $category));
+
+				$this->db->group_end();
 			}
 		}
 

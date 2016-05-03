@@ -19,9 +19,22 @@ $(function(){
 		$('.login-overlay').fadeOut();
 	});
 
-	$('.sidebar-category').click(function(e){
-		$(this).toggleClass('open');
-		$('ul', this).stop().slideToggle();
+	$('.category-link').click(function(){
+
+		$('input[name="category"]').val($(this).attr('data-category'));
+
+		$('#filter-form').submit();
+
+		return false;
 	});
+
+	$('.sidebar-category > .fa').click(function(e){
+		$(this).toggleClass('open');
+		$(this).next('ul').stop().slideToggle();
+	});
+
+	$('.fa.expanded').click();
+
+	$('.category-link.expanded').parent().parent().prev().click();
 
 });

@@ -1,5 +1,5 @@
 <h3 class="bpg-excelsior-caps"><?php echo lang('news'); ?></h3>
-<?php if(count($news)): ?>
+<?php if(!empty($news)): ?>
 	<?php foreach($news as $n): ?>
 		<?php $image = static_url().'uploads/news/thumbs/'.$n->image; ?>
 		<div class="col-sm-3">

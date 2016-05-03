@@ -1,6 +1,6 @@
-<h3 class="bpg-excelsior-caps"><?php echo lang('new_products'); ?></h3>
-<?php if(!empty($latest_products)): ?>
-	<?php foreach($latest_products as $p): ?>
+<h3 class="bpg-excelsior-caps"><?php echo lang('products'); ?></h3>
+<?php if(!empty($products)): ?>
+	<?php foreach($products as $p): ?>
 		<?php $image = static_url().'uploads/products/thumbs/'.$p->image; ?>
 		<div class="col-sm-4">
 			<div class="product">

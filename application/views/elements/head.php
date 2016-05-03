@@ -5,7 +5,7 @@
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-hQpvDQiCJaD2H465dQfA717v7lu5qHWtDbWNPvaTJ0ID5xnPUlVXnKzq7b8YUkbN" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<link rel="stylesheet" href="<?php echo static_url().'css/fonts.css'; ?>">
+<link rel="stylesheet" href="<?php echo static_url().'css/fonts.css?v='.V; ?>">
 <link rel="stylesheet" href="<?php echo static_url().'css/general.css?v='.V; ?>">
 <link rel="icon" type="image/png" href="<?php echo static_url().'img/favicon.png'; ?>">
 

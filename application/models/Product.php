@@ -17,10 +17,12 @@ class Product extends MY_Model {
 
 		$this->db->order_by('id DESC');
 
-		return parent::get_list(8);
+		return parent::get_list(6);
 	}
 
 	public function get_filtered($get) {
+
+		$lang = get_lang_code(get_lang());
 
 		$page = !empty($get['page']) ? $get['page'] : 1;
 
@@ -45,10 +47,24 @@ class Product extends MY_Model {
 					$ids[] = $s->id;
 				}
 
-				$this->db->where_in('category', $ids);
+				if(!empty($ids)) {
+					$this->db->where_in('category', $ids);
+				}
+
 				$this->db->or_where(array('category' => $category));
 			}
 		}
+
+		if(!empty($get['brand'])) {
+			$this->db->where_in('brand', $get['brand']);
+		}
+
+		$this->db->select(array(
+			$lang.'_name as name',
+			'brand',
+			'price',
+			'image',
+		));
 
 		return parent::get_list($page * PRODUCTS_PER_PAGE, $offset);
 	}

@@ -11,7 +11,14 @@
 		</span>
 	</div><!-- header-top -->
 
-	<div class="header-main clearfix">
+	<?php
+		$header_main_class = 'header-main clearfix';
+
+		if($slug !== 'home') {
+			$header_main_class .= ' with-background';
+		}
+	?>
+	<div class="<?php echo $header_main_class; ?>">
 		<a href="<?php echo locale_url(); ?>">
 			<img class="logo" alt="Logo" src="<?php echo static_url().'img/logo.png'; ?>">
 		</a>
@@ -76,17 +83,18 @@
 			</div>
 		</form><!-- third-row -->
 	</div><!-- header-main -->
-
-	<div class="slider">
-		<ul>
-			<li>
-				<?php $url = static_url().'uploads/banners/2.png'; ?>
-				<div class="slide" style="background-image: url('<?php echo $url; ?>');"></div>
-			</li>
-			<li>
-				<?php $url = static_url().'uploads/banners/1.png'; ?>
-				<div class="slide" style="background-image: url('<?php echo $url; ?>');"></div>
-			</li>
-		</ul>
-	</div><!-- slider -->
+	<?php if($slug === 'home'): ?>
+		<div class="slider">
+			<ul>
+				<li>
+					<?php $url = static_url().'uploads/banners/2.png'; ?>
+					<div class="slide" style="background-image: url('<?php echo $url; ?>');"></div>
+				</li>
+				<li>
+					<?php $url = static_url().'uploads/banners/1.png'; ?>
+					<div class="slide" style="background-image: url('<?php echo $url; ?>');"></div>
+				</li>
+			</ul>
+		</div><!-- slider -->
+	<?php endif; ?>
 </div><!-- header -->

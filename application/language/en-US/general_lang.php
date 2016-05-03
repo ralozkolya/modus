@@ -9,6 +9,7 @@ $lang['cart'] = 'Cart';
 $lang['category'] = 'Category';
 
 $lang['new_products'] = 'New products';
+$lang['no_products'] = 'No products found';
 $lang['brands'] = 'Brands';
 $lang['no_brands'] = 'No Brands found';
 
@@ -18,3 +19,6 @@ $lang['no_news'] = 'No news found';
 $lang['email'] = 'Email';
 $lang['password'] = 'Password';
 $lang['password_recovery'] = 'Password recovery';
+
+$lang['products'] = 'Products';
+$lang['brand'] = 'Brand';

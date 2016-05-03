@@ -20,6 +20,35 @@ class Brand extends MY_Model {
 		return $this->db->get($this->table)->result();
 	}
 
+	public function get_distinct($products) {
+
+		$lang = get_lang_code(get_lang());
+
+		$brands = array();
+
+		foreach($products as $p) {
+			$brands[] = $p->brand;
+		}
+
+		if(!empty($brands)) {
+			$this->db->where_in('id', $brands);
+		}
+
+		else {
+			return NULL;
+		}
+
+		$this->db->select(array(
+			$lang.'_name as name',
+			'id',
+		));
+
+		$this->db->distinct();
+
+		return parent::get_list();
+
+	}
+
 }
 
 /* End of file Brand.php */

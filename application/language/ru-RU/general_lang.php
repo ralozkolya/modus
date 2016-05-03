@@ -9,6 +9,7 @@ $lang['cart'] = 'Корзина';
 $lang['category'] = 'Категория';
 
 $lang['new_products'] = 'Новая продукция';
+$lang['no_products'] = 'Не удалось найти товар';
 $lang['brands'] = 'Бренды';
 $lang['no_brands'] = 'Не удалось найти бренды';
 
@@ -17,3 +18,6 @@ $lang['no_news'] = 'Не удалось найти новости';
 
 $lang['email'] = 'Емайл';
 $lang['password'] = 'Восстановление Пароля';
+
+$lang['products'] = 'Продукты';
+$lang['brand'] = 'Бренд';

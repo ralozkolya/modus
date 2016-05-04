@@ -59,7 +59,7 @@
 		</ul><!-- second-row -->
 		<form class="third-row bpg-excelsior-caps" action="#">
 			<div class="input-group">
-				<span class="input-group-btn">
+				<div class="input-group-btn">
 					<button type="button"
 						class="btn btn-default dropdown-toggle bpg-excelsior-caps"
 						data-toggle="dropdown">
@@ -71,7 +71,7 @@
 						<li><a href="#">Lorem Ipsum</a></li>
 						<li><a href="#">Lorem Ipsum</a></li>
 					</ul>
-				</span>
+				</div>
 
 				<input class="form-control" type="text">
 

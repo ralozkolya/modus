@@ -9,7 +9,7 @@
 			$bg = static_url().'uploads/categories/thumbs/'.$c->image;
 		?>
 		<div class="<?php echo $class; ?>" style="background-image: url('<?php echo $bg; ?>');">
-			<a href="#">
+			<a href="<?php echo locale_url().'products?category='.$c->id; ?>">
 				<div class="overlay text-center bpg-excelsior-caps white">
 					<div class="fa fa-cart-plus"></div>
 					<div><?php echo $c->name; ?></div>

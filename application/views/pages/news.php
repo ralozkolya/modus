@@ -11,11 +11,7 @@
 
 		<div class="content">
 			<div class="container bpg-excelsior">
-				<div class="row">
-					<div class="col-xs-12">
-						<?php echo $page->body; ?>
-					</div>
-				</div>
+				<h1 class="bpg-excelsior-caps text-center">UNDER CONSTRUCTION</h1>
 			</div>
 		</div>
 

@@ -92,7 +92,10 @@ class Site extends CI_Controller {
 	}
 
 	public function news() {
-		
+
+		$this->data['slug'] = 'news';
+
+		$this->load->view('pages/news', $this->data);
 	}
 
 	public function about_us() {

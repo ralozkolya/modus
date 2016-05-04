@@ -1,7 +1,7 @@
 <h3 class="bpg-excelsior-caps"><?php echo lang('news'); ?></h3>
 <?php if(!empty($news)): ?>
 	<?php foreach($news as $n): ?>
-		<?php $image = static_url().'uploads/news/thumbs/'.$n->image; ?>
+		<?php $image = static_url('uploads/news/thumbs/'.$n->image); ?>
 		<div class="col-sm-3">
 			<a class="unstyled" href="#">
 				<div class="news">

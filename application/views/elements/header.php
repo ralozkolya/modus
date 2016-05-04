@@ -20,7 +20,7 @@
 	?>
 	<div class="<?php echo $header_main_class; ?>">
 		<a href="<?php echo locale_url(); ?>">
-			<img class="logo" alt="Logo" src="<?php echo static_url().'img/logo.png'; ?>">
+			<img class="logo" alt="Logo" src="<?php echo static_url('img/logo.png'); ?>">
 		</a>
 		<div class="first-row bpg-excelsior">
 			<?php if($user): ?>
@@ -50,7 +50,7 @@
 		<ul class="second-row navigation bpg-excelsior-caps">
 			<?php foreach($navigation as $n): ?>
 				<li>
-					<a href="<?php echo locale_url().$n->slug; ?>"
+					<a href="<?php echo locale_url($n->slug); ?>"
 						<?php if($n->slug === $slug) echo 'class="active"'; ?>>
 						<?php echo $n->title; ?>
 					</a>
@@ -87,11 +87,11 @@
 		<div class="slider">
 			<ul>
 				<li>
-					<?php $url = static_url().'uploads/banners/2.png'; ?>
+					<?php $url = static_url('uploads/banners/2.png'); ?>
 					<div class="slide" style="background-image: url('<?php echo $url; ?>');"></div>
 				</li>
 				<li>
-					<?php $url = static_url().'uploads/banners/1.png'; ?>
+					<?php $url = static_url('uploads/banners/1.png'); ?>
 					<div class="slide" style="background-image: url('<?php echo $url; ?>');"></div>
 				</li>
 			</ul>

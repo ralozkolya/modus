@@ -2,9 +2,9 @@
 <html lang="<?php echo get_lang_code($this->config->item('language')); ?>">
 <head>
 	<?php $this->load->view('elements/head'); ?>
-	<link rel="stylesheet" href="<?php echo static_url().'css/product_list.css?v='.V; ?>">
-	<link rel="stylesheet" href="<?php echo static_url().'css/products.css?v='.V; ?>">
-	<script src="<?php echo static_url().'js/products.js?v='.V; ?>"></script>
+	<link rel="stylesheet" href="<?php echo static_url('css/product_list.css?v='.V); ?>">
+	<link rel="stylesheet" href="<?php echo static_url('css/products.css?v='.V); ?>">
+	<script src="<?php echo static_url('js/products.js?v='.V); ?>"></script>
 </head>
 <body>
 

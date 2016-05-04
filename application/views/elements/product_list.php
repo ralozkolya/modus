@@ -1,7 +1,7 @@
-<h3 class="bpg-excelsior-caps"><?php echo lang('products'); ?></h3>
+<h3 class="bpg-excelsior-caps"><?php echo lang('production'); ?></h3>
 <?php if(!empty($products)): ?>
 	<?php foreach($products as $p): ?>
-		<?php $image = static_url().'uploads/products/thumbs/'.$p->image; ?>
+		<?php $image = static_url('uploads/products/thumbs/'.$p->image); ?>
 		<div class="col-sm-4">
 			<div class="product">
 				<div

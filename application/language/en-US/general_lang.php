@@ -20,8 +20,11 @@ $lang['email'] = 'Email';
 $lang['password'] = 'Password';
 $lang['password_recovery'] = 'Password recovery';
 
-$lang['products'] = 'Products';
+$lang['production'] = 'Products';
 $lang['brand'] = 'Brand';
 $lang['price'] = 'Price';
 $lang['from'] = 'From';
 $lang['to'] = 'To';
+
+$lang['description'] = 'Description';
+$lang['add_to_cart'] = 'Add to cart';

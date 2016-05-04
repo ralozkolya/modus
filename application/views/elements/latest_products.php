@@ -17,7 +17,11 @@
 					<?php endif; ?>
 				</div>
 				<div class="overlay text-center white">
-					<a class="unstyled" href="#">
+					<?php
+						$url = locale_url('product/'.$p->id);
+						$url .= '/'.url_title($p->slug);
+					?>
+					<a class="unstyled" href="<?php echo $url; ?>">
 						<span class="fa fa-search"></span>
 					</a>
 					<a class="unstyled" href="#">

@@ -19,8 +19,11 @@ $lang['no_news'] = 'Не удалось найти новости';
 $lang['email'] = 'Емайл';
 $lang['password'] = 'Восстановление Пароля';
 
-$lang['products'] = 'Продукты';
+$lang['production'] = 'Продуктция';
 $lang['brand'] = 'Бренд';
 $lang['price'] = 'Стоймость';
 $lang['from'] = 'От';
 $lang['to'] = 'До';
+
+$lang['description'] = 'Описание';
+$lang['add_to_cart'] = 'Добавить в корзину';

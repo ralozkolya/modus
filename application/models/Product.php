@@ -5,12 +5,29 @@ class Product extends MY_Model {
 
 	protected $table = 'products';
 
-	public function get_latest() {
+	public function get($id) {
 
 		$lang = get_lang_code(get_lang());
 
 		$this->db->select(array(
 			$lang.'_name as name',
+			$lang.'_description as description',
+			'en_name as slug',
+			'price', 'image',
+		));
+
+		return parent::get($id);
+	}
+
+	public function get_latest() {
+
+		$lang = get_lang_code(get_lang());
+
+		$this->db->select(array(
+			'id',
+			$lang.'_name as name',
+			'en_name as slug',
+			'brand',
 			'price',
 			'image',
 		));
@@ -72,7 +89,9 @@ class Product extends MY_Model {
 		}
 
 		$this->db->select(array(
+			'id',
 			$lang.'_name as name',
+			'en_name as slug',
 			'brand',
 			'price',
 			'image',

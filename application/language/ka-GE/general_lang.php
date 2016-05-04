@@ -20,8 +20,11 @@ $lang['email'] = 'ელ. ფოსტა';
 $lang['password'] = 'პაროლი';
 $lang['password_recovery'] = 'პაროლის აღდგენა';
 
-$lang['products'] = 'პროდუქტები';
+$lang['production'] = 'პროდუქცია';
 $lang['brand'] = 'ბრენდი';
 $lang['price'] = 'ღირებულება';
 $lang['from'] = '-დან';
 $lang['to'] = '-მდე';
+
+$lang['description'] = 'აღწერა';
+$lang['add_to_cart'] = 'კალათაში დამატება';

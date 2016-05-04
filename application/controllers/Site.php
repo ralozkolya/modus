@@ -55,6 +55,18 @@ class Site extends CI_Controller {
 		$this->load->view('pages/products', $this->data);
 	}
 
+	public function product($id, $slug) {
+
+		$this->load->model(array('Product', 'Category', 'Brand'));
+
+		$this->data['categories'] = $this->Category->get_list_with_subcategories();
+		$this->data['product'] = $this->Product->get($id);
+
+		$this->data['slug'] = 'products';
+
+		$this->load->view('pages/product', $this->data);
+	}
+
 	public function test() {
 
 		$this->load->library('image_lib');

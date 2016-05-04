@@ -1,3 +1,6 @@
+var addToCartUrl = baseUrl + 'add_to_cart/';
+var removeFromCartUrl = baseUrl + 'remove_from_cart/';
+
 var slideDuration = 400;
 
 $(function(){

@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="<?php echo static_url('css/general.css?v='.V); ?>">
 <link rel="icon" type="image/png" href="<?php echo static_url('img/favicon.png'); ?>">
 
+<script>
+	var baseUrl = '<?php echo base_url(); ?>';
+	var staticUrl = '<?php echo static_url(); ?>';
+	var localeUrl = '<?php echo locale_url(); ?>';
+</script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script src="<?php echo static_url('js/general.js?v='.V); ?>"></script>

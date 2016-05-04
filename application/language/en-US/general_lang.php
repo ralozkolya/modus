@@ -28,3 +28,6 @@ $lang['to'] = 'To';
 
 $lang['description'] = 'Description';
 $lang['add_to_cart'] = 'Add to cart';
+$lang['added_to_cart'] = 'Added';
+
+$lant['empty_cart'] = 'Empty cart';

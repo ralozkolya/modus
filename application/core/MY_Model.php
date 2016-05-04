@@ -7,11 +7,18 @@ class MY_Model extends CI_Model {
 
 	public function get($id) {
 
-		$this->db->where(array('id' => $id));
+		$this->db->where('id', $id);
 
 		$r = $this->db->get($this->table);
 
 		return $r->row();
+	}
+
+	public function get_by_key($key, $value) {
+
+		$this->db->where($key, $value);
+
+		return $this->db->get($this->table)->row();
 	}
 
 	public function add($data) {

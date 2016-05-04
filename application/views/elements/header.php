@@ -26,13 +26,21 @@
 			<?php if($user): ?>
 				<?php var_dump($user); ?>
 			<?php else: ?>
-				<span class="fa fa-user"></span>
 				<a class="unstyled" href="#" id="login-link">
+					<span class="fa fa-user"></span>
 					<?php echo lang('login'); ?>
 				</a>
-				<span class="fa fa-shopping-cart"></span>
-				<a class="unstyled" href="#">
-					<?php echo lang('cart'); ?>
+				<a class="unstyled cart" href="#">
+					<span class="fa fa-shopping-cart"></span>
+					<?php
+						if($cart_size) {
+							echo lang('cart')." ({$cart_size})";
+						}
+
+						else {
+							echo lang('cart');
+						}
+					?>
 				</a>
 			<?php endif; ?>
 			<span class="langs">

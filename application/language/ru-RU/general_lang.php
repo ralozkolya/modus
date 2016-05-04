@@ -27,3 +27,6 @@ $lang['to'] = 'До';
 
 $lang['description'] = 'Описание';
 $lang['add_to_cart'] = 'Добавить в корзину';
+$lang['added_to_cart'] = 'В Корзине';
+
+$lang['empty_cart'] = 'Пусто';

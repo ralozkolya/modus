@@ -13,7 +13,7 @@ class Product extends MY_Model {
 			$lang.'_name as name',
 			$lang.'_description as description',
 			'en_name as slug',
-			'price', 'image',
+			'id', 'price', 'image',
 		));
 
 		return parent::get($id);
@@ -37,18 +37,18 @@ class Product extends MY_Model {
 		return parent::get_list(6);
 	}
 
-	public function get_filtered($get) {
+	public function get_filtered($filter) {
 
 		$lang = get_lang_code(get_lang());
 
-		$page = !empty($get['page']) ? $get['page'] : 1;
+		$page = !empty($filter['page']) ? $filter['page'] : 1;
 
 		$page = abs($page - 1);
 		$offset = $page * PRODUCTS_PER_PAGE;
 
-		if(!empty($get['category'])) {
+		if(!empty($filter['category'])) {
 
-			$category = $get['category'];
+			$category = $filter['category'];
 
 			$c = $this->Category->get($category);
 
@@ -76,16 +76,16 @@ class Product extends MY_Model {
 			}
 		}
 
-		if(!empty($get['brand'])) {
-			$this->db->where_in('brand', $get['brand']);
+		if(!empty($filter['brand'])) {
+			$this->db->where_in('brand', $filter['brand']);
 		}
 
-		if(!empty($get['from'])) {
-			$this->db->where('price >=', $get['from']);
+		if(!empty($filter['from'])) {
+			$this->db->where('price >=', $filter['from']);
 		}
 
-		if(!empty($get['to'])) {
-			$this->db->where('price <=', $get['to']);
+		if(!empty($filter['to'])) {
+			$this->db->where('price <=', $filter['to']);
 		}
 
 		$this->db->select(array(
@@ -98,6 +98,22 @@ class Product extends MY_Model {
 		));
 
 		return parent::get_list($page * PRODUCTS_PER_PAGE, $offset);
+	}
+
+	public function get_cart($cart) {
+
+		$lang = get_lang_code(get_lang());
+
+		$cart = array_keys($cart);
+
+		$this->db->select(array(
+			$lang.'_name as name',
+			'id', 'price', 'image',
+		));
+
+		$this->db->where_in('id', $cart);
+
+		return $this->get_list();
 	}
 
 }

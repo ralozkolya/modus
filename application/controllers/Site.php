@@ -14,14 +14,16 @@ class Site extends CI_Controller {
 
 		$this->load->helper(array('language', 'cookie'));
 		$this->load->library('Auth');
-		$this->load->model(array('Page'));
+		$this->load->model('Page');
 
 		set_language();
 
-		$this->load->language(array('general'));
+		$this->load->language('general');
 
 		$this->data['user'] = $this->auth->get_current_user();
 		$this->data['navigation'] = $this->Page->get_navigation();
+
+		$this->data['cart_size'] = count($this->session->userdata('cart'));
 	}
 
 	public function index()	{
@@ -57,14 +59,117 @@ class Site extends CI_Controller {
 
 	public function product($id, $slug) {
 
-		$this->load->model(array('Product', 'Category', 'Brand'));
+		$this->load->model('Product');
 
-		$this->data['categories'] = $this->Category->get_list_with_subcategories();
 		$this->data['product'] = $this->Product->get($id);
+
+		$cart = $this->session->userdata('cart');
+
+		if($cart) {
+			if(!empty($cart[$this->data['product']->id])) {
+				$this->data['in_cart'] = TRUE;
+			}
+		}
 
 		$this->data['slug'] = 'products';
 
 		$this->load->view('pages/product', $this->data);
+	}
+
+	public function cart() {
+
+		return;
+
+		$this->load->model('Product');
+
+		$cart = $this->session->userdata('cart');
+
+		$this->data['products'] = $this->Product->get_cart($cart);
+
+		$this->data['slug'] = 'cart';
+
+		$this->load->view('pages/cart', $this->data);
+	}
+
+	public function news() {
+		
+	}
+
+	public function about_us() {
+
+		$this->data['slug'] = 'about_us';
+
+		$this->data['page'] = $this->Page->get_by_key('slug', $this->data['slug']);
+
+		$this->load->view('pages/page', $this->data);
+	}
+
+	public function contact() {
+
+		$this->data['slug'] = 'contact';
+
+		$this->data['page'] = $this->Page->get_by_key('slug', $this->data['slug']);
+
+		$this->load->view('pages/page', $this->data);
+	}
+
+	public function add_to_cart($id) {
+
+		$this->output->set_header('Content-Type: application/json');
+
+		$response = array();
+
+		if(is_numeric($id)) {
+
+			$cart = $this->session->userdata('cart');
+
+			if(!$cart) {
+				$cart = array();
+			}
+
+			$cart[$id] = time();
+
+			$this->session->set_userdata('cart', $cart);
+
+			$response['status'] = 'success';
+			$response['action'] = 'added';
+			$response['item_count'] = count($cart);
+
+			echo json_encode($response);
+			return;
+		}
+
+		$response['status'] = 'error';
+
+		echo json_encode($response);
+	}
+
+	public function remove_from_cart($id) {
+
+		$this->output->set_header('Content-Type: application/json');
+
+		$response = array();
+
+		if(is_numeric($id)) {
+
+			$cart = $this->session->userdata('cart');
+
+			if($cart) {
+				unset($cart[$id]);
+				$this->session->set_userdata('cart', $cart);
+			}
+
+			$response['status'] = 'success';
+			$response['action'] = 'removed';
+			$response['item_count'] = count($cart);
+
+			echo json_encode($response);
+			return;
+		}
+
+		$response['status'] = 'error';
+
+		echo json_encode($response);
 	}
 
 	public function test() {

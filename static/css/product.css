@@ -25,3 +25,9 @@ h1, h2, h3, h4, h5, h6 {
 	color: #f7931e !important;
 	border-color: #f7931e !important;
 }
+
+.added-to-cart {
+	margin-top: 30px;
+	color: #8dc63f !important;
+	border-color: #8dc63f !important;
+}

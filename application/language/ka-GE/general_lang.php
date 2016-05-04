@@ -28,3 +28,6 @@ $lang['to'] = '-მდე';
 
 $lang['description'] = 'აღწერა';
 $lang['add_to_cart'] = 'კალათაში დამატება';
+$lang['added_to_cart'] = 'დამატებულია';
+
+$lang['empty_cart'] = 'კალათა ცარიელია';

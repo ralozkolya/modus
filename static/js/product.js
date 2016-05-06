@@ -44,4 +44,13 @@ $(function(){
 
 		return false;
 	});
+
+	$('.thumb').click(function(){
+		$('.preview').attr('src', $(this).attr('src'));
+	});
+
+	$('#zoom').anythingZoomer({
+		edit: true,
+		clone: true,
+	});
 });

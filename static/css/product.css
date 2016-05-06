@@ -5,6 +5,15 @@ h1, h2, h3, h4, h5, h6 {
 	padding-bottom: 5px;
 }
 
+.az-zoom {
+	width: 250px;
+	height: 250px;
+}
+
+.az-zoom img {
+	max-width: none;
+}
+
 .thumb {
 	width: 33.33%;
 	float: left;

@@ -52,6 +52,8 @@ function init() {
 	$('.category-link.active').parent().parent().prev().click();
 
 	$('input[name="category"]').val($('.category-link.active').attr('data-category'));
+
+	slideDuration = 400;
 }
 
 function filterProducts() {

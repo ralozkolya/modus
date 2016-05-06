@@ -1,6 +1,6 @@
 <div class="header">
 	<div class="header-top clearfix hidden-xs white">
-		<a href="#" class="unstyled">
+		<a href="#" class="unstyled pull-left">
 			<span class="fa fa-facebook"></span>
 		</a>
 		<span class="pull-right">
@@ -43,7 +43,7 @@
 					?>
 				</a>
 			<?php endif; ?>
-			<span class="langs">
+			<div class="langs">
 				<a
 					class="unstyled <?php if(get_lang() === GE) echo 'active'; ?>"
 					href="<?php echo lang_link(GE); ?>">GE</a>
@@ -53,7 +53,7 @@
 				<a
 					class="unstyled <?php if(get_lang() === RU) echo 'active'; ?>"
 					href="<?php echo lang_link(RU); ?>">RU</a>
-			</span>
+			</div>
 		</div><!-- first-row -->
 		<ul class="second-row navigation bpg-excelsior-caps">
 			<?php foreach($navigation as $n): ?>
@@ -65,7 +65,7 @@
 				</li>
 			<?php endforeach; ?>
 		</ul><!-- second-row -->
-		<form class="third-row bpg-excelsior-caps" action="#">
+		<form class="third-row bpg-excelsior-caps hidden-xs" action="#">
 			<div class="input-group">
 				<div class="input-group-btn">
 					<button type="button"
@@ -92,7 +92,7 @@
 		</form><!-- third-row -->
 	</div><!-- header-main -->
 	<?php if($slug === 'home'): ?>
-		<div class="slider">
+		<div class="slider hidden-xs">
 			<ul>
 				<li>
 					<?php $url = static_url('uploads/banners/2.png'); ?>

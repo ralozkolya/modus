@@ -17,6 +17,7 @@ img {
 .header {
 	position: relative;
 	z-index: 50;
+	text-align: center;
 }
 
 .content {
@@ -82,6 +83,7 @@ img {
 }
 
 .first-row {
+	margin-top: 10px;
 	color: #f7931e;
 }
 
@@ -91,7 +93,7 @@ img {
 
 .langs {
 	color: #a1a1a1;
-	margin-left: 10px;
+	margin: 10px;
 }
 
 .langs > a {
@@ -105,8 +107,8 @@ img {
 
 .navigation {
 	list-style: none;
-	padding: 10px 0;
 	margin: 0;
+	padding: 0;
 }
 
 .navigation > li {
@@ -222,12 +224,23 @@ img {
 /*	MEDIA QUERIES	*/
 
 @media (min-width: 768px) {
+
 	.first-row {
 		text-align: right;
+		margin-top: 0;
+	}
+
+	.langs {
+		display: inline-block;
+		margin: 0 0 0 10px;
 	}
 
 	.second-row {
 		text-align: right;
+	}
+
+	.navigation {
+		padding: 10px 0;
 	}
 
 	.navigation > li {

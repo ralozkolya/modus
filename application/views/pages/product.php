@@ -3,6 +3,7 @@
 <head>
 	<?php $this->load->view('elements/head'); ?>
 
+	<link rel="stylesheet" href="<?php echo static_url('css/anythingzoomer.css'); ?>">
 	<link rel="stylesheet" href="<?php echo static_url('css/product_list.css?v='.V); ?>">
 	<link rel="stylesheet" href="<?php echo static_url('css/product.css?v='.V); ?>">
 
@@ -13,6 +14,7 @@
 		};
 	</script>
 
+	<script src="<?php echo static_url('js/jquery.anythingzoomer.min.js'); ?>"></script>
 	<script src="<?php echo static_url('js/product.js?v='.V); ?>"></script>
 </head>
 <body>
@@ -25,10 +27,13 @@
 			<div class="container bpg-excelsior">
 				<div class="row">
 					<div class="col-sm-3">
-						<div>
-							<img
-								alt="<?php echo $product->name; ?>"
-								src="<?php echo static_url('uploads/products/thumbs/'.$product->image); ?>">
+						<div id="zoom">
+							<div class="small">
+								<img
+									class="preview"
+									alt="<?php echo $product->name; ?>"
+									src="<?php echo static_url('uploads/products/thumbs/'.$product->image); ?>">
+							</div>
 						</div>
 						<br>
 						<div>

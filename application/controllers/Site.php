@@ -93,9 +93,22 @@ class Site extends CI_Controller {
 
 	public function news() {
 
+		$this->load->model('News');
+
+		$this->data['news'] = $this->News->get_list();
 		$this->data['slug'] = 'news';
 
 		$this->load->view('pages/news', $this->data);
+	}
+
+	public function post($id, $slug) {
+
+		$this->load->model('News');
+
+		$this->data['post'] = $this->News->get($id);
+		$this->data['slug'] = 'news';
+
+		$this->load->view('pages/post', $this->data);
 	}
 
 	public function about_us() {

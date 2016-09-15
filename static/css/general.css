@@ -47,6 +47,10 @@ img {
 	color: white;
 }
 
+.orange {
+	color: #c97b23 !important;
+}
+
 
 /*	GENERAL	*/
 
@@ -186,7 +190,11 @@ img {
 }
 
 #login-form {
-	margin-top: 100px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 300px;
+	transform: translate(-50%, -50%);
 }
 
 #login-form > div {
@@ -214,10 +222,6 @@ img {
 	background: transparent;
 	margin: 5px 0;
 	font-size: 18px;
-}
-
-.password-recovery {
-	color: #c97b23 !important;
 }
 
 

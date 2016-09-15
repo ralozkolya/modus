@@ -1,9 +1,13 @@
 /*	REST	*/
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
 	color: #0071bc;
 	border-bottom: solid 1px #0071bc;
 	padding-bottom: 5px;
+}
+
+tr:first-child > td {
+	border-top: none !important;
 }
 
 td:not(.thumb-container) {

@@ -5,6 +5,7 @@ $lang['address_1'] = 'თბილისი, შარტავას ქ. 35/37
 $lang['address_2'] = 'ბათუმი, გოგებაშვილის ქ. 45 (+995) 32 2 123 456';
 
 $lang['login'] = 'შესვლა';
+$lang['logout'] = 'გამოსვლა';
 $lang['cart'] = 'კალათა';
 $lang['category'] = 'კატეგორია';
 
@@ -18,7 +19,9 @@ $lang['no_news'] = 'ვერცერთი სიახლე ვერ მო
 
 $lang['email'] = 'ელ. ფოსტა';
 $lang['password'] = 'პაროლი';
+$lang['register'] = 'რეგისტრაცია';
 $lang['password_recovery'] = 'პაროლის აღდგენა';
+$lang['auth_error'] = 'ელ. ფოსტის და პაროლის არასწორი კომბინაცია';
 
 $lang['production'] = 'პროდუქცია';
 $lang['brand'] = 'ბრენდი';
@@ -31,3 +34,8 @@ $lang['add_to_cart'] = 'კალათაში დამატება';
 $lang['added_to_cart'] = 'დამატებულია';
 
 $lang['empty_cart'] = 'კალათა ცარიელია';
+$lang['continue'] = 'გაგრძელება';
+
+$lang['name'] = 'სახელი';
+$lang['message'] = 'შეტყობინება';
+$lang['send'] = 'გაგზავნა';

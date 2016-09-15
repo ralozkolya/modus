@@ -13,6 +13,11 @@
 	var baseUrl = '<?php echo base_url(); ?>';
 	var staticUrl = '<?php echo static_url(); ?>';
 	var localeUrl = '<?php echo locale_url(); ?>';
+
+	<?php if(!empty($this->input->get('category'))
+		&& is_numeric($this->input->get('category'))): ?>
+		var category = '<?php echo $this->input->get('category'); ?>';
+	<?php endif; ?>
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>

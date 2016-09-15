@@ -88,6 +88,22 @@ class Product extends MY_Model {
 			$this->db->where('price <=', $filter['to']);
 		}
 
+		if(!empty($filter['search'])) {
+			$search = $filter['search'];
+
+			$this->db->group_start();
+
+			$this->db->like('ka_name', $search);
+			$this->db->or_like('en_name', $search);
+			$this->db->or_like('ru_name', $search);
+			$this->db->or_like('ka_description', $search);
+			$this->db->or_like('en_description', $search);
+			$this->db->or_like('ru_description', $search);
+			$this->db->or_like('brand', $search);
+			
+			$this->db->group_end();
+		}
+
 		$this->db->select(array(
 			'id',
 			$lang.'_name as name',

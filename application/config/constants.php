@@ -50,5 +50,7 @@ define('PASSWORD', 'password');
 
 define('USER', 'user');
 
-
 define('PRODUCTS_PER_PAGE', 24);
+
+define('SUCCESS_MESSAGE', 'success_message');
+define('ERROR_MESSAGE', 'error_message');

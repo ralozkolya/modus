@@ -5,6 +5,7 @@ $lang['address_1'] = 'Тбилиси, Ул. Шартава 35/37 (+995) 32 2 123
 $lang['address_2'] = 'Батуми, Ул. Гогебашвили 45 (+995) 32 2 123 456';
 
 $lang['login'] = 'Войти';
+$lang['logout'] = 'Выйти';
 $lang['cart'] = 'Корзина';
 $lang['category'] = 'Категория';
 
@@ -17,7 +18,10 @@ $lang['news'] = 'Новости';
 $lang['no_news'] = 'Не удалось найти новости';
 
 $lang['email'] = 'Емайл';
-$lang['password'] = 'Восстановление Пароля';
+$lang['password'] = 'Пароль';
+$lang['register'] = 'Регистрация';
+$lang['password_recovery'] = 'Восстановление Пароля';
+$lang['auth_error'] = 'Неправильная комбинация эл. почты и пароля';
 
 $lang['production'] = 'Продуктция';
 $lang['brand'] = 'Бренд';
@@ -30,3 +34,8 @@ $lang['add_to_cart'] = 'Добавить в корзину';
 $lang['added_to_cart'] = 'В Корзине';
 
 $lang['empty_cart'] = 'Пусто';
+$lang['continue'] = 'Продолжить';
+
+$lang['name'] = 'Имя';
+$lang['message'] = 'Сообщение';
+$lang['send'] = 'Отправить';

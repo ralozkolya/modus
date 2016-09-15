@@ -25,8 +25,13 @@ $(function(){
 	});
 
 	$('.category-link').click(function(){
-		$('input[name="category"]').val($(this).attr('data-category'));
+		$('.sidebar-category').val($(this).attr('data-category'));
 		filterProducts();
+		return false;
+	});
+
+	$('.category-dropdown').click(function(){
+		$('.header-category').val($(this).attr('data-id'));
 	});
 
 	$('.brand-check').change(filterProducts);
@@ -54,6 +59,10 @@ function init() {
 	$('input[name="category"]').val($('.category-link.active').attr('data-category'));
 
 	slideDuration = 400;
+
+	if(window.category && !isNaN(+category)) {
+		$('.category-dropdown[data-id=' + category + ']').click();
+	}
 }
 
 function filterProducts() {

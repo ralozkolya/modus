@@ -1,34 +1,24 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Site extends CI_Controller {
-
-	private $data = array(
-		'title' => 'Modus',
-		'slug' => NULL,
-	);
+class Site extends MY_Controller {
 
 	public function __construct() {
 
 		parent::__construct();
 
-		$this->load->helper(array('language', 'cookie'));
-		$this->load->library('Auth');
-		$this->load->model('Page');
-
-		set_language();
-
-		$this->load->language('general');
+		$this->load->model('Category');
 
 		$this->data['user'] = $this->auth->get_current_user();
 		$this->data['navigation'] = $this->Page->get_navigation();
+		$this->data['top_categories'] = $this->Category->get_list();
 
 		$this->data['cart_size'] = count($this->session->userdata('cart'));
 	}
 
 	public function index()	{
 
-		$this->load->model(array('Product', 'Category', 'Brand', 'News'));
+		$this->load->model(['Product', 'Category', 'Brand', 'News']);
 
 		$this->data['pinned_categories'] = $this->Category->get_pinned();
 		$this->data['categories'] = $this->Category->get_list_with_subcategories();
@@ -45,7 +35,7 @@ class Site extends CI_Controller {
 
 		$get = $this->input->get();
 
-		$this->load->model(array('Product', 'Category', 'Brand'));
+		$this->load->model(['Product', 'Category', 'Brand']);
 
 		$this->data['categories'] = $this->Category->get_list_with_subcategories();
 		$this->data['products'] = $this->Product->get_filtered($get);
@@ -78,13 +68,13 @@ class Site extends CI_Controller {
 
 	public function cart() {
 
-		return;
-
 		$this->load->model('Product');
 
 		$cart = $this->session->userdata('cart');
 
-		$this->data['products'] = $this->Product->get_cart($cart);
+		if($this->data['cart_size']) {
+			$this->data['products'] = $this->Product->get_cart($cart);
+		}
 
 		$this->data['slug'] = 'cart';
 
@@ -124,23 +114,21 @@ class Site extends CI_Controller {
 
 		$this->data['slug'] = 'contact';
 
-		$this->data['page'] = $this->Page->get_by_key('slug', $this->data['slug']);
-
-		$this->load->view('pages/page', $this->data);
+		$this->load->view('pages/contact', $this->data);
 	}
 
 	public function add_to_cart($id) {
 
-		$this->output->set_header('Content-Type: application/json');
+		header('Content-Type: application/json');
 
-		$response = array();
+		$response = [];
 
 		if(is_numeric($id)) {
 
 			$cart = $this->session->userdata('cart');
 
 			if(!$cart) {
-				$cart = array();
+				$cart = [];
 			}
 
 			$cart[$id] = time();
@@ -162,9 +150,9 @@ class Site extends CI_Controller {
 
 	public function remove_from_cart($id) {
 
-		$this->output->set_header('Content-Type: application/json');
+		header('Content-Type: application/json');
 
-		$response = array();
+		$response = [];
 
 		if(is_numeric($id)) {
 
@@ -186,6 +174,30 @@ class Site extends CI_Controller {
 		$response['status'] = 'error';
 
 		echo json_encode($response);
+	}
+
+	public function login() {
+
+		$email = $this->input->post('email');
+		$password = $this->input->post('password');
+
+		if(!$this->auth->login($email, $password)) {
+			$this->session->set_flashdata(ERROR_MESSAGE, lang('auth_error'));
+		}
+
+		redirect($this->agent->referrer());
+	}
+
+	public function logout() {
+		$this->auth->logout();
+		redirect($this->agent->referrer());
+	}
+
+	public function register() {
+
+		$this->data['slug'] = 'register';
+
+		$this->load->view('pages/register', $this->data);
 	}
 
 	public function test() {
@@ -211,6 +223,15 @@ class Site extends CI_Controller {
 		}
 
 		var_dump(scandir('static/uploads/categories/thumbs/'));
+	}
+
+	public function retrieve() {
+		
+		$this->load->library('Soap');
+
+		echo '<pre>';
+		echo print_r($this->soap->get_table());
+		echo '</pre>';
 	}
 }
 

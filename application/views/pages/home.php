@@ -17,6 +17,7 @@
 	<script src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/unslider/2.0.3/js/unslider-min.js"></script>
 	<script src="<?php echo static_url('js/home.js?v='.V); ?>"></script>
+	<script src="<?php echo static_url('js/products.js?v='.V); ?>"></script>
 </head>
 <body>
 

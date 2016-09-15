@@ -35,18 +35,18 @@ function set_language() {
 
 	if($diff < 45 || $cookie->value !== $lang) { //if it's been at around 2 weeks
 
-		$cookie = array(
+		$cookie = [
 			'value' => $lang,
 			'expire' => strtotime('2 months'),
-		);
+		];
 
 		$value = base64_encode(json_encode($cookie));
 
-		set_cookie(array(
+		set_cookie([
 			'name' => 'lang',
 			'value' => $value,
 			'expire' => 60*60*24*60,
-		));
+		]);
 	}
 
 	$ci->load->language('general');

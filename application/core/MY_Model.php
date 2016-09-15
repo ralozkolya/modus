@@ -28,14 +28,14 @@ class MY_Model extends CI_Model {
 
 	public function edit($data) {
 
-		$this->db->where(array('id' => $data['id']));
+		$this->db->where(['id' => $data['id']]);
 
 		return $this->db->update($this->table, $data);
 	}
 
 	public function delete($id) {
 
-		$this->db->where(array('id' => $id));
+		$this->db->where(['id' => $id]);
 
 		return $this->db->delete($this->table);
 	}

@@ -36,7 +36,7 @@ class Auth {
 		$user = $this->CI->session->userdata(USER);
 
 		if($user) {
-			$this->CI->db->where(array(ID => $user[ID], USERNAME => $user[USERNAME]));
+			$this->CI->db->where([ID => $user[ID], USERNAME => $user[USERNAME]]);
 			$r = $this->CI->db->get(USERS);
 
 			if($r->num_rows() == 1) {
@@ -57,24 +57,24 @@ class Auth {
 
 	public function add_user($data) {
 
-		$this->CI->db->where(array(USERNAME => $data[USERNAME]));
+		$this->CI->db->where([USERNAME => $data[USERNAME]]);
 		$r = $this->CI->db->get(USERS);
 
 		if($r->num_rows() != 0) {
 			return FALSE;
 		}
 
-		$r = $this->CI->db->insert(USERS, array(
+		$r = $this->CI->db->insert(USERS, [
 			USERNAME => $data[USERNAME],
 			PASSWORD => $this->pass_hash($data[PASSWORD])
-		));
+		]);
 
 		return $r;
 	}
 
 	public function edit_user($username = NULL, $password = NULL) {
 
-		$data = array();
+		$data = [];
 
 		$user = $this->CI->session->userdata(USER);
 
@@ -93,7 +93,7 @@ class Auth {
 		
 		if(count($data)) {
 
-			$this->CI->db->where(array(ID => $user[ID]));
+			$this->CI->db->where([ID => $user[ID]]);
 			if($this->CI->db->update(USERS, $data)) {
 				if($username) {
 					$user[USERNAME] = $username;
@@ -110,9 +110,9 @@ class Auth {
 
 	public function check($username, $password) {
 
-		$this->CI->db->where(array(
+		$this->CI->db->where([
 			USERNAME => $username
-		));
+		]);
 
 		$r = $this->CI->db->get(USERS);
 
@@ -140,8 +140,8 @@ class Auth {
 	}
 
 	public function change_password($username, $password) {
-		$this->CI->db->where(array(USERNAME => $username));
-		$r = $this->CI->db->update(USERS, array(PASSWORD => $this->pass_hash($password)));
+		$this->CI->db->where([USERNAME => $username]);
+		$r = $this->CI->db->update(USERS, [PASSWORD => $this->pass_hash($password)]);
 		return $r;
 	}
 

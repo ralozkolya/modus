@@ -5,6 +5,8 @@ $lang = '('.GE.'|'.EN.'|'.RU.')';
 
 $route[$lang] = 'site';
 $route[$lang.'/home'] = 'site';
+$route[$lang.'/login'] = 'site/login';
+$route[$lang.'/register'] = 'site/register';
 
 $route[$lang.'/(.*)'] = 'site/$2';
 

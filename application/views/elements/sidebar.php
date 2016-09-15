@@ -1,5 +1,5 @@
 <form id="filter-form" action="<?php echo locale_url('products'); ?>">
-	<input type="hidden" name="category" value="0">
+	<input class="sidebar-category" type="hidden" name="category" value="0">
 
 	<ul class="sidebar-categories bpg-excelsior-caps">
 		<?php $category = $this->input->get('category'); ?>

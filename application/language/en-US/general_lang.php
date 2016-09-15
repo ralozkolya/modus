@@ -5,6 +5,7 @@ $lang['address_1'] = 'Tbilisi, Shartava St. 35/37 (+995) 32 2 123 456';
 $lang['address_2'] = 'Batumi, Gogebashvili St. 45 (+995) 32 2 123 456';
 
 $lang['login'] = 'Login';
+$lang['logout'] = 'Logout';
 $lang['cart'] = 'Cart';
 $lang['category'] = 'Category';
 
@@ -18,7 +19,9 @@ $lang['no_news'] = 'No news found';
 
 $lang['email'] = 'Email';
 $lang['password'] = 'Password';
+$lang['register'] = 'Register';
 $lang['password_recovery'] = 'Password recovery';
+$lang['auth_error'] = 'Incorrect email and password combination';
 
 $lang['production'] = 'Products';
 $lang['brand'] = 'Brand';
@@ -30,4 +33,9 @@ $lang['description'] = 'Description';
 $lang['add_to_cart'] = 'Add to cart';
 $lang['added_to_cart'] = 'Added';
 
-$lant['empty_cart'] = 'Empty cart';
+$lang['empty_cart'] = 'Empty cart';
+$lang['continue'] = 'Continue';
+
+$lang['name'] = 'Name';
+$lang['message'] = 'Message';
+$lang['send'] = 'Send';

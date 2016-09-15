@@ -24,25 +24,28 @@
 		</a>
 		<div class="first-row bpg-excelsior">
 			<?php if($user): ?>
-				<?php var_dump($user); ?>
+				<?php echo htmlspecialchars($user['username']); ?>&nbsp;&nbsp;&nbsp;
+				<a class="unstyled" href="<?php echo locale_url('logout'); ?>"><?php echo lang('logout'); ?>
 			<?php else: ?>
 				<a class="unstyled" href="#" id="login-link">
 					<span class="fa fa-user"></span>
 					<?php echo lang('login'); ?>
 				</a>
-				<a class="unstyled cart" href="#">
-					<span class="fa fa-shopping-cart"></span>
-					<?php
-						if($cart_size) {
-							echo lang('cart')." ({$cart_size})";
-						}
-
-						else {
-							echo lang('cart');
-						}
-					?>
-				</a>
 			<?php endif; ?>
+
+			<a class="unstyled cart" href="<?php echo locale_url('cart'); ?>">
+				<span class="fa fa-shopping-cart"></span>
+				<?php
+					if($cart_size) {
+						echo lang('cart')." ({$cart_size})";
+					}
+
+					else {
+						echo lang('cart');
+					}
+				?>
+			</a>
+
 			<div class="langs">
 				<a
 					class="unstyled <?php if(get_lang() === GE) echo 'active'; ?>"
@@ -66,6 +69,7 @@
 			<?php endforeach; ?>
 		</ul><!-- second-row -->
 		<form class="third-row bpg-excelsior-caps hidden-xs" action="#">
+			<input class="header-category" type="hidden" name="category" value="">
 			<div class="input-group">
 				<div class="input-group-btn">
 					<button type="button"
@@ -75,13 +79,31 @@
 						<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu">
-						<li><a href="#">Lorem Ipsum</a></li>
-						<li><a href="#">Lorem Ipsum</a></li>
-						<li><a href="#">Lorem Ipsum</a></li>
+						<li>
+							<a href="#"
+								class="category-dropdown"
+								data-id="0">
+								<?php echo lang('category'); ?>
+							</a>
+						</li>
+						<li role="separator" class="divider"></li>
+						<?php foreach($top_categories as $t): ?>
+							<li>
+								<a href="#"
+									class="category-dropdown"
+									data-id="<?php echo $t->id; ?>">
+									<?php echo $t->name; ?>
+								</a>
+							</li>
+						<?php endforeach; ?>
 					</ul>
 				</div>
-
-				<input class="form-control" type="text">
+				
+				<?php if(!empty($this->input->get('search'))): ?>
+					<input class="form-control" type="text" name="search" value="<?php echo htmlspecialchars($this->input->get('search')); ?>">
+				<?php else: ?>
+					<input class="form-control" type="text" name="search">
+				<?php endif; ?>
 
 				<span class="input-group-btn">
 					<button class="btn btn-warning search-button" type="submit">
@@ -106,3 +128,5 @@
 		</div><!-- slider -->
 	<?php endif; ?>
 </div><!-- header -->
+
+<?php $this->load->view('elements/messages'); ?>

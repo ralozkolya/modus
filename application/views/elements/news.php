@@ -3,7 +3,8 @@
 	<?php foreach($news as $n): ?>
 		<?php $image = static_url('uploads/news/thumbs/'.$n->image); ?>
 		<div class="col-sm-3">
-			<a class="unstyled" href="#">
+			<?php $slug = url_title($n->slug); ?>
+			<a class="unstyled" href="<?php echo locale_url('post/'.$n->id.'/'.$slug); ?>">
 				<div class="news">
 					<div
 						class="image-container"

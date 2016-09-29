@@ -68,7 +68,8 @@
 				</li>
 			<?php endforeach; ?>
 		</ul><!-- second-row -->
-		<form class="third-row bpg-excelsior-caps hidden-xs" action="#">
+		<form class="third-row bpg-excelsior-caps hidden-xs"
+			action="<?php echo locale_url('products'); ?>">
 			<input class="header-category" type="hidden" name="category" value="">
 			<div class="input-group">
 				<div class="input-group-btn">

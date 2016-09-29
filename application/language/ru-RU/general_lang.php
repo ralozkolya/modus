@@ -35,6 +35,8 @@ $lang['added_to_cart'] = 'В Корзине';
 
 $lang['empty_cart'] = 'Пусто';
 $lang['continue'] = 'Продолжить';
+$lang['order'] = 'Заказать';
+$lang['total'] = 'Всего';
 
 $lang['name'] = 'Имя';
 $lang['message'] = 'Сообщение';

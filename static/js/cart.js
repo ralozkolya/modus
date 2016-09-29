@@ -1,6 +1,6 @@
 $(function(){
 
-	$('.glyphicon-remove').click(function(){
+	$('.remove').click(function(){
 
 		var t = $(this);
 		var id = t.attr('data-id');

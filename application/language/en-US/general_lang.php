@@ -35,6 +35,8 @@ $lang['added_to_cart'] = 'Added';
 
 $lang['empty_cart'] = 'Empty cart';
 $lang['continue'] = 'Continue';
+$lang['order'] = 'Order';
+$lang['total'] = 'Total';
 
 $lang['name'] = 'Name';
 $lang['message'] = 'Message';

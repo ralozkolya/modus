@@ -35,6 +35,8 @@ $lang['added_to_cart'] = 'დამატებულია';
 
 $lang['empty_cart'] = 'კალათა ცარიელია';
 $lang['continue'] = 'გაგრძელება';
+$lang['order'] = 'შეკვეთა';
+$lang['total'] = 'ჯამი';
 
 $lang['name'] = 'სახელი';
 $lang['message'] = 'შეტყობინება';

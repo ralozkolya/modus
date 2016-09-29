@@ -22,3 +22,21 @@ td:not(.thumb-container) {
 .input {
 	width: 50px;
 }
+
+.remove, .remove:hover, .remove:focus {
+	color: #bc0000;
+}
+
+.order-button, .order-button:hover, .order-button:focus {
+	color: #f7931e;
+	margin-right: 20px;
+	border: solid 1px #f7931e;
+	padding: 10px 40px;
+	font-size: 15px;
+	border-radius: 5px;
+	text-decoration: none;
+}
+
+.total {
+	color: #f7931e;
+}

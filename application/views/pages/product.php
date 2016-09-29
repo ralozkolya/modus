@@ -36,7 +36,7 @@
 							</div>
 						</div>
 						<br>
-						<div>
+						<div class="gallery">
 							<img class="thumb"
 								alt="<?php echo $product->name; ?>"
 								src="<?php echo static_url('uploads/products/thumbs/'.$product->image); ?>">

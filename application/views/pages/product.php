@@ -26,7 +26,7 @@
 		<div class="content">
 			<div class="container bpg-excelsior">
 				<div class="row">
-					<div class="col-sm-3">
+					<div class="col-sm-4">
 						<div id="zoom">
 							<div class="small">
 								<img
@@ -52,7 +52,7 @@
 								src="<?php echo static_url('uploads/products/thumbs/'.$product->image); ?>">
 						</div>
 					</div>
-					<div class="col-sm-9">
+					<div class="col-sm-8">
 						<div class="col-xs-12">
 							<h3 class="bpg-excelsior-caps"><?php echo $product->name; ?></h3>
 							<div class="price"><?php echo $product->price; ?> GEL</div>

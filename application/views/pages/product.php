@@ -27,7 +27,7 @@
 			<div class="container bpg-excelsior">
 				<div class="row">
 					<div class="col-sm-4">
-						<div id="zoom">
+						<div id="zoom" class="text-center">
 							<div class="small">
 								<img
 									class="preview"

@@ -49,8 +49,10 @@ $(function(){
 		$('.preview').attr('src', $(this).attr('src'));
 	});
 
-	$('#zoom').anythingZoomer({
-		edit: true,
-		clone: true,
-	});
+	setTimeout(function(){
+		$('#zoom').anythingZoomer({
+			edit: true,
+			clone: true,
+		});
+	}, 1000);
 });

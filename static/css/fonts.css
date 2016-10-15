@@ -1,3 +1,12 @@
+/*	NOTO SANS	*/
+
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic);
+
+
+/*	NOTO SANS GEORGIAN	*/
+
+@import url(https://fonts.googleapis.com/earlyaccess/notosansgeorgian.css);
+
 @font-face {
 	font-family: 'BPG Excelsior Caps';
 	src: url('../font/bpg_excelsior_caps_gplgnu.eot');
@@ -28,4 +37,8 @@
 
 .bpg-excelsior {
 	font-family: 'BPG Excelsior', Arial, Sans-serif !important;
+}
+
+.noto {
+	font-family: 'Noto Sans', 'Noto Sans Georgian', Arial, Sans-serif;
 }

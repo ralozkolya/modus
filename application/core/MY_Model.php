@@ -57,6 +57,11 @@ class MY_Model extends CI_Model {
 		return $r->result();
 	}
 
+	protected function hash_password($password) {
+
+		return password_hash($password, PASSWORD_DEFAULT, array('cost' => 12));
+	}
+
 }
 
 /* End of file MY_Model.php */

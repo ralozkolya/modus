@@ -9,8 +9,9 @@ $(function(){
 		$('.search-toggle').html($(this).html());
 	});
 
-	$('#login-link').click(function(){
+	$('#login-link').click(function() {
 		$('.login-overlay').fadeIn();
+		$('#email').focus();
 		return false;
 	});
 

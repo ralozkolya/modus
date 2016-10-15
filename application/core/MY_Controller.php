@@ -12,8 +12,6 @@ class MY_Controller extends CI_Controller {
 
 		parent::__construct();
 
-		$this->load->helper(['language', 'cookie']);
-		$this->load->library('Auth');
 		$this->load->model('Page');
 
 		set_language();

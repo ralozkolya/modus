@@ -6,6 +6,8 @@ class Site extends MY_Controller {
 	public function __construct() {
 
 		parent::__construct();
+		
+		$this->load->library('Auth');
 
 		$this->load->model('Category');
 
@@ -228,10 +230,11 @@ class Site extends MY_Controller {
 	public function retrieve() {
 		
 		$this->load->library('Soap');
+		$this->load->model('Stock');
 
-		echo '<pre>';
-		echo print_r($this->soap->get_table());
-		echo '</pre>';
+		$table = $this->soap->get_table();
+
+		$this->Stock->update($table);
 	}
 }
 

@@ -26,10 +26,7 @@ class Soap {
 			'trace' => TRUE,
 		]);
 
-		//var_dump($client->__getLastRequest());
-
-		$client->GetBalance([]);
-		return $client->__getLastRequest();
+		return $client->GetBalance([])->return->BalanceTable;
 	}
 
 }

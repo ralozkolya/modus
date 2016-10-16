@@ -3,7 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class MY_Model extends CI_Model {
 
+	protected $upload_path = 'static/uploads/';
+
 	protected $table;
+	protected $folder;
+	protected $with_image;
+	protected $image_required;
+	protected $slug = FALSE;
 
 	public function get($id) {
 
@@ -23,6 +29,22 @@ class MY_Model extends CI_Model {
 
 	public function add($data) {
 
+		if($this->with_image) {
+
+			$upload = $this->upload();
+
+			if(empty($upload)) {
+				return FALSE;
+			}
+
+			$data['image'] = $upload['file_name'];
+			$data['image_path'] = $upload['file_path'];
+		}
+
+		if($this->slug) {
+			$data['slug'] = $this->generate_slug($data[$slug]);
+		}
+
 		return $this->db->insert($this->table, $data);
 	}
 
@@ -36,6 +58,16 @@ class MY_Model extends CI_Model {
 	public function delete($id) {
 
 		$this->db->where(['id' => $id]);
+
+		if($this->with_image) {
+
+			$item = parent::get($id);
+			$path = $item->image_path.$item->image;
+
+			if(file_exists($path)) {
+				unlink($path);
+			}
+		}
 
 		return $this->db->delete($this->table);
 	}
@@ -60,6 +92,23 @@ class MY_Model extends CI_Model {
 	protected function hash_password($password) {
 
 		return password_hash($password, PASSWORD_DEFAULT, array('cost' => 12));
+	}
+
+	protected function upload() {
+
+		$config['allowed_types'] = 'png|jpg|gif';
+		$config['upload_path'] = $this->upload_path.$this->folder;
+		$config['encrypt_name'] = TRUE;
+
+		$this->load->library('upload', $config);
+
+		if($this->upload->do_upload('image')) {
+			return $this->upload->data();
+		}
+
+		else if($image_requred) {
+			return FALSE;
+		}
 	}
 
 }

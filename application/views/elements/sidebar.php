@@ -41,7 +41,7 @@
 		<?php endforeach; ?>
 	</ul>
 
-	<?php if($slug === 'products'): ?>
+	<?php if($highlighted === 'products'): ?>
 		<?php if(!empty($brands)): ?>
 			<?php $get = $this->input->get('brand'); ?>
 			<h4 class="bpg-excelsior-caps"><?php echo lang('brand'); ?></h4>
@@ -70,9 +70,6 @@
 				</div>
 			<?php endforeach; ?>
 		<?php endif; ?>
-	<?php endif; ?>
-
-	<?php if($slug === 'products'): ?>
 		<h4 class="bpg-excelsior-caps"><?php echo lang('price'); ?></h4>
 		<div class="clearfix">
 			<div class="price-container">

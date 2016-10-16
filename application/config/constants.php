@@ -52,5 +52,5 @@ define('USER', 'user');
 
 define('PRODUCTS_PER_PAGE', 24);
 
-define('SUCCESS_MESSAGE', 'success_message');
-define('ERROR_MESSAGE', 'error_message');
+define('SUCCESS', 'success_message');
+define('ERROR', 'error_message');

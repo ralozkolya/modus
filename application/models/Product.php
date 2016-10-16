@@ -4,42 +4,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Product extends MY_Model {
 
 	protected $table = 'products';
-
-	public function get($id) {
-
-		$lang = get_lang_code(get_lang());
-
-		$this->db->select(array(
-			$lang.'_name as name',
-			$lang.'_description as description',
-			'en_name as slug',
-			'id', 'price', 'image',
-		));
-
-		return parent::get($id);
-	}
+	protected $slug = 'en_name';
 
 	public function get_latest() {
 
-		$lang = get_lang_code(get_lang());
-
-		$this->db->select(array(
-			'id',
-			$lang.'_name as name',
-			'en_name as slug',
-			'brand',
-			'price',
-			'image',
-		));
-
 		$this->db->order_by('id DESC');
 
-		return parent::get_list(6);
+		return $this->get_localized_list(6);
 	}
 
 	public function get_filtered($filter) {
-
-		$lang = get_lang_code(get_lang());
 
 		$page = !empty($filter['page']) ? $filter['page'] : 1;
 
@@ -104,16 +78,7 @@ class Product extends MY_Model {
 			$this->db->group_end();
 		}
 
-		$this->db->select(array(
-			'id',
-			$lang.'_name as name',
-			'en_name as slug',
-			'brand',
-			'price',
-			'image',
-		));
-
-		return parent::get_list($page * PRODUCTS_PER_PAGE, $offset);
+		return $this->get_localized_list($page * PRODUCTS_PER_PAGE, $offset);
 	}
 
 	public function get_cart($cart) {
@@ -130,6 +95,46 @@ class Product extends MY_Model {
 		$this->db->where_in('id', $cart);
 
 		return $this->get_list();
+	}
+
+	public function get_localized($id) {
+
+		$this->select_localized();
+		return parent::get($id);
+	}
+
+	public function get_localized_list($limit = NULL, $offset = NULL) {
+
+		$this->join();
+		return parent::get_list($limit, $offset);
+	}
+
+	private function select_localized() {
+
+		$lang = get_lang_code(get_lang());
+
+		$this->db->select([
+			"{$this->table}.{$lang}_name as name",
+			"{$this->table}.{$lang}_description as description",
+			"{$this->table}.slug", "{$this->table}.id",
+			"{$this->table}.price", "{$this->table}.image",
+		]);
+	}
+
+	private function join() {
+
+		$lang = get_lang_code(get_lang());
+
+		$this->select_localized();
+
+		$this->db->select([
+			"categories.{$lang}_name as category",
+			"brands.{$lang}_name as brand",
+		]);
+
+		$this->db->join('categories', "{$this->table}.category = categories.id");
+		$this->db->join('brands', "{$this->table}.brand = brands.id");
+		$this->db->group_by("{$this->table}.id");
 	}
 
 }

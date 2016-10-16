@@ -5,18 +5,35 @@ class MY_Controller extends CI_Controller {
 
 	protected $data = [
 		'title' => 'Modus',
-		'slug' => NULL,
+		'highlighted' => NULL,
 	];
 
 	public function __construct() {
 
 		parent::__construct();
 
-		$this->load->model('Page');
-
 		set_language();
+	}
 
-		$this->load->language('general');
+	protected function redirect() {
+
+		if($this->agent->referrer()) {
+			redirect($this->agent->referrer());
+		}
+
+		redirect(base_url('admin'));
+	}
+
+	protected function message($message, $type = SUCCESS, $redirects = TRUE) {
+
+		if($redirects) {
+			$this->session->set_flashdata($type, $message);
+			$this->redirect();
+		}
+
+		else {
+			$this->data[$type] = $message;
+		}
 	}
 
 }

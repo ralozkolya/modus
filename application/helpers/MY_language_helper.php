@@ -48,8 +48,6 @@ function set_language() {
 			'expire' => 60*60*24*60,
 		]);
 	}
-
-	$ci->load->language('general');
 }
 
 function lang_link($lang) {

@@ -18,8 +18,7 @@
 				</div>
 				<div class="overlay text-center white">
 					<?php
-						$url = locale_url('product/'.$p->id);
-						$url .= '/'.url_title($p->slug);
+						$url = locale_url('product/'.$p->id.'/'.$p->slug);
 					?>
 					<a class="unstyled" href="<?php echo $url; ?>">
 						<span class="fa fa-search"></span>

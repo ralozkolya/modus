@@ -6,10 +6,10 @@ class Site extends MY_Controller {
 	public function __construct() {
 
 		parent::__construct();
-		
-		$this->load->library('Auth');
 
-		$this->load->model('Category');
+		$this->load->language('general');
+		$this->load->library('Auth');
+		$this->load->model(['Page', 'Category']);
 
 		$this->data['user'] = $this->auth->get_current_user();
 		$this->data['navigation'] = $this->Page->get_navigation();
@@ -28,7 +28,7 @@ class Site extends MY_Controller {
 		$this->data['brands'] = $this->Brand->get_pinned();
 		$this->data['news'] = $this->News->get_latest();
 		
-		$this->data['slug'] = 'home';
+		$this->data['highlighted'] = 'home';
 		
 		$this->load->view('pages/home', $this->data);
 	}
@@ -44,7 +44,7 @@ class Site extends MY_Controller {
 
 		$this->data['brands'] = $this->Brand->get_distinct($this->data['products']);
 
-		$this->data['slug'] = 'products';
+		$this->data['highlighted'] = 'products';
 
 		$this->load->view('pages/products', $this->data);
 	}
@@ -53,7 +53,7 @@ class Site extends MY_Controller {
 
 		$this->load->model('Product');
 
-		$this->data['product'] = $this->Product->get($id);
+		$this->data['product'] = $this->Product->get_localized($id);
 
 		$cart = $this->session->userdata('cart');
 
@@ -63,7 +63,7 @@ class Site extends MY_Controller {
 			}
 		}
 
-		$this->data['slug'] = 'products';
+		$this->data['highlighted'] = 'products';
 
 		$this->load->view('pages/product', $this->data);
 	}
@@ -78,7 +78,7 @@ class Site extends MY_Controller {
 			$this->data['products'] = $this->Product->get_cart($cart);
 		}
 
-		$this->data['slug'] = 'cart';
+		$this->data['highlighted'] = 'cart';
 
 		$this->load->view('pages/cart', $this->data);
 	}
@@ -87,8 +87,8 @@ class Site extends MY_Controller {
 
 		$this->load->model('News');
 
-		$this->data['news'] = $this->News->get_list();
-		$this->data['slug'] = 'news';
+		$this->data['news'] = $this->News->get_localized_list();
+		$this->data['highlighted'] = 'news';
 
 		$this->load->view('pages/news', $this->data);
 	}
@@ -97,24 +97,24 @@ class Site extends MY_Controller {
 
 		$this->load->model('News');
 
-		$this->data['post'] = $this->News->get($id);
-		$this->data['slug'] = 'news';
+		$this->data['post'] = $this->News->get_localized($id);
+		$this->data['highlighted'] = 'news';
 
 		$this->load->view('pages/post', $this->data);
 	}
 
 	public function about_us() {
 
-		$this->data['slug'] = 'about_us';
+		$this->data['highlighted'] = 'about_us';
 
-		$this->data['page'] = $this->Page->get_by_key('slug', $this->data['slug']);
+		$this->data['page'] = $this->Page->get_by_key('slug', $this->data['highlighted']);
 
 		$this->load->view('pages/page', $this->data);
 	}
 
 	public function contact() {
 
-		$this->data['slug'] = 'contact';
+		$this->data['highlighted'] = 'contact';
 
 		$this->load->view('pages/contact', $this->data);
 	}
@@ -197,7 +197,7 @@ class Site extends MY_Controller {
 
 	public function register() {
 
-		$this->data['slug'] = 'register';
+		$this->data['highlighted'] = 'register';
 
 		$this->load->view('pages/register', $this->data);
 	}

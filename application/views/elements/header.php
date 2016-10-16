@@ -14,7 +14,7 @@
 	<?php
 		$header_main_class = 'header-main clearfix';
 
-		if($slug !== 'home') {
+		if($highlighted !== 'home') {
 			$header_main_class .= ' with-background';
 		}
 	?>
@@ -62,7 +62,7 @@
 			<?php foreach($navigation as $n): ?>
 				<li>
 					<a href="<?php echo locale_url($n->slug); ?>"
-						<?php if($n->slug === $slug) echo 'class="active"'; ?>>
+						<?php if($n->slug === $highlighted) echo 'class="active"'; ?>>
 						<?php echo $n->title; ?>
 					</a>
 				</li>
@@ -114,7 +114,7 @@
 			</div>
 		</form><!-- third-row -->
 	</div><!-- header-main -->
-	<?php if($slug === 'home'): ?>
+	<?php if($highlighted === 'home'): ?>
 		<div class="slider hidden-xs">
 			<ul>
 				<li>

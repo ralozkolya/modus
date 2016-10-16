@@ -14,8 +14,10 @@
 			<div class="container bpg-excelsior">
 				<?php foreach($news as $n): ?>
 					<div class="row news">
-						<?php $slug = url_title($n->slug); ?>
-						<a class="unstyled" href="<?php echo locale_url('post/'.$n->id.'/'.$slug); ?>">
+						<?php
+							$url = locale_url('post/'.$n->id.'/'.$n->slug);
+						?>
+						<a class="unstyled" href="<?php echo $url; ?>">
 							<div class="col-sm-4">
 								<img class="thumb"
 									alt="<?php echo $n->title; ?>"

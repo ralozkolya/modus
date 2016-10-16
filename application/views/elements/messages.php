@@ -1,10 +1,10 @@
 <?php
 	if(empty($success_message)) {
-		$success_message = $this->session->flashdata('success_message');
+		$success_message = $this->session->flashdata(SUCCESS);
 	}
 
 	if(empty($error_message)) {
-		$error_message = $this->session->flashdata('error_message');
+		$error_message = $this->session->flashdata(ERROR);
 	}
 ?>
 

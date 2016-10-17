@@ -50,6 +50,17 @@
 		<li>
 			<?php
 				$class = 'unstyled';
+				if($highlighted === 'news') {
+					$class .= ' active';
+				}
+			?>
+			<a class="<?php echo $class; ?>" href="<?php echo base_url('admin/news_list'); ?>">
+				<?php echo lang('news'); ?>
+			</a>
+		</li>
+		<li>
+			<?php
+				$class = 'unstyled';
 				if($highlighted === 'other') {
 					$class .= ' active';
 				}

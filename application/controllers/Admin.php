@@ -17,7 +17,7 @@ class Admin extends MY_Controller {
 		$this->load->model([
 			'User_admin', 'Product', 'Page',
 			'Category', 'Brand', 'Stock', 'Product_images',
-			'Banner',
+			'Banner', 'News',
 		]);
 
 		$this->data['user'] = $this->auth->get_current_user();
@@ -106,9 +106,60 @@ class Admin extends MY_Controller {
 		}
 
 		$this->data['item'] = $this->Banner->get($id);
+		$this->check_item();
 		$this->data['highlighted'] = 'banners';
 
 		$this->load->view('pages/admin/banner', $this->data);
+	}
+
+	public function brands() {
+
+		if($this->input->post()) {
+			$this->modify('Brand');
+		}
+
+		$this->data['items'] = $this->Brand->get_localized_list();
+		$this->data['highlighted'] = 'brands';
+
+		$this->load->view('pages/admin/brands', $this->data);
+	}
+
+	public function Brand($id) {
+
+		if($this->input->post()) {
+			$this->modify('Brand');
+		}
+
+		$this->data['item'] = $this->Brand->get($id);
+		$this->check_item();
+		$this->data['highlighted'] = 'brands';
+
+		$this->load->view('pages/admin/brand', $this->data);
+	}
+
+	public function news_list() {
+
+		if($this->input->post()) {
+			$this->modify('News');
+		}
+
+		$this->data['items'] = $this->News->get_localized_list();
+		$this->data['highlighted'] = 'news';
+
+		$this->load->view('pages/admin/news_list', $this->data);
+	}
+
+	public function News($id) {
+
+		if($this->input->post()) {
+			$this->modify('News');
+		}
+
+		$this->data['item'] = $this->News->get($id);
+		$this->check_item();
+		$this->data['highlighted'] = 'news';
+
+		$this->load->view('pages/admin/news', $this->data);
 	}
 
 
@@ -153,7 +204,7 @@ class Admin extends MY_Controller {
 		}
 
 		else {
-			$this->message(validation_errors('<div>', '</div>'), ERROR, FALSE);
+			$this->validation_errors();
 		}
 	}
 
@@ -181,7 +232,7 @@ class Admin extends MY_Controller {
 		}
 
 		else {
-			$this->message(validation_errors('<div>', '</div>'), ERROR, FALSE);
+			$this->validation_errors();
 		}
 	}
 
@@ -231,7 +282,7 @@ class Admin extends MY_Controller {
 		}
 
 		else {
-			$this->message(validation_errors('<div>', '</div>'), ERROR);
+			$this->validation_errors();
 		}
 	}
 
@@ -254,6 +305,12 @@ class Admin extends MY_Controller {
 			show_404();
 			exit;
 		}
+	}
+
+	private function validation_errors() {
+		$message = validation_errors('<div>', '</div>');
+		$message = $message ? $message : lang('no_validation_rules');
+		$this->message($message, ERROR, FALSE);
 	}
 
 }

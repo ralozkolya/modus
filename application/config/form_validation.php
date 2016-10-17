@@ -79,10 +79,34 @@ $ru_title = [
 	'rules' => 'required',
 ];
 
+$ka_body = [
+	'field' => 'ka_body',
+	'label' => 'lang:ka_body',
+	'rules' => 'required',
+];
+
+$en_body = [
+	'field' => 'en_body',
+	'label' => 'lang:en_body',
+	'rules' => 'required',
+];
+
+$ru_body = [
+	'field' => 'ru_body',
+	'label' => 'lang:ru_body',
+	'rules' => 'required',
+];
+
 $priority = [
 	'field' => 'priority',
 	'label' => 'lang:priority',
 	'rules' => 'is_numeric',
+];
+
+$pinned = [
+	'field' => 'pinned',
+	'label' => 'lang:pinned',
+	'rules' => 'regex_match[/0|1/]',
 ];
 
 $config['add_Product'] = [
@@ -115,4 +139,25 @@ $config['add_Banner'] = [
 
 $config['edit_Banner'] = [
 	$id, $priority,
+];
+
+$config['add_Brand'] = [
+	$ka_name, $en_name, $ru_name, $pinned,
+];
+
+$config['edit_Brand'] = [
+	$id, $ka_name, $en_name, $ru_name, $pinned,
+];
+
+$config['add_News'] = [
+	$ka_title, $en_title, $ru_title,
+	$ka_body, $en_body, $ru_body,
+	$pinned,
+];
+
+$config['edit_News'] = [
+	$id,
+	$ka_title, $en_title, $ru_title,
+	$ka_body, $en_body, $ru_body,
+	$pinned,
 ];

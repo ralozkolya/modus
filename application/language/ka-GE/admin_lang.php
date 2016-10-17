@@ -5,6 +5,7 @@ $lang['products'] = 'პროდუქტები';
 $lang['pages'] = 'გვერდები';
 $lang['banners'] = 'ბანერები';
 $lang['brands'] = 'ბრენდები';
+$lang['news'] = 'სიახლეები';
 $lang['other'] = 'სხვა';
 $lang['user'] = 'მომხმარებელი';
 
@@ -19,6 +20,7 @@ $lang['added_successfully'] = 'დაემატა წარმატები
 $lang['changed_successfully'] = 'შეიცვალა წარმატებით';
 $lang['deleted_successfully'] = 'წაიშალა წარმატებით';
 $lang['not_allowed'] = 'მოცემული ქმედება არ არის ნებადართული';
+$lang['no_validation_rules'] = 'ვალიდაციის შეცდომა';
 $lang['unexpected_error'] = 'დაფიქსირდა შეცდომა';
 
 $lang['username'] = 'მომხმარებლის სახელი';
@@ -59,3 +61,10 @@ $lang['existing_banners'] = 'არსებული ბანერები';
 $lang['add_banner'] = 'ბანერის დამატება';
 $lang['link'] = 'ბმული';
 $lang['priority'] = 'პრიორიტეტი (ჩანაწერი ნაკლები პრიორიტეტით გამოჩნდება პირველი)';
+
+$lang['existing_brands'] = 'არსებული ბრენდები';
+$lang['add_brand'] = 'ბრენდის დამატება';
+$lang['pinned'] = 'მთავარ გვერდზე მიპინვა';
+
+$lang['existing_news'] = 'არსებული სიახლეები';
+$lang['add_news'] = 'სიახლის დამატება';

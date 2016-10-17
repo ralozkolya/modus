@@ -3,7 +3,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Brand extends MY_Model {
 
+	protected $upload_path = 'static/uploads/brands/';
+	protected $thumbs_path = 'static/uploads/brands/thumbs/';
+
 	protected $table = 'brands';
+
+	protected $with_image = TRUE;
+	protected $image_required = TRUE;
+
+	public function add($data) {
+
+		if(empty($data['pinned'])) {
+			$data['pinned'] = 0;
+		}
+
+		return parent::add($data);
+	}
+
+	public function edit($data) {
+
+		if(empty($data['pinned'])) {
+			$data['pinned'] = 0;
+		}
+
+		return parent::edit($data);
+	}
 
 	public function get_pinned() {
 

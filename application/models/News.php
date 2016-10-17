@@ -3,6 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class News extends MY_Model {
 
+	protected $upload_path = 'static/uploads/news/';
+	protected $thumbs_path = 'static/uploads/news/thumbs/';
+
 	protected $table = 'news';
 	protected $slug = 'en_title';
 	protected $with_image = TRUE;

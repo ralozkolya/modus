@@ -85,9 +85,18 @@
 			id="<?php echo $name; ?>" multiple>
 	</div>
 <?php elseif($type === 'hidden'): ?>
-	<input type="hidden" name="<?php echo $name; ?>" value="<?php echo $value; ?>">
+	<input type="hidden" name="<?php echo $name; ?>"
+		value="<?php echo $value; ?>">
 <?php elseif($type === 'submit'): ?>
 	<div class="form-group">
 		<input class="btn btn-default" type="submit" value="<?php echo $value; ?>">
+	</div>
+<?php elseif($type === 'checkbox'): ?>
+	<div class="form-group">
+		<input type="checkbox"
+			name="<?php echo $name; ?>"
+			value="1"
+			id="<?php echo $name; ?>" <?php if($value) echo 'checked'; ?>>
+		<?php echo lang($name, $name); ?>
 	</div>
 <?php endif; ?>

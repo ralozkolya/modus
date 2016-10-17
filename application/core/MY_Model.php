@@ -253,7 +253,6 @@ class MY_Model extends CI_Model {
 			return prep_url($url);
 		}
 	}
-
 }
 
 /* End of file MY_Model.php */

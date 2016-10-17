@@ -117,14 +117,19 @@
 	<?php if($highlighted === 'home'): ?>
 		<div class="slider hidden-xs">
 			<ul>
-				<li>
-					<?php $url = static_url('uploads/banners/2.png'); ?>
-					<div class="slide" style="background-image: url('<?php echo $url; ?>');"></div>
-				</li>
-				<li>
-					<?php $url = static_url('uploads/banners/1.png'); ?>
-					<div class="slide" style="background-image: url('<?php echo $url; ?>');"></div>
-				</li>
+				<?php if(!empty($banners)): ?>
+					<?php foreach($banners as $b): ?>
+						<li>
+							<?php $url = static_url("uploads/banners/{$b->image}"); ?>
+							<div class="slide" style="background-image: url('<?php echo $url; ?>');"></div>
+						</li>
+					<?php endforeach; ?>
+				<?php else: ?>
+						<li>
+							<?php $url = static_url("img/banner.png?v=".V); ?>
+							<div class="slide" style="background-image: url('<?php echo $url; ?>');"></div>
+						</li>
+				<?php endif; ?>
 			</ul>
 		</div><!-- slider -->
 	<?php endif; ?>

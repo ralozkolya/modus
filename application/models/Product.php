@@ -3,12 +3,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Product extends MY_Model {
 
+	protected $upload_path = 'static/uploads/products/';
+	protected $thumbs_path = 'static/uploads/products/thumbs/';
+
 	protected $table = 'products';
 	protected $slug = 'en_name';
+	protected $images_table = 'product_images';
 
 	public function get_latest() {
 
 		$this->db->order_by('id DESC');
+
+		$this->join_images();
 
 		return $this->get_localized_list(6);
 	}
@@ -78,26 +84,24 @@ class Product extends MY_Model {
 			$this->db->group_end();
 		}
 
+		$this->join_images();
+
 		return $this->get_localized_list($page * PRODUCTS_PER_PAGE, $offset);
 	}
 
 	public function get_cart($cart) {
 
-		$lang = get_lang_code(get_lang());
-
 		$cart = array_keys($cart);
 
-		$this->db->select(array(
-			$lang.'_name as name',
-			'id', 'price', 'image',
-		));
+		$this->db->where_in("{$this->table}.id", $cart);
 
-		$this->db->where_in('id', $cart);
-
-		return $this->get_list();
+		$this->join_images();
+		return $this->get_localized_list();
 	}
 
 	public function get_localized($id) {
+
+		$this->join_images();
 
 		$this->select_localized();
 		return parent::get($id);
@@ -117,7 +121,7 @@ class Product extends MY_Model {
 			"{$this->table}.{$lang}_name as name",
 			"{$this->table}.{$lang}_description as description",
 			"{$this->table}.slug", "{$this->table}.id",
-			"{$this->table}.price", "{$this->table}.image",
+			"{$this->table}.price",
 		]);
 	}
 
@@ -134,6 +138,19 @@ class Product extends MY_Model {
 
 		$this->db->join('categories', "{$this->table}.category = categories.id");
 		$this->db->join('brands', "{$this->table}.brand = brands.id");
+		$this->db->group_by("{$this->table}.id");
+	}
+
+	private function join_images() {
+
+		$this->db->select([
+			"{$this->images_table}.image",
+		]);
+
+		//$this->db->where('product', $product);
+
+		$this->db->join($this->images_table, "{$this->images_table}.item = {$this->table}.id", 'left');
+
 		$this->db->group_by("{$this->table}.id");
 	}
 

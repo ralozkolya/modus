@@ -49,10 +49,10 @@ $(function(){
 		$('.preview').attr('src', $(this).attr('src'));
 	});
 
-	setTimeout(function(){
-		$('#zoom').anythingZoomer({
+	/*setTimeout(function(){
+		$('.fotorama__img').anythingZoomer({
 			edit: true,
 			clone: true,
 		});
-	}, 1000);
+	}, 1000);*/
 });

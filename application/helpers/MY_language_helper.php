@@ -1,13 +1,17 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-function set_language() {
+function set_language($_lang = NULL) {
 
 	$ci =& get_instance();
 
 	$lang = $ci->uri->segment(1);
 	$config = $ci->config->item('language');
 	$cookie = json_decode(base64_decode(get_cookie('lang')));
+
+	if($_lang) {
+		$lang = $_lang;
+	}
 
 	if(!$cookie && !isset($cookie->value)) {
 		$cookie = new stdClass;

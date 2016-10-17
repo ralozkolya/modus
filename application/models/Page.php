@@ -36,9 +36,9 @@ class Page extends MY_Model {
 		$lang = get_lang_code(get_lang());
 		
 		$this->db->select(array(
-			$lang.'_title as title',
-			$lang.'_body as body',
-			'slug',
+			"{$lang}_title as title",
+			"{$lang}_body as body",
+			'slug', 'id',
 		));
 	}
 }

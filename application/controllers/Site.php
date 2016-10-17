@@ -13,20 +13,21 @@ class Site extends MY_Controller {
 
 		$this->data['user'] = $this->auth->get_current_user();
 		$this->data['navigation'] = $this->Page->get_navigation();
-		$this->data['top_categories'] = $this->Category->get_list();
+		$this->data['top_categories'] = $this->Category->get_top();
 
 		$this->data['cart_size'] = count($this->session->userdata('cart'));
 	}
 
 	public function index()	{
 
-		$this->load->model(['Product', 'Category', 'Brand', 'News']);
+		$this->load->model(['Product', 'Category', 'Brand', 'News', 'Banner']);
 
 		$this->data['pinned_categories'] = $this->Category->get_pinned();
 		$this->data['categories'] = $this->Category->get_list_with_subcategories();
 		$this->data['latest_products'] = $this->Product->get_latest();
 		$this->data['brands'] = $this->Brand->get_pinned();
 		$this->data['news'] = $this->News->get_latest();
+		$this->data['banners'] = $this->Banner->get_list();
 		
 		$this->data['highlighted'] = 'home';
 		
@@ -42,7 +43,7 @@ class Site extends MY_Controller {
 		$this->data['categories'] = $this->Category->get_list_with_subcategories();
 		$this->data['products'] = $this->Product->get_filtered($get);
 
-		$this->data['brands'] = $this->Brand->get_distinct($this->data['products']);
+		$this->data['brands'] = $this->Brand->get_localized_list();
 
 		$this->data['highlighted'] = 'products';
 
@@ -51,9 +52,10 @@ class Site extends MY_Controller {
 
 	public function product($id, $slug) {
 
-		$this->load->model('Product');
+		$this->load->model(['Product', 'Product_images']);
 
 		$this->data['product'] = $this->Product->get_localized($id);
+		$this->data['gallery'] = $this->Product_images->get_for_product($id);
 
 		$cart = $this->session->userdata('cart');
 

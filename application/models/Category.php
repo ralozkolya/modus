@@ -5,53 +5,27 @@ class Category extends MY_Model {
 
 	protected $table = 'categories';
 
-	public function get_list($limit = NULL, $offset = NULL) {
-
-		$lang = get_lang_code(get_lang());
-
-		$this->db->select(array(
-			'id',
-			$lang.'_name as name',
-			'parent',
-		));
+	public function get_top() {
 
 		$this->db->where(array(
 			'parent' => 0,
 		));
 
-		return parent::get_list();
+		return $this->get_localized_list();
 	}
 
 	public function get_pinned() {
-
-		$lang = get_lang_code(get_lang());
 		
 		$this->db->where(array(
 			'pinned' => 1,
 		));
 
-		$this->db->select(array(
-			$lang.'_name as name',
-			'image',
-			'id',
-		));
-
-		$this->db->limit(7);
-
-		return $this->db->get($this->table)->result();
+		return $this->get_localized_list(7);
 	}
 
 	public function get_list_with_subcategories() {
 
-		$lang = get_lang_code(get_lang());
-
-		$this->db->select(array(
-			'id',
-			$lang.'_name as name',
-			'parent',
-		));
-
-		$r = parent::get_list();
+		$r = $this->get_localized_list();
 
 		foreach($r as $k => $s) {
 			if($s->parent) {
@@ -70,6 +44,23 @@ class Category extends MY_Model {
 		$this->db->where(array('parent' => $id));
 
 		return parent::get_list();
+	}
+
+	public function get_localized_list($limit = NULL, $offset = NULL) {
+
+		$this->select_localized();
+		return parent::get_list($limit, $offset);
+	}
+
+	private function select_localized() {
+
+		$lang = get_lang_code(get_lang());
+
+		$this->db->select(array(
+			'id',
+			$lang.'_name as name',
+			'parent', 'image',
+		));
 	}
 
 }

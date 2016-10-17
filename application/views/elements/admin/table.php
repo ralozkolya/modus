@@ -4,15 +4,20 @@
 			<tr>
 				<?php foreach($columns as $c): ?>
 					<td>
-						<?php echo $i->$c; ?>
+						<?php if($c === 'image'): ?>
+							<img alt="<?php echo $i->$c; ?>"
+								src="<?php echo $path.$i->$c; ?>">
+						<?php else: ?>
+							<?php echo $i->$c; ?>
+						<?php endif; ?>
 					</td>
 				<?php endforeach; ?>
-				<td class="glyph-container">
+				<td class="glyph-container edit-container">
 					<a href="<?php echo base_url("admin/{$type}/{$i->id}"); ?>">
 						<span class="glyphicon glyphicon-edit"></span>
 					</a>
 				</td>
-				<td class="glyph-container">
+				<td class="glyph-container delete-container">
 					<a href="<?php echo base_url("admin/delete/{$type}/{$i->id}"); ?>"
 						class="unstyled delete">
 						<span class="glyphicon glyphicon-remove"></span>	

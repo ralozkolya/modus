@@ -36,6 +36,12 @@ class Stock extends MY_Model {
 		$this->db->query($query);
 	}
 
+	public function get_list($limit = NULL, $offset = NULL) {
+
+		$this->db->select(['*', 'Name as name']);
+		return parent::get_list($limit, $offset);
+	}
+
 }
 
 /* End of file Stock.php */

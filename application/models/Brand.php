@@ -22,8 +22,6 @@ class Brand extends MY_Model {
 
 	public function get_distinct($products) {
 
-		$lang = get_lang_code(get_lang());
-
 		/*$brands = array();
 
 		foreach($products as $p) {
@@ -38,15 +36,21 @@ class Brand extends MY_Model {
 			return NULL;
 		}*/
 
-		$this->db->select(array(
-			$lang.'_name as name',
-			'id',
-		));
-
-		$this->db->distinct();
+		//$this->db->distinct();
 
 		return parent::get_list();
+	}
 
+	public function get_localized_list($limit = NULL, $offset = NULL) {
+
+		$lang = get_lang_code(get_lang());
+
+		$this->db->select(array(
+			"{$lang}_name as name",
+			'id', 'image',
+		));
+
+		return parent::get_list($limit, $offset);
 	}
 
 }

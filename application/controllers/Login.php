@@ -47,7 +47,7 @@ class Login extends CI_Controller {
 				redirect(base_url('admin'));
 			}
 
-			$this->session->set_flashdata('error_message', lang('incorrect_credentials'));
+			$this->session->set_flashdata(ERROR, lang('incorrect_credentials'));
 			redirect(current_url());
 		}
 

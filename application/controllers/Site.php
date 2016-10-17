@@ -186,7 +186,7 @@ class Site extends MY_Controller {
 		$password = $this->input->post('password');
 
 		if(!$this->auth->login($email, $password)) {
-			$this->session->set_flashdata(ERROR_MESSAGE, lang('auth_error'));
+			$this->session->set_flashdata(ERROR, lang('auth_error'));
 		}
 
 		redirect($this->agent->referrer());

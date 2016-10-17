@@ -13,6 +13,13 @@ class User_admin extends MY_Model {
 		return parent::add($data);
 	}
 
+	public function edit($data) {
+
+		$data['password'] = $this->hash_password($data['password']);
+
+		return parent::edit($data);
+	}
+
 	public function edit_password($user, $password) {
 
 		$data['id'] = $user;

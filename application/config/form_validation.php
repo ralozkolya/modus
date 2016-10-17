@@ -109,6 +109,12 @@ $pinned = [
 	'rules' => 'regex_match[/0|1/]',
 ];
 
+$email = [
+	'field' => 'email',
+	'label' => 'lang:email',
+	'rules' => 'required|valid_email',
+];
+
 $config['add_Product'] = [
 	$ka_name, $en_name, $ru_name,
 	$ka_description, $en_description, $ru_description,
@@ -160,4 +166,25 @@ $config['edit_News'] = [
 	$ka_title, $en_title, $ru_title,
 	$ka_body, $en_body, $ru_body,
 	$pinned,
+];
+
+$config['add_Agent'] = [
+	$ka_name, $en_name, $ru_name, $email,
+];
+
+$config['edit_Agent'] = [
+	$id, $ka_name, $en_name, $ru_name, $email,
+];
+
+$config['edit_User_admin'] = [
+	[
+		'field' => 'password',
+		'label' => 'lang:password',
+		'rules' => 'required|min_length[5]'
+	],
+	[
+		'field' => 'password_repeat',
+		'label' => 'lang:password_repeat',
+		'rules' => 'required|matches[password]'
+	],
 ];

@@ -17,7 +17,7 @@ class Admin extends MY_Controller {
 		$this->load->model([
 			'User_admin', 'Product', 'Page',
 			'Category', 'Brand', 'Stock', 'Product_images',
-			'Banner', 'News',
+			'Banner', 'News', 'Agent',
 		]);
 
 		$this->data['user'] = $this->auth->get_current_user();
@@ -36,11 +36,11 @@ class Admin extends MY_Controller {
 
 	public function products() {
 
-		if($this->input->post()) {
-			$this->modify('Product');
-		}
+		$this->data['type'] = $type = 'Product';
 
-		$this->data['items'] = $this->Product->get_localized_list();
+		$this->modify($type);
+
+		$this->data['items'] = $this->get_items($type);
 		$this->data['highlighted'] = 'products';
 		$this->data['categories'] = $this->Category->get_localized_list();
 		$this->data['brands'] = $this->Brand->get_localized_list();
@@ -51,12 +51,11 @@ class Admin extends MY_Controller {
 
 	public function Product($id) {
 
-		if($this->input->post()) {
-			$this->modify('Product');
-		}
+		$this->data['type'] = $type = 'Product';
 
-		$this->data['item'] = $this->Product->get($id);
-		$this->check_item();
+		$this->modify($type);
+
+		$this->data['item'] = $this->get_item($type, $id);
 		$this->data['highlighted'] = 'products';
 		$this->data['categories'] = $this->Category->get_localized_list();
 		$this->data['brands'] = $this->Brand->get_localized_list();
@@ -68,7 +67,9 @@ class Admin extends MY_Controller {
 
 	public function pages() {
 
-		$this->data['items'] = $this->Page->get_localized_list();
+		$this->data['type'] = $type = 'Page';
+
+		$this->data['items'] = $this->get_items($type);
 		$this->data['highlighted'] = 'pages';
 
 		$this->load->view('pages/admin/pages', $this->data);
@@ -76,12 +77,11 @@ class Admin extends MY_Controller {
 
 	public function Page($id) {
 
-		if($this->input->post()) {
-			$this->modify('Page');
-		}
+		$this->data['type'] = $type = 'Page';
 
-		$this->data['item'] = $this->Page->get($id);
-		$this->check_item();
+		$this->modify($type);
+		
+		$this->data['item'] = $this->get_item($type, $id);
 		$this->data['highlighted'] = 'pages';
 
 		$this->load->view('pages/admin/page', $this->data);
@@ -89,11 +89,11 @@ class Admin extends MY_Controller {
 
 	public function banners() {
 
-		if($this->input->post()) {
-			$this->modify('Banner');
-		}
+		$this->data['type'] = $type = 'Banner';
 
-		$this->data['items'] = $this->Banner->get_list();
+		$this->modify($type);
+
+		$this->data['items'] = $this->get_items($type);
 		$this->data['highlighted'] = 'banners';
 
 		$this->load->view('pages/admin/banners', $this->data);
@@ -101,12 +101,11 @@ class Admin extends MY_Controller {
 
 	public function Banner($id) {
 
-		if($this->input->post()) {
-			$this->modify('Banner');
-		}
+		$this->data['type'] = $type = 'Banner';
 
-		$this->data['item'] = $this->Banner->get($id);
-		$this->check_item();
+		$this->modify($type);
+
+		$this->data['item'] = $this->get_item($type, $id);
 		$this->data['highlighted'] = 'banners';
 
 		$this->load->view('pages/admin/banner', $this->data);
@@ -114,11 +113,11 @@ class Admin extends MY_Controller {
 
 	public function brands() {
 
-		if($this->input->post()) {
-			$this->modify('Brand');
-		}
+		$this->data['type'] = $type = 'Brand';
 
-		$this->data['items'] = $this->Brand->get_localized_list();
+		$this->modify($type);
+
+		$this->data['items'] = $this->get_items($type);
 		$this->data['highlighted'] = 'brands';
 
 		$this->load->view('pages/admin/brands', $this->data);
@@ -126,12 +125,11 @@ class Admin extends MY_Controller {
 
 	public function Brand($id) {
 
-		if($this->input->post()) {
-			$this->modify('Brand');
-		}
+		$this->data['type'] = $type = 'Brand';
 
-		$this->data['item'] = $this->Brand->get($id);
-		$this->check_item();
+		$this->modify($type);
+
+		$this->data['item'] = $this->get_item($type, $id);
 		$this->data['highlighted'] = 'brands';
 
 		$this->load->view('pages/admin/brand', $this->data);
@@ -139,11 +137,11 @@ class Admin extends MY_Controller {
 
 	public function news_list() {
 
-		if($this->input->post()) {
-			$this->modify('News');
-		}
+		$this->data['type'] = $type = 'News';
 
-		$this->data['items'] = $this->News->get_localized_list();
+		$this->modify($type);
+
+		$this->data['items'] = $this->get_items($type);
 		$this->data['highlighted'] = 'news';
 
 		$this->load->view('pages/admin/news_list', $this->data);
@@ -151,21 +149,61 @@ class Admin extends MY_Controller {
 
 	public function News($id) {
 
-		if($this->input->post()) {
-			$this->modify('News');
-		}
+		$this->data['type'] = $type = 'News';
 
-		$this->data['item'] = $this->News->get($id);
-		$this->check_item();
+		$this->modify($type);
+
+		$this->data['item'] = $this->get_item($type, $id);
 		$this->data['highlighted'] = 'news';
 
 		$this->load->view('pages/admin/news', $this->data);
+	}
+
+	public function agents() {
+
+		$this->data['type'] = $type = 'Agent';
+
+		$this->modify($type);
+
+		$this->data['items'] = $this->get_items($type);
+		$this->data['highlighted'] = 'agents';
+
+		$this->load->view('pages/admin/agents', $this->data);
+	}
+
+	public function Agent($id) {
+
+		$this->data['type'] = $type = 'Agent';
+
+		$this->modify($type);
+
+		$this->data['item'] = $this->get_item($type, $id);
+		$this->data['highlighted'] = 'agents';
+
+		$this->load->view('pages/admin/agent', $this->data);
+	}
+
+	public function user() {
+
+		$type = 'User_admin';
+
+		$this->modify($type, [
+			'password' => $this->input->post('password'),
+			'id' => $this->data['user']->id,
+		]);
+
+		$this->data['highlighted'] = 'user';
+		$this->load->view('pages/admin/user', $this->data);
 	}
 
 
 	/*	MODIFIERS	*/
 
 	public function modify($type, $data = NULL) {
+
+		if(!$this->input->post()) {
+			return;
+		}
 
 		if(empty($data)) {
 			$data = $this->input->post();
@@ -184,7 +222,7 @@ class Admin extends MY_Controller {
 
 		$allowed = [
 			'Banner', 'Brand', 'News',
-			'Product',
+			'Product', 'Agent',
 		];
 
 		if(!$this->is_allowed($allowed, $type)) {
@@ -212,7 +250,8 @@ class Admin extends MY_Controller {
 
 		$allowed = [
 			'Banner', 'Page', 'Brand',
-			'News', 'Product',
+			'News', 'Product', 'Agent',
+			'User_admin',
 		];
 
 		if(!$this->is_allowed($allowed, $type)) {
@@ -239,9 +278,9 @@ class Admin extends MY_Controller {
 	public function delete($type, $id) {
 
 		$allowed = [
-			'Banner', 'Brand',
-			'News', 'Product',
-			'Product_images',
+			'Banner', 'Brand', 'News',
+			'Product', 'Product_images',
+			'Agent',
 		];
 
 		if(!$this->is_allowed($allowed, $type)) {
@@ -300,17 +339,28 @@ class Admin extends MY_Controller {
 		return FALSE;
 	}
 
-	private function check_item() {
-		if(empty($this->data['item'])) {
-			show_404();
-			exit;
-		}
-	}
-
 	private function validation_errors() {
 		$message = validation_errors('<div>', '</div>');
 		$message = $message ? $message : lang('no_validation_rules');
 		$this->message($message, ERROR, FALSE);
+	}
+
+	private function get_items($type) {
+
+		$items = $this->$type->get_localized_list();
+		return $items;
+	}
+
+	private function get_item($type, $id) {
+
+		$item = $this->$type->get($id);
+
+		if(empty($item)) {
+			show_404();
+			exit;
+		}
+
+		return $item;
 	}
 
 }

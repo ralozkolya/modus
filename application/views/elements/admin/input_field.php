@@ -99,4 +99,12 @@
 			id="<?php echo $name; ?>" <?php if($value) echo 'checked'; ?>>
 		<?php echo lang($name, $name); ?>
 	</div>
+<?php elseif($type === 'password'): ?>
+	<div class="form-group">
+		<?php echo lang($name, $name); ?>
+		<input class="form-control"
+			type="password"
+			name="<?php echo $name; ?>"
+			id="<?php echo $name; ?>">
+	</div>
 <?php endif; ?>

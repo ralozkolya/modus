@@ -121,6 +121,10 @@ class MY_Model extends CI_Model {
 		return $r->result();
 	}
 
+	public function get_localized_list($limit = NULL, $offset = NULL) {
+		return $this->get_list($limit, $offset);
+	}
+
 	public function add_images($item) {
 
 		$files = $_FILES;

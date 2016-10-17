@@ -58,15 +58,14 @@
 				<?php echo lang('news'); ?>
 			</a>
 		</li>
-		<li>
 			<?php
 				$class = 'unstyled';
-				if($highlighted === 'other') {
+				if($highlighted === 'agents') {
 					$class .= ' active';
 				}
 			?>
-			<a class="<?php echo $class; ?>" href="<?php echo base_url('admin/other'); ?>">
-				<?php echo lang('other'); ?>
+			<a class="<?php echo $class; ?>" href="<?php echo base_url('admin/agents'); ?>">
+				<?php echo lang('agents'); ?>
 			</a>
 		</li>
 		<li>

@@ -11,7 +11,7 @@ $(function(){
 
 	$('#login-link').click(function() {
 		$('.login-overlay').fadeIn();
-		$('#email').focus();
+		$('#login-form #email').focus();
 		return false;
 	});
 

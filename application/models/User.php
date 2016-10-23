@@ -12,6 +12,16 @@ class User extends MY_Model {
 		return parent::get($id);
 	}
 
+	public function add($data) {
+
+		if(!empty($data['password_repeat'])) {
+			unset($data['password_repeat']);
+		}
+
+		$data['password'] = $this->hash_password($data['password']);
+
+		return parent::add($data);
+	}
 }
 
 /* End of file User.php */

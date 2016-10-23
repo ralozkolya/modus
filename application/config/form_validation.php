@@ -190,3 +190,31 @@ $config['edit_User_admin'] = [
 		'rules' => 'required|matches[password]'
 	],
 ];
+
+$config['register'] = [
+	[
+		'field' => 'first_name',
+		'label' => 'lang:first_name',
+		'rules' => 'required',
+	],
+	[
+		'field' => 'last_name',
+		'label' => 'lang:last_name',
+		'rules' => 'required',
+	],
+	[
+		'field' => 'email',
+		'label' => 'lang:email',
+		'rules' => 'required|valid_email|is_unique[users.email]',
+	],
+	[
+		'field' => 'password',
+		'label' => 'lang:password',
+		'rules' => 'required|min_length[6]',
+	],
+	[
+		'field' => 'password_repeat',
+		'label' => 'lang:password_repeat',
+		'rules' => 'required|matches[password]',
+	],
+];

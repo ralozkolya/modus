@@ -107,4 +107,13 @@
 			name="<?php echo $name; ?>"
 			id="<?php echo $name; ?>">
 	</div>
+<?php elseif($type === 'email'): ?>
+	<div class="form-group">
+		<?php echo lang($name, $name); ?>
+		<input class="form-control"
+			type="email"
+			name="<?php echo $name; ?>"
+			id="<?php echo $name; ?>"
+			value="<?php echo $value; ?>">
+	</div>
 <?php endif; ?>

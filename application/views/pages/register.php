@@ -12,8 +12,27 @@
 		<div class="content">
 			<div class="container bpg-excelsior">
 				<div class="row">
-					<div class="col-xs-12">
+					<div class="col-md-6 col-md-offset-3">
 						<h2><?php echo lang('register'); ?></h2>
+						<form method="post">
+							<?php
+								$fields = [
+									['name' => 'first_name', 'value' => set_value('first_name')],
+									['name' => 'last_name', 'value' => set_value('last_name')],
+									['name' => 'email', 'value' => set_value('email'),
+										'type' => 'email'],
+									['name' => 'password', 'type' => 'password'],
+									['name' => 'password_repeat', 'type' => 'password'],
+									['type' => 'submit', 'value' => lang('register')],
+								];
+
+								$form = form_fields($fields);
+
+								foreach($form as $f) {
+									echo $f;
+								}
+							?>
+						</form>
 					</div>
 				</div>
 			</div>

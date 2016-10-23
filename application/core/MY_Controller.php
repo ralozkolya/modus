@@ -15,20 +15,20 @@ class MY_Controller extends CI_Controller {
 		set_language();
 	}
 
-	protected function redirect() {
+	protected function redirect($path = '') {
 
 		if($this->agent->referrer()) {
 			redirect($this->agent->referrer());
 		}
 
-		redirect(base_url('admin'));
+		redirect(base_url($path));
 	}
 
 	protected function message($message, $type = SUCCESS, $redirects = TRUE) {
 
 		if($redirects) {
 			$this->session->set_flashdata($type, $message);
-			$this->redirect();
+			$this->redirect('admin');
 		}
 
 		else {

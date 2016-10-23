@@ -134,14 +134,12 @@ class Site extends MY_Controller {
 			$cart[$id] = time();
 
 			$this->session->set_userdata('cart', $cart);
-			$this->session->set_flashdata(SUCCESS, lang('added_to_cart'));
+			$this->message(lang('added_to_cart'));
 		}
 
 		else {
-			$this->session->set_flashdata(ERROR, lang('unexpected_error'));
+			$this->message(lang('unexpected_error'), ERROR);
 		}
-
-		redirect($this->agent->referrer());
 	}
 
 	public function remove_from_cart($id) {
@@ -157,10 +155,10 @@ class Site extends MY_Controller {
 		}
 
 		else {
-			$this->session->set_flashdata(ERROR, lang('unexpected_error'));
+			$this->message(lang('unexpected_error'), ERROR);
 		}
 
-		redirect($this->agent->referrer());
+		$this->redirect();
 	}
 
 	public function login() {
@@ -169,19 +167,43 @@ class Site extends MY_Controller {
 		$password = $this->input->post('password');
 
 		if(!$this->auth->login($email, $password)) {
-			$this->session->set_flashdata(ERROR, lang('auth_error'));
+			$this->message(lang('auth_error'), ERROR);
 		}
 
-		redirect($this->agent->referrer());
+		$this->redirect();
 	}
 
 	public function logout() {
 		$this->auth->logout();
-		redirect($this->agent->referrer());
+		$this->redirect();
 	}
 
 	public function register() {
 
+		if($this->auth->is_logged_in()) {
+			redirect(locale_url());
+		}
+
+		$this->load->library('form_validation');
+		$this->load->helper('view');
+		$this->load->model('User');
+
+		if($this->input->post()) {
+			if($this->form_validation->run('register')) {
+				
+				if($this->User->add($this->input->post())) {
+					$this->message(lang('registered_successfully'));
+				}
+
+				else {
+					$this->message(lang('unexpected_error'), ERROR);
+				}
+			}
+
+			else {
+				$this->message(validation_errors('<div>', '</div>'), ERROR, FALSE);
+			}
+		}
 		$this->data['highlighted'] = 'register';
 
 		$this->load->view('pages/register', $this->data);

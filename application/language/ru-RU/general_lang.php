@@ -41,3 +41,9 @@ $lang['total'] = 'Всего';
 $lang['name'] = 'Имя';
 $lang['message'] = 'Сообщение';
 $lang['send'] = 'Отправить';
+
+$lang['first_name'] = 'Имя';
+$lang['last_name'] = 'Фамилия';
+$lang['password_repeat'] = 'Пароль повторно';
+$lang['registered_successfully'] = 'Вы успешно зарегистрировались';
+$lang['unexpected_error'] = 'Пройзошла ошибка';

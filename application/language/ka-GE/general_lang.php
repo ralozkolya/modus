@@ -41,3 +41,9 @@ $lang['total'] = 'ჯამი';
 $lang['name'] = 'სახელი';
 $lang['message'] = 'შეტყობინება';
 $lang['send'] = 'გაგზავნა';
+
+$lang['first_name'] = 'სახელი';
+$lang['last_name'] = 'გვარი';
+$lang['password_repeat'] = 'პაროლი განმეორებით';
+$lang['registered_successfully'] = 'თქვენ წარმატებით გაიარეთ რეგისტრაცია';
+$lang['unexpected_error'] = 'დაფიქსირდა შეცდომა';

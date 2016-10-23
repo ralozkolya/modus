@@ -41,3 +41,9 @@ $lang['total'] = 'Total';
 $lang['name'] = 'Name';
 $lang['message'] = 'Message';
 $lang['send'] = 'Send';
+
+$lang['first_name'] = 'First name';
+$lang['last_name'] = 'Last name';
+$lang['password_repeat'] = 'Repeat password';
+$lang['registered_successfully'] = 'You registered successfully';
+$lang['unexpected_error'] = 'Unexpected error';

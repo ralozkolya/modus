@@ -47,3 +47,6 @@ define('PRODUCTS_PER_PAGE', 24);
 
 define('SUCCESS', 'success_message');
 define('ERROR', 'error_message');
+
+define('NO_REPLY', 'nikoloz@indiestudio.ge');
+define('INFO_MAIL', 'nikoloz@indiestudio.ge');

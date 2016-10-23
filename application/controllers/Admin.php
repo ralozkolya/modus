@@ -22,9 +22,11 @@ class Admin extends MY_Controller {
 
 		if(!$this->data['user']) {
 			$this->auth->logout();
-			$this->session->set_flashdata('error_message', lang('unauthorized'));
-			redirect(base_url('login'));
+			$this->message(lang('unauthorized'), ERROR, FALSE);
+			$this->redirect('login');
 		}
+
+		$this->data['redirect_base'] = base_url('admin');
 	}
 	
 

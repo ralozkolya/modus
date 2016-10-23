@@ -18,13 +18,27 @@ class Auth {
 		$user = $this->check($email, $password);
 
 		if($user) {
-
+			
+			$this->CI->User->clear_token($user->id);
 			$this->CI->session->set_userdata(USER, $user);
 
 			return TRUE;
 		}
 
 		return FALSE;
+	}
+
+	public function login_by_id($id) {
+
+		$user = $this->CI->User->get($id);
+
+		if($user) {
+
+			$this->CI->User->clear_token($user->id);
+			$this->CI->session->set_userdata('user', $user);
+		}
+
+		return $user;
 	}
 
 	public function logout() {

@@ -22,6 +22,7 @@ $lang['password'] = 'Password';
 $lang['register'] = 'Register';
 $lang['password_recovery'] = 'Password recovery';
 $lang['auth_error'] = 'Incorrect email and password combination';
+$lang['auth_needed'] = 'Authorization needed to view this page';
 
 $lang['production'] = 'Products';
 $lang['brand'] = 'Brand';
@@ -32,6 +33,7 @@ $lang['to'] = 'To';
 $lang['description'] = 'Description';
 $lang['add_to_cart'] = 'Add to cart';
 $lang['added_to_cart'] = 'Added';
+$lang['out_of_stock'] = 'Out of stock';
 
 $lang['empty_cart'] = 'Empty cart';
 $lang['continue'] = 'Continue';
@@ -47,3 +49,12 @@ $lang['last_name'] = 'Last name';
 $lang['password_repeat'] = 'Repeat password';
 $lang['registered_successfully'] = 'You registered successfully';
 $lang['unexpected_error'] = 'Unexpected error';
+
+$lang['no_such_user'] = 'No user found with given email';
+$lang['instructions_sent'] = 'Instructions sent to given email';
+$lang['to_recover_password'] = 'Follow link to complete password recovery:';
+$lang['change_password'] = 'You should change your password now';
+
+$lang['profile'] = 'Profile';
+$lang['change'] = 'Change';
+$lang['changed_successfully'] = 'Changed successfully';

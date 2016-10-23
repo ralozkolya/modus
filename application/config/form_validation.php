@@ -109,10 +109,40 @@ $pinned = [
 	'rules' => 'regex_match[/0|1/]',
 ];
 
-$email = [
+$email_admin = [
 	'field' => 'email',
 	'label' => 'lang:email',
 	'rules' => 'required|valid_email',
+];
+
+$email = [
+	'field' => 'email',
+	'label' => 'lang:email',
+	'rules' => 'required|valid_email|is_unique[users.email]',
+];
+
+$first_name = [
+	'field' => 'first_name',
+	'label' => 'lang:first_name',
+	'rules' => 'required',
+];
+
+$last_name = [
+	'field' => 'last_name',
+	'label' => 'lang:last_name',
+	'rules' => 'required',
+];
+
+$password = [
+	'field' => 'password',
+	'label' => 'lang:password',
+	'rules' => 'required|min_length[6]',
+];
+
+$password_repeat = [
+	'field' => 'password_repeat',
+	'label' => 'lang:password_repeat',
+	'rules' => 'required|matches[password]',
 ];
 
 $config['add_Product'] = [
@@ -171,11 +201,11 @@ $config['edit_News'] = [
 ];
 
 $config['add_Agent'] = [
-	$ka_name, $en_name, $ru_name, $email,
+	$ka_name, $en_name, $ru_name, $email_admin,
 ];
 
 $config['edit_Agent'] = [
-	$id, $ka_name, $en_name, $ru_name, $email,
+	$id, $ka_name, $en_name, $ru_name, $email_admin,
 ];
 
 $config['edit_User_admin'] = [
@@ -192,29 +222,13 @@ $config['edit_User_admin'] = [
 ];
 
 $config['register'] = [
-	[
-		'field' => 'first_name',
-		'label' => 'lang:first_name',
-		'rules' => 'required',
-	],
-	[
-		'field' => 'last_name',
-		'label' => 'lang:last_name',
-		'rules' => 'required',
-	],
-	[
-		'field' => 'email',
-		'label' => 'lang:email',
-		'rules' => 'required|valid_email|is_unique[users.email]',
-	],
-	[
-		'field' => 'password',
-		'label' => 'lang:password',
-		'rules' => 'required|min_length[6]',
-	],
-	[
-		'field' => 'password_repeat',
-		'label' => 'lang:password_repeat',
-		'rules' => 'required|matches[password]',
-	],
+	$first_name, $last_name, $email, $password, $password_repeat,
+];
+
+$config['edit_profile'] = [
+	$first_name, $last_name,
+];
+
+$config['change_password'] = [
+	$password, $password_repeat,
 ];

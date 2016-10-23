@@ -36,18 +36,24 @@
 						<h3 class="bpg-excelsior-caps"><?php echo $product->name; ?></h3>
 						<div class="price"><?php echo $product->price; ?> GEL</div>
 						<div>
-							<?php if(empty($in_cart)): ?>
-								<a class="btn btn-default add-to-cart"
-									href="<?php echo locale_url("add_to_cart/{$product->id}"); ?>">
-									<span class="fa fa-plus"></span>
-									<span class="lbl"><?php echo lang('add_to_cart'); ?></span>		
-								</a>
+							<?php if(!empty($product->quantity) && $product->quantity > 0): ?>
+								<?php if(empty($in_cart)): ?>
+									<a class="btn btn-default add-to-cart"
+										href="<?php echo locale_url("add_to_cart/{$product->id}"); ?>">
+										<span class="fa fa-plus"></span>
+										<span class="lbl"><?php echo lang('add_to_cart'); ?></span>		
+									</a>
+								<?php else: ?>
+									<a class="btn btn-default added-to-cart"
+										href="<?php echo locale_url("remove_from_cart/{$product->id}"); ?>">
+										<span class="fa fa-check"></span>
+										<span class="lbl"><?php echo lang('added_to_cart'); ?></span>		
+									</a>
+								<?php endif; ?>
 							<?php else: ?>
-								<a class="btn btn-default added-to-cart"
-									href="<?php echo locale_url("remove_from_cart/{$product->id}"); ?>">
-									<span class="fa fa-check"></span>
-									<span class="lbl"><?php echo lang('added_to_cart'); ?></span>		
-								</a>
+								<br>
+								<br>
+								<div class="text-danger"><?php echo lang('out_of_stock'); ?></div>
 							<?php endif; ?>
 						</div>
 					</div>

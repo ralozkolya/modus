@@ -22,6 +22,7 @@ $lang['password'] = 'პაროლი';
 $lang['register'] = 'რეგისტრაცია';
 $lang['password_recovery'] = 'პაროლის აღდგენა';
 $lang['auth_error'] = 'ელ. ფოსტის და პაროლის არასწორი კომბინაცია';
+$lang['auth_needed'] = 'ამ გვერდის სანახავად ავტორიზაციაა საჭირო';
 
 $lang['production'] = 'პროდუქცია';
 $lang['brand'] = 'ბრენდი';
@@ -32,6 +33,7 @@ $lang['to'] = '-მდე';
 $lang['description'] = 'აღწერა';
 $lang['add_to_cart'] = 'კალათაში დამატება';
 $lang['added_to_cart'] = 'დამატებულია';
+$lang['out_of_stock'] = 'არ არის საწყობში';
 
 $lang['empty_cart'] = 'კალათა ცარიელია';
 $lang['continue'] = 'გაგრძელება';
@@ -47,3 +49,12 @@ $lang['last_name'] = 'გვარი';
 $lang['password_repeat'] = 'პაროლი განმეორებით';
 $lang['registered_successfully'] = 'თქვენ წარმატებით გაიარეთ რეგისტრაცია';
 $lang['unexpected_error'] = 'დაფიქსირდა შეცდომა';
+
+$lang['no_such_user'] = 'მომხმარებელი მოცემული ელ. ფოსტით ვერ მოიძებნა';
+$lang['instructions_sent'] = 'ინსტრუქცია გამოიგზავნა მოცემულ ელ. ფოსტაზე';
+$lang['to_recover_password'] = 'მიყევით ბმულს პაროლის აღსადგენად:';
+$lang['change_password'] = 'შეცვალეთ თქვენი პაროლი';
+
+$lang['profile'] = 'პროფილი';
+$lang['change'] = 'შეცვლა';
+$lang['changed_successfully'] = 'შეიცვალა წარმატებით';

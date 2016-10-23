@@ -15,6 +15,9 @@ class Site extends MY_Controller {
 		$this->data['navigation'] = $this->Page->get_navigation();
 		$this->data['top_categories'] = $this->Category->get_top();
 
+		$this->data['user'] = purify($this->data['user']);
+		$this->data['redirect_base'] = locale_url();
+
 		$this->data['cart_size'] = count($this->session->userdata('cart'));
 	}
 
@@ -56,6 +59,11 @@ class Site extends MY_Controller {
 
 		$this->data['product'] = $this->Product->get_localized($id);
 		$this->data['gallery'] = $this->Product_images->get_for_product($id);
+
+		if(empty($this->data['product'])) {
+			show_404();
+			return;
+		}
 
 		$cart = $this->session->userdata('cart');
 
@@ -102,6 +110,11 @@ class Site extends MY_Controller {
 		$this->data['post'] = $this->News->get_localized($id);
 		$this->data['highlighted'] = 'news';
 
+		if(empty($this->data['post'])) {
+			show_404();
+			return;
+		}
+
 		$this->load->view('pages/post', $this->data);
 	}
 
@@ -124,6 +137,14 @@ class Site extends MY_Controller {
 	public function add_to_cart($id) {
 
 		if(is_numeric($id)) {
+
+			$this->load->model('Product');
+
+			$product = $this->Product->get_localized($id);
+
+			if(empty($product->quantity) || $product->quantity < 1) {
+				$this->message(lang('out_of_stock'), ERROR);
+			}
 
 			$cart = $this->session->userdata('cart');
 
@@ -175,7 +196,7 @@ class Site extends MY_Controller {
 
 	public function logout() {
 		$this->auth->logout();
-		$this->redirect();
+		redirect(locale_url());
 	}
 
 	public function register() {
@@ -186,7 +207,6 @@ class Site extends MY_Controller {
 
 		$this->load->library('form_validation');
 		$this->load->helper('view');
-		$this->load->model('User');
 
 		if($this->input->post()) {
 			if($this->form_validation->run('register')) {
@@ -204,34 +224,51 @@ class Site extends MY_Controller {
 				$this->message(validation_errors('<div>', '</div>'), ERROR, FALSE);
 			}
 		}
-		$this->data['highlighted'] = 'register';
 
 		$this->load->view('pages/register', $this->data);
 	}
 
-	public function test() {
+	public function recover_password() {
 
-		$this->load->library('image_lib');
+		$this->load->helper(['view', 'email_sender']);
 
-		$images = scandir('static/uploads/categories');
+		if($this->input->post()) {
 
-		foreach($images as $image) {
-			if(!is_dir($image)) {
-				$path = 'static/uploads/categories/'.$image;
+			$email = $this->input->post('email');
+			$user = $this->User->get_by_key('email', $email);
+				
+			if(!empty($user)) {
 
-				$config['source_image'] = $path;
-				$config['maintain_ratio'] = TRUE;
-				$config['width'] = 300;
-				$config['height'] = 300;
-				$config['new_image'] = 'static/uploads/categories/thumbs/'.$image;
+				$this->User->edit([
+					'id' => $user->id,
+					'recovery_token' => $this->User->get_token(),
+				]);
 
-				$this->image_lib->initialize($config);
+				$user = $this->User->get($user->id);
 
-				$this->image_lib->resize();
+				send_recovery($user);
+			}
+
+			$this->message(lang('instructions_sent'));
+		}
+
+		$this->load->view('pages/recover_password', $this->data);
+	}
+
+	public function check_token($token) {
+
+		$user = $this->User->get_by_key('recovery_token', $token);
+
+		if($user) {
+
+			if($this->auth->login_by_id($user->id)) {
+
+				$this->message(lang('change_password'), ERROR, FALSE);
+				$this->redirect('profile');
 			}
 		}
 
-		var_dump(scandir('static/uploads/categories/thumbs/'));
+		$this->message(lang('unexpected_error'), ERROR);
 	}
 
 	public function retrieve() {
@@ -242,6 +279,10 @@ class Site extends MY_Controller {
 		$table = $this->soap->get_table();
 
 		$this->Stock->update($table);
+
+		echo '<pre>';
+		print_r($table);
+		echo '</pre>';
 	}
 }
 

@@ -13,7 +13,8 @@
 			<div class="container bpg-excelsior">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3">
-						<h2><?php echo lang('register'); ?></h2>
+						<h2 class="bpg-excelsior-caps"><?php echo lang('register'); ?></h2>
+						<br>
 						<form method="post">
 							<?php
 								$fields = [

@@ -18,10 +18,16 @@
 			<input class="submit-button bpg-excelsior" type="submit" value="<?php echo lang('login'); ?>">
 		</div>
 		<div>
-			<a class="bpg-excelsior orange" href="#"><?php echo lang('password_recovery'); ?></a>
+			<a class="bpg-excelsior orange"
+				href="<?php echo locale_url('recover_password'); ?>">
+				<?php echo lang('password_recovery'); ?>
+			</a>
 		</div>
 		<div>
-			<a class="bpg-excelsior orange" href="<?php echo locale_url('register'); ?>"><?php echo lang('register'); ?></a>
+			<a class="bpg-excelsior orange"
+				href="<?php echo locale_url('register'); ?>">
+				<?php echo lang('register'); ?>
+			</a>
 		</div>
 	</form>
 	<div class="white close-button">

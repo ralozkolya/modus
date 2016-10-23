@@ -1,0 +1,60 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "28aa949e45f89e223a84a498b04f0ada",
+    "content-hash": "3070513e8521e216511d4ac81ab48033",
+    "packages": [
+        {
+            "name": "masterjoa/htmlpurifier-standalone",
+            "version": "v4.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Masterjoa/HTMLPurifier-standalone.git",
+                "reference": "47c629bf8575407469ad73591f8ada3e22198a96"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Masterjoa/HTMLPurifier-standalone/zipball/47c629bf8575407469ad73591f8ada3e22198a96",
+                "reference": "47c629bf8575407469ad73591f8ada3e22198a96",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "HTMLPurifier": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Edward Z. Yang",
+                    "email": "admin@htmlpurifier.org",
+                    "homepage": "http://ezyang.com"
+                }
+            ],
+            "description": "Standalone distribution of HTMLPurifier",
+            "homepage": "http://htmlpurifier.org/",
+            "keywords": [
+                "html"
+            ],
+            "time": "2016-04-22 17:32:53"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

@@ -22,6 +22,7 @@ $lang['password'] = 'Пароль';
 $lang['register'] = 'Регистрация';
 $lang['password_recovery'] = 'Восстановление Пароля';
 $lang['auth_error'] = 'Неправильная комбинация эл. почты и пароля';
+$lang['auth_needed'] = 'Для просмотра данной страницы нужна авторизация';
 
 $lang['production'] = 'Продуктция';
 $lang['brand'] = 'Бренд';
@@ -32,6 +33,7 @@ $lang['to'] = 'До';
 $lang['description'] = 'Описание';
 $lang['add_to_cart'] = 'Добавить в корзину';
 $lang['added_to_cart'] = 'В Корзине';
+$lang['out_of_stock'] = 'Нет в наличии';
 
 $lang['empty_cart'] = 'Пусто';
 $lang['continue'] = 'Продолжить';
@@ -47,3 +49,12 @@ $lang['last_name'] = 'Фамилия';
 $lang['password_repeat'] = 'Пароль повторно';
 $lang['registered_successfully'] = 'Вы успешно зарегистрировались';
 $lang['unexpected_error'] = 'Пройзошла ошибка';
+
+$lang['no_such_user'] = 'Пользователь с данной эл. почтой не найден';
+$lang['instructions_sent'] = 'Инструкция переслана на данной эл. почте';
+$lang['to_recover_password'] = 'Следуйте за ссылкой для восстановления пароля:';
+$lang['change_password'] = 'Измените свой пароль';
+
+$lang['profile'] = 'Профиль';
+$lang['change'] = 'Сохранить';
+$lang['changed_successfully'] = 'Сохранено';

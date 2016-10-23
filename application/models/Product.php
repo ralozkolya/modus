@@ -102,6 +102,7 @@ class Product extends MY_Model {
 	public function get_localized($id) {
 
 		$this->join_images();
+		$this->join_stock();
 
 		$this->select_localized();
 		return parent::get($id);
@@ -151,6 +152,16 @@ class Product extends MY_Model {
 
 		$this->db->join($this->images_table, "{$this->images_table}.item = {$this->table}.id", 'left');
 
+		$this->db->group_by("{$this->table}.id");
+	}
+
+	private function join_stock() {
+
+		$this->db->select([
+			'stock_products.Quantity as quantity',
+		]);
+
+		$this->db->join('stock_products', "stock_products.id = {$this->table}.stock", 'left');
 		$this->db->group_by("{$this->table}.id");
 	}
 

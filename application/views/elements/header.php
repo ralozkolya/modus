@@ -24,7 +24,9 @@
 		</a>
 		<div class="first-row bpg-excelsior">
 			<?php if($user): ?>
-				<?php echo htmlspecialchars($user->first_name); ?>&nbsp;&nbsp;&nbsp;
+				<a href="<?php echo locale_url('profile'); ?>" class="unstyled">
+					<?php echo $user->first_name; ?>
+				</a>&nbsp;&nbsp;&nbsp;
 				<a class="unstyled" href="<?php echo locale_url('logout'); ?>"><?php echo lang('logout'); ?>
 			<?php else: ?>
 				<a class="unstyled" href="#" id="login-link">

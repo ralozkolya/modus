@@ -23,10 +23,19 @@ class Soap {
 		$client = new SoapClient($this->directory_exchange, [
 			'login' => $this->user,
 			'password' => $this->password,
-			'trace' => TRUE,
 		]);
 
 		return $client->GetBalance([])->return->BalanceTable;
+	}
+
+	public function order() {
+		
+		$client = new SoapClient($this->sales_order, [
+			'login' => $this->user,
+			'password' => $this->password,
+		]);
+
+		return $client->Exchange([]);
 	}
 
 }

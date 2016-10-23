@@ -15,20 +15,32 @@ class MY_Controller extends CI_Controller {
 		set_language();
 	}
 
-	protected function redirect($path = '') {
+	protected function redirect($path = NULL) {
+
+		if(empty($path)) {
+			$path = $this->data['redirect_base'];
+		}
+
+		if(!empty($this->data[ERROR])) {
+			$this->session->set_flashdata(ERROR, $this->data[ERROR]);
+		}
+
+		if(!empty($this->data[SUCCESS])) {
+			$this->session->set_flashdata(SUCCESS, $this->data[SUCCESS]);
+		}
 
 		if($this->agent->referrer()) {
 			redirect($this->agent->referrer());
 		}
 
-		redirect(base_url($path));
+		redirect($path);
 	}
 
 	protected function message($message, $type = SUCCESS, $redirects = TRUE) {
 
 		if($redirects) {
 			$this->session->set_flashdata($type, $message);
-			$this->redirect('admin');
+			$this->redirect();
 		}
 
 		else {

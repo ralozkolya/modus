@@ -229,6 +229,14 @@ h3 {
 	font-size: 18px;
 }
 
+.alert {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
 
 /*	MEDIA QUERIES	*/
 

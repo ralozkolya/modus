@@ -3,8 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends MY_Controller {
 
-	/*	VIEWS	*/
-
 	public function __construct() {
 
 		parent::__construct();
@@ -28,6 +26,9 @@ class Admin extends MY_Controller {
 			redirect(base_url('login'));
 		}
 	}
+	
+
+	/*	VIEWS	*/
 
 	public function index() {
 

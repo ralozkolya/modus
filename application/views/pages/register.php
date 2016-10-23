@@ -13,7 +13,7 @@
 			<div class="container bpg-excelsior">
 				<div class="row">
 					<div class="col-xs-12">
-						<h1>Coming soon</h1>
+						<h2><?php echo lang('register'); ?></h2>
 					</div>
 				</div>
 			</div>

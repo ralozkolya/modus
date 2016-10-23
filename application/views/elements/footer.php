@@ -20,9 +20,9 @@
 		<div>
 			<a class="bpg-excelsior orange" href="#"><?php echo lang('password_recovery'); ?></a>
 		</div>
-		<!-- <div>
+		<div>
 			<a class="bpg-excelsior orange" href="<?php echo locale_url('register'); ?>"><?php echo lang('register'); ?></a>
-		</div> -->
+		</div>
 	</form>
 	<div class="white close-button">
 		<span class="fa fa-times"></span>

@@ -41,13 +41,6 @@ define('SECURE', $secure);
 define('PROTOCOL', $protocol);
 
 
-// Auth Library
-	
-define('ID', 'id');
-define('USERS', 'users');
-define('USERNAME', 'username');
-define('PASSWORD', 'password');
-
 define('USER', 'user');
 
 define('PRODUCTS_PER_PAGE', 24);

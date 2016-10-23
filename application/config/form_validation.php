@@ -157,6 +157,7 @@ $config['edit_Brand'] = [
 
 $config['add_News'] = [
 	$ka_title, $en_title, $ru_title,
+	$ka_description, $en_description, $ru_description,
 	$ka_body, $en_body, $ru_body,
 	$pinned,
 ];
@@ -164,6 +165,7 @@ $config['add_News'] = [
 $config['edit_News'] = [
 	$id,
 	$ka_title, $en_title, $ru_title,
+	$ka_description, $en_description, $ru_description,
 	$ka_body, $en_body, $ru_body,
 	$pinned,
 ];

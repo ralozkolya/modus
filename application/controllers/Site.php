@@ -123,10 +123,6 @@ class Site extends MY_Controller {
 
 	public function add_to_cart($id) {
 
-		header('Content-Type: application/json');
-
-		$response = [];
-
 		if(is_numeric($id)) {
 
 			$cart = $this->session->userdata('cart');
@@ -138,25 +134,17 @@ class Site extends MY_Controller {
 			$cart[$id] = time();
 
 			$this->session->set_userdata('cart', $cart);
-
-			$response['status'] = 'success';
-			$response['action'] = 'added';
-			$response['item_count'] = count($cart);
-
-			echo json_encode($response);
-			return;
+			$this->session->set_flashdata(SUCCESS, lang('added_to_cart'));
 		}
 
-		$response['status'] = 'error';
+		else {
+			$this->session->set_flashdata(ERROR, lang('unexpected_error'));
+		}
 
-		echo json_encode($response);
+		redirect($this->agent->referrer());
 	}
 
 	public function remove_from_cart($id) {
-
-		header('Content-Type: application/json');
-
-		$response = [];
 
 		if(is_numeric($id)) {
 
@@ -166,18 +154,13 @@ class Site extends MY_Controller {
 				unset($cart[$id]);
 				$this->session->set_userdata('cart', $cart);
 			}
-
-			$response['status'] = 'success';
-			$response['action'] = 'removed';
-			$response['item_count'] = count($cart);
-
-			echo json_encode($response);
-			return;
 		}
 
-		$response['status'] = 'error';
+		else {
+			$this->session->set_flashdata(ERROR, lang('unexpected_error'));
+		}
 
-		echo json_encode($response);
+		redirect($this->agent->referrer());
 	}
 
 	public function login() {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<?php echo get_lang_code($this->config->item('language')); ?>">
+<html lang="<?php echo get_lang_code(get_lang()); ?>">
 <head>
 	<?php $this->load->view('elements/head'); ?>
 
@@ -17,7 +17,6 @@
 	
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
 	<script src="<?php echo static_url('js/jquery.anythingzoomer.min.js'); ?>"></script>
-	<script src="<?php echo static_url('js/product.js?v='.V); ?>"></script>
 </head>
 <body>
 
@@ -38,17 +37,17 @@
 						<div class="price"><?php echo $product->price; ?> GEL</div>
 						<div>
 							<?php if(empty($in_cart)): ?>
-								<button class="add-to-cart btn btn-default"
-									data-id="<?php echo $product->id; ?>">
+								<a class="btn btn-default add-to-cart"
+									href="<?php echo locale_url("add_to_cart/{$product->id}"); ?>">
 									<span class="fa fa-plus"></span>
-									<span class="lbl"><?php echo lang('add_to_cart'); ?></span>
-								</button>
+									<span class="lbl"><?php echo lang('add_to_cart'); ?></span>		
+								</a>
 							<?php else: ?>
-								<button class="added-to-cart btn btn-default"
-									data-id="<?php echo $product->id; ?>">
+								<a class="btn btn-default added-to-cart"
+									href="<?php echo locale_url("remove_from_cart/{$product->id}"); ?>">
 									<span class="fa fa-check"></span>
-									<span class="lbl"><?php echo lang('added_to_cart'); ?></span>
-								</button>
+									<span class="lbl"><?php echo lang('added_to_cart'); ?></span>		
+								</a>
 							<?php endif; ?>
 						</div>
 					</div>

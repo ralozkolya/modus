@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<?php echo get_lang_code($this->config->item('language')); ?>">
+<html lang="<?php echo get_lang_code(get_lang()); ?>">
 <head>
 	<?php $this->load->view('elements/head'); ?>
 
@@ -17,7 +17,6 @@
 	<script src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/unslider/2.0.3/js/unslider-min.js"></script>
 	<script src="<?php echo static_url('js/home.js?v='.V); ?>"></script>
-	<script src="<?php echo static_url('js/products.js?v='.V); ?>"></script>
 </head>
 <body>
 

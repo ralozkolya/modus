@@ -33,7 +33,9 @@
 					<a class="unstyled" href="<?php echo $url; ?>">
 						<span class="fa fa-search"></span>
 					</a>
-					<a class="unstyled add-to-cart" href="#" data-id="<?php echo $p->id; ?>">
+					<a class="unstyled add-to-cart"
+						href="<?php echo locale_url("add_to_cart/{$p->id}"); ?>"
+						data-id="<?php echo $p->id; ?>">
 						<span class="fa fa-cart-plus"></span>
 					</a>
 				</div>

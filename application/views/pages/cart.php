@@ -1,11 +1,8 @@
 <!DOCTYPE html>
-<html lang="<?php echo get_lang_code($this->config->item('language')); ?>">
+<html lang="<?php echo get_lang_code(get_lang()); ?>">
 <head>
 	<?php $this->load->view('elements/head'); ?>
-
 	<link rel="stylesheet" href="<?php echo static_url('css/cart.css?v='.V); ?>">
-
-	<script src="<?php echo static_url('js/cart.js?v='.V); ?>"></script>
 </head>
 <body>
 

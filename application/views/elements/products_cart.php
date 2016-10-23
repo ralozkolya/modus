@@ -8,7 +8,7 @@
 						<td><?php echo $p->name; ?></td>
 						<td><?php echo $p->price; $total += $p->price; ?> GEL</td>
 						<td><input class="input form-control text-right" type="text" name="amount" value="1"></td>
-						<td><a data-id="<?php echo $p->id; ?>"
+						<td><a href="<?php echo locale_url("remove_from_cart/{$p->id}"); ?>"
 							class="glyphicon glyphicon-remove remove"></a></td>
 					</tr>
 				<?php endforeach; ?>

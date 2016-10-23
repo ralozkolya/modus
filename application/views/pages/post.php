@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<?php echo get_lang_code($this->config->item('language')); ?>">
+<html lang="<?php echo get_lang_code(get_lang()); ?>">
 <head>
 	<?php $this->load->view('elements/head'); ?>
 	<link rel="stylesheet" href="<?php echo static_url('css/news.css?v='.V); ?>">

@@ -3,7 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Category extends MY_Model {
 
+	protected $upload_path = 'static/uploads/categories/';
+	protected $thumbs_path = 'static/uploads/categories/thumbs/';
+
 	protected $table = 'categories';
+
+	protected $with_image = TRUE;
+	protected $image_required = TRUE;
 
 	public function get_top() {
 

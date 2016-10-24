@@ -2,9 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 $lang['products'] = 'პროდუქტები';
+$lang['categories'] = 'კატეგორიები';
+$lang['brands'] = 'ბრენდები';
 $lang['pages'] = 'გვერდები';
 $lang['banners'] = 'ბანერები';
-$lang['brands'] = 'ბრენდები';
 $lang['news'] = 'სიახლეები';
 $lang['agents'] = 'აგენტები';
 $lang['other'] = 'სხვა';
@@ -75,3 +76,7 @@ $lang['add_agent'] = 'აგენტის დამატება';
 $lang['email'] = 'ელ. ფოსტა';
 
 $lang['password_repeat'] = 'პაროლი განმეორებით';
+
+$lang['existing_categories'] = 'არსებული კატეგორიები';
+$lang['add_category'] = 'კატეგორიის დამატება';
+$lang['parent'] = 'ზე-კატეგორია';

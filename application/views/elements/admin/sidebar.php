@@ -17,6 +17,28 @@
 		<li>
 			<?php
 				$class = 'unstyled';
+				if($highlighted === 'categories') {
+					$class .= ' active';
+				}
+			?>
+			<a class="<?php echo $class; ?>" href="<?php echo base_url('admin/categories'); ?>">
+				<?php echo lang('categories'); ?>
+			</a>
+		</li>
+		<li>
+			<?php
+				$class = 'unstyled';
+				if($highlighted === 'brands') {
+					$class .= ' active';
+				}
+			?>
+			<a class="<?php echo $class; ?>" href="<?php echo base_url('admin/brands'); ?>">
+				<?php echo lang('brands'); ?>
+			</a>
+		</li>
+		<li>
+			<?php
+				$class = 'unstyled';
 				if($highlighted === 'pages') {
 					$class .= ' active';
 				}
@@ -34,17 +56,6 @@
 			?>
 			<a class="<?php echo $class; ?>" href="<?php echo base_url('admin/banners'); ?>">
 				<?php echo lang('banners'); ?>
-			</a>
-		</li>
-		<li>
-			<?php
-				$class = 'unstyled';
-				if($highlighted === 'brands') {
-					$class .= ' active';
-				}
-			?>
-			<a class="<?php echo $class; ?>" href="<?php echo base_url('admin/brands'); ?>">
-				<?php echo lang('brands'); ?>
 			</a>
 		</li>
 		<li>

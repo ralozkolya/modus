@@ -68,6 +68,56 @@ class Admin extends MY_Controller {
 		$this->load->view('pages/admin/product', $this->data);
 	}
 
+	public function categories() {
+
+		$this->data['type'] = $type = 'Category';
+
+		$this->modify($type);
+
+		$this->data['items'] = $this->get_items($type);
+		$this->data['parents'] = $this->Category->get_top();
+		$this->data['highlighted'] = 'categories';
+
+		$this->load->view('pages/admin/categories', $this->data);
+	}
+
+	public function Category($id) {
+
+		$this->data['type'] = $type = 'Category';
+
+		$this->modify($type);
+
+		$this->data['item'] = $this->get_item($type, $id);
+		$this->data['parents'] = $this->Category->get_top();
+		$this->data['highlighted'] = 'categories';
+
+		$this->load->view('pages/admin/category', $this->data);
+	}
+
+	public function brands() {
+
+		$this->data['type'] = $type = 'Brand';
+
+		$this->modify($type);
+
+		$this->data['items'] = $this->get_items($type);
+		$this->data['highlighted'] = 'brands';
+
+		$this->load->view('pages/admin/brands', $this->data);
+	}
+
+	public function Brand($id) {
+
+		$this->data['type'] = $type = 'Brand';
+
+		$this->modify($type);
+
+		$this->data['item'] = $this->get_item($type, $id);
+		$this->data['highlighted'] = 'brands';
+
+		$this->load->view('pages/admin/brand', $this->data);
+	}
+
 	public function pages() {
 
 		$this->data['type'] = $type = 'Page';
@@ -112,30 +162,6 @@ class Admin extends MY_Controller {
 		$this->data['highlighted'] = 'banners';
 
 		$this->load->view('pages/admin/banner', $this->data);
-	}
-
-	public function brands() {
-
-		$this->data['type'] = $type = 'Brand';
-
-		$this->modify($type);
-
-		$this->data['items'] = $this->get_items($type);
-		$this->data['highlighted'] = 'brands';
-
-		$this->load->view('pages/admin/brands', $this->data);
-	}
-
-	public function Brand($id) {
-
-		$this->data['type'] = $type = 'Brand';
-
-		$this->modify($type);
-
-		$this->data['item'] = $this->get_item($type, $id);
-		$this->data['highlighted'] = 'brands';
-
-		$this->load->view('pages/admin/brand', $this->data);
 	}
 
 	public function news_list() {
@@ -225,7 +251,7 @@ class Admin extends MY_Controller {
 
 		$allowed = [
 			'Banner', 'Brand', 'News',
-			'Product', 'Agent',
+			'Product', 'Agent', 'Category'
 		];
 
 		if(!$this->is_allowed($allowed, $type)) {
@@ -254,7 +280,7 @@ class Admin extends MY_Controller {
 		$allowed = [
 			'Banner', 'Page', 'Brand',
 			'News', 'Product', 'Agent',
-			'User_admin',
+			'User_admin', 'Category'
 		];
 
 		if(!$this->is_allowed($allowed, $type)) {
@@ -283,7 +309,7 @@ class Admin extends MY_Controller {
 		$allowed = [
 			'Banner', 'Brand', 'News',
 			'Product', 'Product_images',
-			'Agent',
+			'Agent', 'Category'
 		];
 
 		if(!$this->is_allowed($allowed, $type)) {

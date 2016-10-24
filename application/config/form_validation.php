@@ -145,6 +145,12 @@ $password_repeat = [
 	'rules' => 'required|matches[password]',
 ];
 
+$parent = [
+	'field' => 'parent',
+	'label' => 'lang:parent',
+	'rules' => 'is_natural|differs[id]',
+];
+
 $config['add_Product'] = [
 	$ka_name, $en_name, $ru_name,
 	$ka_description, $en_description, $ru_description,
@@ -219,6 +225,16 @@ $config['edit_User_admin'] = [
 		'label' => 'lang:password_repeat',
 		'rules' => 'required|matches[password]'
 	],
+];
+
+$config['add_Category'] = [
+	$ka_name, $en_name, $ru_name,
+	$parent,
+];
+
+$config['edit_Category'] = [
+	$ka_name, $en_name, $ru_name,
+	$parent, $id,
 ];
 
 $config['register'] = [

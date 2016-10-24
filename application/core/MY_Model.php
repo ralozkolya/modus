@@ -8,6 +8,7 @@ class MY_Model extends CI_Model {
 
 	protected $table;
 	protected $images_table;
+	protected $images_model;
 	protected $with_image = FALSE;
 	protected $image_required = FALSE;
 	protected $slug = FALSE;
@@ -94,10 +95,12 @@ class MY_Model extends CI_Model {
 
 	public function delete($id) {
 
-		$this->db->where(['id' => $id]);
-
 		if($this->with_image) {
 			$this->delete_image($id);
+		}
+
+		if(!empty($this->images_model)) {
+			$this->delete_images($id);
 		}
 
 		$this->db->where('id', $id);
@@ -122,6 +125,7 @@ class MY_Model extends CI_Model {
 	}
 
 	public function get_localized_list($limit = NULL, $offset = NULL) {
+
 		return $this->get_list($limit, $offset);
 	}
 
@@ -170,6 +174,21 @@ class MY_Model extends CI_Model {
 			if(file_exists($path)) {
 				unlink($path);
 			}
+		}
+	}
+
+	protected function delete_images($item) {
+
+		$model = $this->images_model;
+
+		$this->load->model($model);
+
+		$this->db->where('item', $item);
+		$images = $this->$model->get_list();
+
+		foreach($images as $i) {
+
+			$this->$model->delete($i->id);
 		}
 	}
 

@@ -31,7 +31,7 @@
 								['name' => 'ru_name', 'value' => $item->ru_name],
 								['name' => 'parent', 'type' => 'select', 'value' => $parents],
 								['name' => 'image', 'type' => 'file'],
-								['type' => 'submit', 'value' => lang('add')],
+								['type' => 'submit', 'value' => lang('change')],
 							];
 
 							$form = form_fields($fields);

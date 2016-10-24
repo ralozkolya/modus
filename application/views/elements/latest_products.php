@@ -1,9 +1,19 @@
 <h3 class="bpg-excelsior-caps"><?php echo lang('new_products'); ?></h3>
 <?php if(!empty($latest_products)): ?>
 	<?php foreach($latest_products as $p): ?>
-		<?php $image = static_url('uploads/products/thumbs/'.$p->image); ?>
 		<div class="col-sm-4">
 			<div class="product">
+				<?php
+					$image = $p->image;
+
+					if(!$image) {
+						$image = static_url('img/no_image.png');
+					}
+
+					else {
+						$image = static_url('uploads/products/thumbs/'.$image);
+					}
+				?>
 				<div
 					class="image-container"
 					style="background-image: url('<?php echo $image; ?>');"></div>

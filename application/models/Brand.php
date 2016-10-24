@@ -77,6 +77,20 @@ class Brand extends MY_Model {
 		return parent::get_list($limit, $offset);
 	}
 
+	public function delete($id) {
+
+		$this->load->model('Product');
+
+		$this->db->where('brand', $id);
+		$products = $this->Product->get_list();
+
+		foreach($products as $p) {
+			$this->Product->delete($p->id);
+		}
+
+		return parent::delete($id);
+	}
+
 }
 
 /* End of file Brand.php */

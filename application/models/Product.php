@@ -9,6 +9,7 @@ class Product extends MY_Model {
 	protected $table = 'products';
 	protected $slug = 'en_name';
 	protected $images_table = 'product_images';
+	protected $images_model = 'Product_images';
 
 	public function get_latest() {
 

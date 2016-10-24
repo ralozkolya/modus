@@ -58,6 +58,31 @@ class Category extends MY_Model {
 		return parent::get_list($limit, $offset);
 	}
 
+	public function delete($id) {
+
+		if($id < 1) {
+			return FALSE;
+		}
+
+		$this->load->model('Product');
+
+		$this->db->where('category', $id);
+		$products = $this->Product->get_list();
+
+		foreach($products as $p) {
+			$this->Product->delete($p->id);
+		}
+
+		$this->db->where('parent', $id);
+		$subcategories = parent::get_list();
+
+		foreach($subcategories as $s) {
+			$this->delete($s->id);
+		}
+
+		return parent::delete($id);
+	}
+
 	private function select_localized() {
 
 		$lang = get_lang_code(get_lang());

@@ -1,3 +1,4 @@
+<!-- TODO: CHECK WHY SUBCATEGORIES GIVE ERRORS -->
 <form id="filter-form" action="<?php echo locale_url('products'); ?>">
 	<input class="sidebar-category" type="hidden" name="category" value="0">
 

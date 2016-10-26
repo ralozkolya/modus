@@ -1,0 +1,13 @@
+.profile-navigation {
+	list-style: none;
+	padding: 0;
+}
+
+.profile-navigation a {
+	display: inline-block;
+	margin: 5px 0;
+}
+
+li.active {
+	color: #f7931e;
+}

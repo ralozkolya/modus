@@ -58,3 +58,6 @@ $lang['change_password'] = 'You should change your password now';
 $lang['profile'] = 'Profile';
 $lang['change'] = 'Change';
 $lang['changed_successfully'] = 'Changed successfully';
+
+$lang['parameters'] = 'Parameters';
+$lang['orders'] = 'Orders';

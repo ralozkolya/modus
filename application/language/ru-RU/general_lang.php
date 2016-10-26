@@ -58,3 +58,6 @@ $lang['change_password'] = 'Измените свой пароль';
 $lang['profile'] = 'Профиль';
 $lang['change'] = 'Сохранить';
 $lang['changed_successfully'] = 'Сохранено';
+
+$lang['parameters'] = 'Параметры';
+$lang['orders'] = 'Заказы';

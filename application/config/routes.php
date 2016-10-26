@@ -9,6 +9,7 @@ $route[$lang.'/login'] = 'site/login';
 $route[$lang.'/register'] = 'site/register';
 
 $route[$lang.'/profile'] = 'profile';
+$route[$lang.'/orders'] = 'profile/orders';
 $route[$lang.'/profile/(.*)'] = 'profile/$2';
 
 $route[$lang.'/(.*)'] = 'site/$2';

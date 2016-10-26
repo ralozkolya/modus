@@ -44,7 +44,20 @@ class Profile extends MY_Controller {
 			}
 		}
 
+		$this->data['highlighted'] = 'profile';
+
 		$this->load->view('pages/profile', $this->data);
+	}
+
+	public function orders() {
+
+		$this->load->model('Order');
+
+		$this->data['orders'] = $this->Order->get_for_user($this->data['user']->id);
+
+		$this->data['highlighted'] = 'orders';
+
+		$this->load->view('pages/orders', $this->data);
 	}
 
 	public function change_password() {

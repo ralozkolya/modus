@@ -34,8 +34,16 @@ class Profile extends MY_Controller {
 
 		if($this->input->post()) {
 			if($this->form_validation->run('edit_profile')) {
-				$this->User->edit($this->input->post());
-				$this->message(lang('changed_successfully'));
+				$data = $this->input->post();
+				$data['id'] = $this->data['user']->id;
+				if($this->User->edit($data)) {
+					$this->auth->refresh();
+					$this->message(lang('changed_successfully'));
+				}
+
+				else {
+					$this->message(lang('unexpected_error'), ERROR);
+				}
 			}
 
 			else {

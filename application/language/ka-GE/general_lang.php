@@ -46,6 +46,10 @@ $lang['send'] = 'გაგზავნა';
 
 $lang['first_name'] = 'სახელი';
 $lang['last_name'] = 'გვარი';
+$lang['company'] = 'კომპანია';
+$lang['id_number'] = 'საიდენტიფიკაციო კოდი';
+$lang['billing_address'] = 'მისამართი';
+$lang['shipping_address'] = 'ტრანსპორტირების მისამართი';
 $lang['password_repeat'] = 'პაროლი განმეორებით';
 $lang['registered_successfully'] = 'თქვენ წარმატებით გაიარეთ რეგისტრაცია';
 $lang['unexpected_error'] = 'დაფიქსირდა შეცდომა';

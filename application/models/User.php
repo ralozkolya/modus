@@ -12,25 +12,35 @@ class User extends MY_Model {
 		return parent::get($id);
 	}
 
-	public function add($data) {
+	public function add($raw) {
 
-		if(!empty($data['password_repeat'])) {
-			unset($data['password_repeat']);
-		}
-
-		$data['password'] = $this->hash_password($data['password']);
+		$data['first_name'] = $raw['first_name'];
+		$data['last_name'] = $raw['last_name'];
+		$data['email'] = $raw['email'];
+		$data['company'] = $raw['company'];
+		$data['id_number'] = $raw['id_number'];
+		$data['billing_address'] = $raw['billing_address'];
+		$data['shipping_address'] = $raw['shipping_address'];
+		$data['password'] = $this->hash_password($raw['password']);
 
 		return parent::add($data);
 	}
 
-	public function edit($data) {
+	public function edit($raw) {
 
-		if(!empty($data['password_repeat'])) {
-			unset($data['password_repeat']);
+		if(!empty($raw['password'])) {
+			$data['id'] = $raw['id'];
+			$data['password'] = $this->hash_password($raw['password']);
 		}
 
-		if(!empty($data['password'])) {
-			$data['password'] = $this->hash_password($data['password']);
+		else {
+			$data['id'] = $raw['id'];
+			$data['first_name'] = $raw['first_name'];
+			$data['last_name'] = $raw['last_name'];
+			$data['company'] = $raw['company'];
+			$data['id_number'] = $raw['id_number'];
+			$data['billing_address'] = $raw['billing_address'];
+			$data['shipping_address'] = $raw['shipping_address'];
 		}
 
 		return parent::edit($data);

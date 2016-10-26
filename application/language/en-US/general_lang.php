@@ -46,6 +46,10 @@ $lang['send'] = 'Send';
 
 $lang['first_name'] = 'First name';
 $lang['last_name'] = 'Last name';
+$lang['company'] = 'Company';
+$lang['id_number'] = 'Identification code';
+$lang['billing_address'] = 'address';
+$lang['shipping_address'] = 'Shipping address';
 $lang['password_repeat'] = 'Repeat password';
 $lang['registered_successfully'] = 'You registered successfully';
 $lang['unexpected_error'] = 'Unexpected error';

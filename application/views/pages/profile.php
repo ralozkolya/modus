@@ -31,6 +31,10 @@
 											$fields = [
 												['name' => 'first_name', 'value' => $user->first_name],
 												['name' => 'last_name', 'value' => $user->last_name],
+												['name' => 'company', 'value' => $user->company],
+												['name' => 'id_number', 'value' => $user->id_number],
+												['name' => 'billing_address', 'value' => $user->billing_address],
+												['name' => 'shipping_address', 'value' => $user->shipping_address],
 												['type' => 'submit', 'value' => lang('change')],
 											];
 

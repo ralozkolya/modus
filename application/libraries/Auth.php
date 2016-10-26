@@ -48,7 +48,7 @@ class Auth {
 
 	public function is_logged_in() {
 		
-		$user = $this->CI->session->userdata(USER);
+		$user = $this->get_current_user();
 
 		if($user) {
 
@@ -67,6 +67,17 @@ class Auth {
 	public function get_current_user() {
 		
 		$user = $this->CI->session->userdata(USER);
+		return $user;
+	}
+
+	public function refresh() {
+
+		$user = $this->get_current_user();
+
+		$user = $this->CI->User->get($user->id);
+
+		$this->CI->session->set_userdata(USER, $user);
+
 		return $user;
 	}
 

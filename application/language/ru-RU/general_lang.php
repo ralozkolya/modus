@@ -46,6 +46,10 @@ $lang['send'] = 'Отправить';
 
 $lang['first_name'] = 'Имя';
 $lang['last_name'] = 'Фамилия';
+$lang['company'] = 'Компания';
+$lang['id_number'] = 'Идентификационный код';
+$lang['billing_address'] = 'Адрес';
+$lang['shipping_address'] = 'Адрес для посылки';
 $lang['password_repeat'] = 'Пароль повторно';
 $lang['registered_successfully'] = 'Вы успешно зарегистрировались';
 $lang['unexpected_error'] = 'Пройзошла ошибка';

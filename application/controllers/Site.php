@@ -27,7 +27,7 @@ class Site extends MY_Controller {
 
 		$this->data['pinned_categories'] = $this->Category->get_pinned();
 		$this->data['categories'] = $this->Category->get_list_with_subcategories();
-		$this->data['latest_products'] = $this->Product->get_latest();
+		$this->data['products'] = $this->Product->get_latest();
 		$this->data['brands'] = $this->Brand->get_pinned();
 		$this->data['news'] = $this->News->get_latest();
 		$this->data['banners'] = $this->Banner->get_list();

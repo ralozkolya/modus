@@ -34,7 +34,9 @@
 					<?php endif; ?>
 					<div class="col-sm-8">
 						<h3 class="bpg-excelsior-caps"><?php echo $product->name; ?></h3>
-						<div class="price"><?php echo $product->price; ?> GEL</div>
+						<?php if($product->price != 0): ?>
+							<div class="price"><?php echo $product->price; ?> GEL</div>
+						<?php endif; ?>
 						<div>
 							<?php if(!empty($product->quantity) && $product->quantity > 0): ?>
 								<?php if(empty($in_cart)): ?>

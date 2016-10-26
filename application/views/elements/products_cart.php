@@ -6,12 +6,14 @@
 					<tr>
 						<td class="text-center thumb-container"><img class="thumb" alt="<?php echo $p->name; ?>" src="<?php echo static_url('uploads/products/thumbs/'.$p->image); ?>"></td>
 						<td><?php echo $p->name; ?></td>
-						<td><?php echo $p->price; $total += $p->price; ?> GEL</td>
+						<td>
+							<?php if($p->price != 0) echo "{$p->price} GEL" ?>
+						</td>
 						<td><input class="input form-control text-right" type="text" name="amount" value="1"></td>
 						<td><a href="<?php echo locale_url("remove_from_cart/{$p->id}"); ?>"
 							class="glyphicon glyphicon-remove remove"></a></td>
 					</tr>
-				<?php endforeach; ?>
+				<?php $total += $p->price; endforeach; ?>
 			</table>
 		</div>
 		<div class="col-xs-12">

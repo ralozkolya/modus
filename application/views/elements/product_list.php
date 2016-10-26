@@ -18,7 +18,9 @@
 					class="image-container"
 					style="background-image: url('<?php echo $image; ?>');"></div>
 				<div class="name bpg-excelsior-caps">
-					<div class="price white text-center"><?php echo $p->price; ?>₾</div>
+					<?php if($p->price != 0): ?>
+						<div class="price white text-center"><?php echo $p->price; ?>₾</div>
+					<?php endif; ?>
 					<?php if(mb_strlen($p->name) <= 17): ?>
 						<div class="text-right"><?php echo $p->name; ?></div>
 					<?php else: ?>

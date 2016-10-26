@@ -36,7 +36,7 @@
 								<?php $this->load->view('elements/category_grid'); ?>
 							</div>
 							<div class="row">
-								<?php $this->load->view('elements/latest_products'); ?>
+								<?php $this->load->view('elements/product_list'); ?>
 							</div>
 							<div class="row">
 								<?php $this->load->view('elements/pinned_brands'); ?>

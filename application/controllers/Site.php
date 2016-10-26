@@ -80,13 +80,15 @@ class Site extends MY_Controller {
 
 	public function cart() {
 
-		$this->load->model('Product');
+		$this->load->model(['Product', 'Agent']);
 
 		$cart = $this->session->userdata('cart');
 
 		if($this->data['cart_size']) {
 			$this->data['products'] = $this->Product->get_cart($cart);
 		}
+
+		$this->data['agents'] = $this->Agent->get_localized_list();
 
 		$this->data['highlighted'] = 'cart';
 

@@ -68,6 +68,11 @@ class Profile extends MY_Controller {
 		$this->load->view('pages/orders', $this->data);
 	}
 
+	public function order() {
+
+		
+	}
+
 	public function change_password() {
 
 		$this->load->library('form_validation');

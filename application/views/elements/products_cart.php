@@ -1,7 +1,7 @@
 <div class="row bpg-excelsior-caps">
 	<?php if(!empty($products)): ?>
 		<div class="col-xs-12">
-			<table class="table table-">
+			<table class="table products-table">
 				<?php $total = 0; foreach($products as $p): ?>
 					<tr>
 						<td class="text-center thumb-container"><img class="thumb" alt="<?php echo $p->name; ?>" src="<?php echo static_url('uploads/products/thumbs/'.$p->image); ?>"></td>
@@ -9,7 +9,7 @@
 						<td>
 							<?php if($p->price != 0) echo "{$p->price} GEL" ?>
 						</td>
-						<td><input class="input form-control text-right" type="text" name="amount" value="1"></td>
+						<td><input class="input amount form-control text-right" type="text" data-product-id="<?php echo $p->id; ?>" value="1"></td>
 						<td><a href="<?php echo locale_url("remove_from_cart/{$p->id}"); ?>"
 							class="glyphicon glyphicon-remove remove"></a></td>
 					</tr>

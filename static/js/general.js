@@ -15,14 +15,14 @@ $(function(){
 		return false;
 	});
 
-	$('.login-overlay').click(function(e){
-		if($(e.target).hasClass('login-overlay')) {
+	$('.overlay').click(function(e){
+		if($(e.target).hasClass('overlay')) {
 			$(this).fadeOut();
 		}
 	});
 
 	$('.close-button').click(function(){
-		$('.login-overlay').fadeOut();
+		$(this).parent().fadeOut();
 	});
 
 	$('.category-link').click(function(){

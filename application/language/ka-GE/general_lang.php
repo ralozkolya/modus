@@ -39,6 +39,7 @@ $lang['empty_cart'] = 'კალათა ცარიელია';
 $lang['continue'] = 'გაგრძელება';
 $lang['order'] = 'შეკვეთა';
 $lang['total'] = 'ჯამი';
+$lang['agent'] = 'გაყიდვების აგენტი';
 
 $lang['name'] = 'სახელი';
 $lang['message'] = 'შეტყობინება';

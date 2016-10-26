@@ -10,11 +10,11 @@ tr:first-child > td {
 	border-top: none !important;
 }
 
-td {
+.products-table td {
 	border-top: solid 1px #0071bc !important;
 }
 
-td:not(.thumb-container) {
+.products-table td:not(.thumb-container) {
 	color: #0071bc;
 	padding: 45px 5px !important;
 }
@@ -43,4 +43,52 @@ td:not(.thumb-container) {
 
 .total {
 	color: #f7931e;
+}
+
+.overlay form {
+	width: 500px;
+	max-width: 100%;
+}
+
+.invoice-table {
+	color: #9b9b9b;
+}
+
+.invoice-table td {
+	border-color: #9b9b9b !important;
+}
+
+.invoice-table td:last-child {
+	text-align: right;
+}
+
+.invoice-table input, .invoice-table select {
+	background: none;
+	border: none;
+	outline: none;
+	text-align: right;
+}
+
+.invoice-table input {
+	width: 100%;
+}
+
+.send-button {
+	background: none;
+	border: none;
+	outline: none;
+	color: #f7931e;
+}
+
+
+/* MEDIA QUERIES */
+
+@media(max-width: 767px) {
+	.invoice-table td {
+		display: block;
+	}
+
+	.invoice-table td:last-child {
+		border: none;
+	}
 }

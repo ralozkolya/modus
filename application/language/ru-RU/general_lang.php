@@ -39,6 +39,7 @@ $lang['empty_cart'] = 'Пусто';
 $lang['continue'] = 'Продолжить';
 $lang['order'] = 'Заказать';
 $lang['total'] = 'Всего';
+$lang['agent'] = 'Агент по продажам';
 
 $lang['name'] = 'Имя';
 $lang['message'] = 'Сообщение';

@@ -1,6 +1,6 @@
 <?php if($type === 'text'): ?>
-	<?php echo lang($name, $name); ?>
 	<div class="form-group">
+		<?php echo lang($name, $name); ?>
 		<input
 			class="form-control"
 			type="<?php echo $type; ?>"
@@ -9,22 +9,22 @@
 			value="<?php echo $value; ?>">
 	</div>
 <?php elseif($type === 'textarea'): ?>
-	<?php echo lang($name, $name); ?>
 	<div class="form-group">
+		<?php echo lang($name, $name); ?>
 		<textarea class="form-control"
 			name="<?php echo $name; ?>"
 			id="<?php echo $id; ?>"><?php echo $value; ?></textarea>
 	</div>
 <?php elseif($type === 'ckeditor'): ?>
-	<?php echo lang($name, $name); ?>
 	<div class="form-group">
+		<?php echo lang($name, $name); ?>
 		<textarea class="ckeditor"
 			name="<?php echo $name; ?>"
 			id="<?php echo $name; ?>"><?php echo $value; ?></textarea>
 	</div>
 <?php elseif($type === 'select'): ?>
-	<?php echo lang($name, $name); ?>
 	<div class="form-group">
+		<?php echo lang($name, $name); ?>
 		<select class="form-control"
 			name="<?php echo $name; ?>"
 			id="<?php echo $name; ?>">

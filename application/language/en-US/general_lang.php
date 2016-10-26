@@ -34,6 +34,7 @@ $lang['description'] = 'Description';
 $lang['add_to_cart'] = 'Add to cart';
 $lang['added_to_cart'] = 'Added';
 $lang['out_of_stock'] = 'Out of stock';
+$lang['agent'] = 'Sales agent';
 
 $lang['empty_cart'] = 'Empty cart';
 $lang['continue'] = 'Continue';

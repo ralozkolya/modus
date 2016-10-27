@@ -30,6 +30,11 @@
 						</a>
 					</div>
 				<?php endforeach; ?>
+				<div class="row">
+					<div class="col-xs-12 text-center">
+						<?php echo $this->pagination->create_links(); ?>
+					</div>
+				</div>
 			</div>
 		</div>
 

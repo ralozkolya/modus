@@ -112,12 +112,26 @@ class Site extends MY_Controller {
 		$this->load->view('pages/cart', $this->data);
 	}
 
-	public function news() {
+	public function news($page = 1) {
 
+		$this->load->library('pagination');
 		$this->load->model('News');
+		$this->config->load('pagination');
 
-		$this->data['news'] = $this->News->get_localized_list();
+		$page = abs($page - 1);
+		$offset = $page * NEWS_PER_PAGE;
+
+		$news = $this->News->get_localized_list(NEWS_PER_PAGE, $offset);
+
+		$this->data['news'] = $news['data'];
 		$this->data['highlighted'] = 'news';
+
+		$config = $this->config->item('pagination');
+		$config['base_url'] = locale_url('news');
+		$config['per_page'] = NEWS_PER_PAGE;
+		$config['total_rows'] = $news['rows'];
+
+		$this->pagination->initialize($config);
 
 		$this->load->view('pages/news', $this->data);
 	}

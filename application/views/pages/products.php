@@ -22,8 +22,8 @@
 							<div class="row">
 								<?php $this->load->view('elements/product_list'); ?>
 							</div>
-							<div class="row text-center">
-								<div class="col-xs-12">
+							<div class="row">
+								<div class="col-xs-12 text-center">
 									<?php echo $this->pagination->create_links(); ?>
 								</div>
 							</div>

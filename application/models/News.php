@@ -34,6 +34,8 @@ class News extends MY_Model {
 
 		$lang = get_lang_code(get_lang());
 
+		$this->db->select('SQL_CALC_FOUND_ROWS null as rows', FALSE);
+
 		$this->db->select(array(
 			$lang.'_title as title',
 			$lang.'_description as description',
@@ -43,7 +45,10 @@ class News extends MY_Model {
 
 		$this->db->order_by('date DESC');
 
-		return parent::get_list($limit, $offset);
+		$response['data'] = parent::get_list($limit, $offset);
+		$response['rows'] = $this->db->query('SELECT FOUND_ROWS() count')->row()->count;
+
+		return $response;
 	}
 
 }

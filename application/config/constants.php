@@ -44,6 +44,7 @@ define('PROTOCOL', $protocol);
 define('USER', 'user');
 
 define('PRODUCTS_PER_PAGE', 24);
+define('NEWS_PER_PAGE', 12);
 
 define('SUCCESS', 'success_message');
 define('ERROR', 'error_message');

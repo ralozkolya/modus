@@ -35,9 +35,13 @@ class Category extends MY_Model {
 
 		foreach($r as $k => $s) {
 			if($s->parent) {
-				$i = $s->parent - 1;
-				$r[$i]->sub[] = $s;
-				unset($r[$k]);
+				foreach($r as $t) {
+					if($t->id === $s->parent) {
+						$t->sub[] = $s;
+						unset($r[$k]);
+						break;
+					}
+				}
 			}
 		}
 

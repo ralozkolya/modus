@@ -33,7 +33,7 @@ class Product extends MY_Model {
 
 			$c = $this->Category->get($category);
 
-			if($c->parent) {
+			if(!empty($c->parent)) {
 				$this->db->where('category', $category);
 			}
 
@@ -69,6 +69,8 @@ class Product extends MY_Model {
 			$this->db->where('price <=', $filter['to']);
 		}
 
+		$this->db->select('SQL_CALC_FOUND_ROWS null as rows', FALSE);
+
 		if(!empty($filter['search'])) {
 			$search = $filter['search'];
 
@@ -87,7 +89,10 @@ class Product extends MY_Model {
 
 		$this->join_images();
 
-		return $this->get_localized_list($page * PRODUCTS_PER_PAGE, $offset);
+		$response['data'] = $this->get_localized_list(PRODUCTS_PER_PAGE, $offset);
+		$response['rows'] = $this->db->query('SELECT FOUND_ROWS() count')->row()->count;
+
+		return $response;
 	}
 
 	public function get_cart($cart) {

@@ -28,7 +28,7 @@
 						<div class="text-right"><?php echo $name; ?></div>
 					<?php endif; ?>
 				</div>
-				<div class="product-overlay text-center white">
+				<div class="overlay text-center white">
 					<?php
 						$url = locale_url('product/'.$p->id.'/'.$p->slug);
 					?>

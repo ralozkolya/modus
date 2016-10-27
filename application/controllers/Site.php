@@ -37,16 +37,33 @@ class Site extends MY_Controller {
 		$this->load->view('pages/home', $this->data);
 	}
 
-	public function products() {
+	public function products($page = 1) {
 
 		$get = $this->input->get();
+		$get['page'] = $page;
 
 		$this->load->model(['Product', 'Category', 'Brand']);
+		$this->load->library('pagination');
+		$this->config->load('pagination');
 
 		$this->data['categories'] = $this->Category->get_list_with_subcategories();
-		$this->data['products'] = $this->Product->get_filtered($get);
-
 		$this->data['brands'] = $this->Brand->get_localized_list();
+
+		$products = $this->Product->get_filtered($get);
+
+		$this->data['products'] = $products['data'];
+
+		$config = $this->config->item('pagination');
+		$config['base_url'] = locale_url('products');
+		$config['per_page'] = PRODUCTS_PER_PAGE;
+		$config['total_rows'] = $products['rows'];
+
+		if(count($_GET)) {
+			$config['suffix'] = '?' . http_build_query($_GET, '', '&');
+			$config['first_url'] = $config['base_url'].$config['suffix'];
+		}
+
+		$this->pagination->initialize($config);
 
 		$this->data['highlighted'] = 'products';
 

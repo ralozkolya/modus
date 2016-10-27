@@ -27,7 +27,7 @@
 			</div>
 		</div>
 
-		<div class="cart-overlay overlay">
+		<div class="cart-overlay page-overlay">
 			<div class="white close-button">
 				<span class="fa fa-times"></span>
 			</div>

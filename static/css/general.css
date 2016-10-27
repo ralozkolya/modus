@@ -175,7 +175,7 @@ h3 {
 	color: #f7931e !important;
 }
 
-.overlay {
+.page-overlay {
 	display: none;
 	position: fixed;
 	top: 0;
@@ -186,7 +186,7 @@ h3 {
 	z-index: 100;
 }
 
-.overlay > .close-button {
+.page-overlay > .close-button {
 	position: absolute;
 	right: 15px;
 	top: 15px;
@@ -194,7 +194,7 @@ h3 {
 	cursor: pointer;
 }
 
-.overlay > form {
+.page-overlay > form {
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -202,7 +202,7 @@ h3 {
 	transform: translate(-50%, -50%);
 }
 
-.overlay > form > div {
+.page-overlay > form > div {
 	position: relative;
 }
 

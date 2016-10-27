@@ -1,7 +1,7 @@
 <div class="footer text-center">
 	Copyright © <?php echo date('Y'); ?> All Right Reserved
 </div>
-<div class="login-overlay overlay">
+<div class="login-overlay page-overlay">
 	<form id="login-form" class="white text-center" method="post"
 		action="<?php echo locale_url('login'); ?>">
 		<div>

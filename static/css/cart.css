@@ -45,7 +45,7 @@ tr:first-child > td {
 	color: #f7931e;
 }
 
-.overlay form {
+.page-overlay form {
 	width: 500px;
 	max-width: 100%;
 }

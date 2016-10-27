@@ -15,8 +15,8 @@ $(function(){
 		return false;
 	});
 
-	$('.overlay').click(function(e){
-		if($(e.target).hasClass('overlay')) {
+	$('.page-overlay').click(function(e){
+		if($(e.target).hasClass('page-overlay')) {
 			$(this).fadeOut();
 		}
 	});

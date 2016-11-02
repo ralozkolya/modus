@@ -59,9 +59,7 @@ class Profile extends MY_Controller {
 
 	public function orders() {
 
-		$this->load->model('Order');
-
-		$this->data['orders'] = $this->Order->get_for_user($this->data['user']->id);
+		$this->data['orders'] = $this->get_orders();
 
 		$this->data['highlighted'] = 'orders';
 
@@ -70,7 +68,49 @@ class Profile extends MY_Controller {
 
 	public function order() {
 
-		
+		$this->load->model('Order');
+
+		if($this->input->post()) {
+
+			try {
+				$order = json_decode($this->input->post('order'));
+
+				$ka_desc = '';
+				$en_desc = '';
+				$ru_desc = '';
+
+				foreach($order as $o) {
+
+					$product = $this->get_product($o->id);
+
+					if($product->quantity < $o->amount) {
+						$this->message(lang('out_of_stock'), ERROR);
+					}
+
+					$ka_desc .= "{$o->amount} x {$product->ka_name}\n";
+					$en_desc .= "{$o->amount} x {$product->en_name}\n";
+					$ru_desc .= "{$o->amount} x {$product->ru_name}\n";
+				}
+			}
+
+			catch(Exception $e) {
+				$this->message(lang('unexpected_error'), ERROR);
+			}
+
+			if($this->Order->add([
+				'ka_order' => $ka_desc,
+				'en_order' => $en_desc,
+				'ru_order' => $ru_desc,
+				'user' => $this->data['user']->id,
+			])) {
+				$this->session->unset_userdata('cart');
+				$this->message(lang('order_received'), SUCCESS, FALSE);
+				$this->redirect(locale_url('orders'));
+			}
+		}
+
+		$this->message(lang('unexpected_error'), ERROR);
+		$this->redirect();
 	}
 
 	public function change_password() {
@@ -96,6 +136,18 @@ class Profile extends MY_Controller {
 		}
 
 		$this->redirect();
+	}
+
+	private function get_orders() {
+
+		$this->load->model('Order');
+		return $this->Order->get_for_user($this->data['user']->id);
+	}
+
+	private function get_product($id) {
+
+		$this->load->model('Product');
+		return $this->Product->get_stock($id);
 	}
 
 }

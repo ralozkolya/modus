@@ -23,6 +23,18 @@
 									<h2 class="bpg-excelsior-caps"><?php echo lang('orders'); ?></h2>
 								</div>
 							</div>
+							<br>
+							<?php foreach($orders as $o): ?>
+								<div class="row">
+									<div class="col-xs-8">
+										<strong><?php echo str_replace("\n", "<br>", $o->order); ?></strong>
+									</div>
+									<div class="col-xs-4 text-right">
+										<?php echo $o->modified; ?>
+									</div>
+								</div>
+								<br>
+							<?php endforeach; ?>
 						</div>
 					</div>
 				</div>

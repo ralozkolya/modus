@@ -24,6 +24,7 @@ tr:first-child > td {
 }
 
 .input {
+	display: inline-block;
 	width: 50px;
 }
 

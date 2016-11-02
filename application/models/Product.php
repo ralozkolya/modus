@@ -11,6 +11,18 @@ class Product extends MY_Model {
 	protected $images_table = 'product_images';
 	protected $images_model = 'Product_images';
 
+	public function get_stock($id) {
+		
+		$this->db->select([
+			"{$this->table}.ka_name",
+			"{$this->table}.en_name",
+			"{$this->table}.ru_name",
+		]);
+
+		$this->join_stock();
+		return parent::get($id);
+	}
+
 	public function get_latest() {
 
 		$this->db->order_by('id DESC');
@@ -101,6 +113,7 @@ class Product extends MY_Model {
 
 		$this->db->where_in("{$this->table}.id", $cart);
 
+		$this->join_stock();
 		$this->join_images();
 		return $this->get_localized_list();
 	}

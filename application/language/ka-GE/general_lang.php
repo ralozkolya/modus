@@ -40,6 +40,7 @@ $lang['continue'] = 'გაგრძელება';
 $lang['order'] = 'შეკვეთა';
 $lang['total'] = 'ჯამი';
 $lang['agent'] = 'გაყიდვების აგენტი';
+$lang['order_received'] = 'თქვენი შეკვეთა მიღებულია!';
 
 $lang['name'] = 'სახელი';
 $lang['message'] = 'შეტყობინება';

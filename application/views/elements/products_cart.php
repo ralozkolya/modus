@@ -9,7 +9,13 @@
 						<td>
 							<?php if($p->price != 0) echo "{$p->price} GEL" ?>
 						</td>
-						<td><input class="input amount form-control text-right" type="text" data-product-id="<?php echo $p->id; ?>" value="1"></td>
+						<td>
+							<input
+								class="input amount form-control text-right"
+								type="text"
+								data-product-id="<?php echo $p->id; ?>"
+								value="1">&nbsp;(<?php echo $p->quantity; ?>)
+						</td>
 						<td><a href="<?php echo locale_url("remove_from_cart/{$p->id}"); ?>"
 							class="glyphicon glyphicon-remove remove"></a></td>
 					</tr>

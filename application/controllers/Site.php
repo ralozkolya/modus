@@ -29,7 +29,7 @@ class Site extends MY_Controller {
 		$this->data['categories'] = $this->Category->get_list_with_subcategories();
 		$this->data['products'] = $this->Product->get_latest();
 		$this->data['brands'] = $this->Brand->get_pinned();
-		$this->data['news'] = $this->News->get_latest();
+		$this->data['news'] = $this->News->get_latest()['data'];
 		$this->data['banners'] = $this->Banner->get_list();
 		
 		$this->data['highlighted'] = 'home';

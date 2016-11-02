@@ -62,6 +62,7 @@ function post(data) {
 	var form = $('<form></form>');
 
     form.attr("method", "post");
+    form.attr("action", submitUrl);
 
     data.order = JSON.stringify(data.order);
 

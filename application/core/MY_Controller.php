@@ -17,10 +17,6 @@ class MY_Controller extends CI_Controller {
 
 	protected function redirect($path = NULL) {
 
-		if(empty($path)) {
-			$path = $this->data['redirect_base'];
-		}
-
 		if(!empty($this->data[ERROR])) {
 			$this->session->set_flashdata(ERROR, $this->data[ERROR]);
 		}
@@ -29,11 +25,15 @@ class MY_Controller extends CI_Controller {
 			$this->session->set_flashdata(SUCCESS, $this->data[SUCCESS]);
 		}
 
-		if($this->agent->referrer()) {
+		if($path) {
+			redirect($path);
+		}
+
+		elseif($this->agent->referrer()) {
 			redirect($this->agent->referrer());
 		}
 
-		redirect($path);
+		redirect($this->data['redirect_base']);
 	}
 
 	protected function message($message, $type = SUCCESS, $redirects = TRUE) {

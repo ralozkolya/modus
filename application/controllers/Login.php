@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Login extends CI_Controller {
 
 	private $data = array(
-		'title' => 'ITEQ.ge',
+		'title' => 'Modus',
 	);
 
 	public function __construct() {

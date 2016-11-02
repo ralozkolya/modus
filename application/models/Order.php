@@ -6,8 +6,21 @@ class Order extends MY_Model {
 	protected $table = 'orders';
 
 	public function get_for_user($user) {
+
+		$this->select_localized();
 		$this->db->where('user', $user);
+
 		return parent::get_list();
+	}
+
+	private function select_localized() {
+
+		$lang = get_lang_code(get_lang());
+
+		$this->db->select([
+			"{$lang}_order as order",
+			'modified',
+		]);
 	}
 
 }

@@ -94,6 +94,7 @@ h1, h2, h3, h4, h5, h6 {
 	border-radius: 10px;
 	height: 300px;
 	overflow: hidden;
+	margin: 10px 0;
 }
 
 .news > .image-container {

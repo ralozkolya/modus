@@ -40,6 +40,7 @@ $lang['continue'] = 'Продолжить';
 $lang['order'] = 'Заказать';
 $lang['total'] = 'Всего';
 $lang['agent'] = 'Агент по продажам';
+$lang['order_received'] = 'Заказ принят';
 
 $lang['name'] = 'Имя';
 $lang['message'] = 'Сообщение';

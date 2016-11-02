@@ -5,6 +5,7 @@
 	
 	<script>
 		var isLoggedIn = <?php echo $user ? 'true' : 'false'; ?>;
+		var submitUrl = '<?php echo locale_url('order'); ?>';
 	</script>
 
 	<link rel="stylesheet" href="<?php echo static_url('css/cart.css?v='.V); ?>">
@@ -31,7 +32,8 @@
 			<div class="white close-button">
 				<span class="fa fa-times"></span>
 			</div>
-			<form id="invoice-form" class="white bpg-excelsior-caps" method="post">
+			<form id="invoice-form" class="white bpg-excelsior-caps"
+				method="post">
 				<table class="table invoice-table">
 					<tr>
 						<td><?php echo lang('name'); ?></td>

@@ -10,7 +10,9 @@
 				<div class="news">
 					<div
 						class="image-container"
-						style="background-image: url('<?php echo $image; ?>');"></div>
+						style="background-image: url('<?php echo $image; ?>');">
+						<div class="overlay">...</div>
+					</div>
 					<div class="title bpg-excelsior-caps">
 						<?php if(mb_strlen($n->title) <= 17): ?>
 							<div><?php echo $n->title; ?></div>

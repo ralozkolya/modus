@@ -1,6 +1,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<meta name="google-site-verification" content="Jw5tuZGE3T0GBvoNMctYR_Is_hU7c5hvuRBcBdBSL9I">
+
 <title><?php echo $title; ?></title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">

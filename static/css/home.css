@@ -48,7 +48,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	padding-top: 40px;
+	padding-top: 20px;
 	background: rgba(0, 113, 188, 0.6);
 	-webkit-transition: all .5s;
 	-moz-transition: all .5s;
@@ -165,17 +165,16 @@ h1, h2, h3, h4, h5, h6 {
 		width: 17%;
 	}
 
+	.grid-item > a > .overlay {
+		padding-top: 40px;
+	}
+
 	.grid-item.double-height {
 		height: 305px;
 	}
 
 	.grid-item.double-height > a > .overlay {
 		padding-top: 120px;
-	}
-
-	.grid-item > .overlay {
-		padding-top: 30px;
-		font-size: 18px;
 	}
 
 	.grid-item .fa {

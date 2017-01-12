@@ -133,6 +133,23 @@ class Product extends MY_Model {
 		return parent::get_list($limit, $offset);
 	}
 
+	public function get_distinct_brands($categories) {
+
+		$this->db->where_in('category', $categories);
+		$this->db->select('brand');
+		$this->db->distinct();
+
+		$result = $this->db->get($this->table)->result();
+
+		$ids = [];
+
+		foreach($result as $b) {
+			$ids[] = $b->brand;
+		}
+
+		return $ids;
+	}
+
 	private function select_localized() {
 
 		$lang = get_lang_code(get_lang());
@@ -154,6 +171,7 @@ class Product extends MY_Model {
 		$this->db->select([
 			"categories.{$lang}_name as category",
 			"brands.{$lang}_name as brand",
+			"brands.id as brand_id",
 		]);
 
 		$this->db->join('categories', "{$this->table}.category = categories.id");

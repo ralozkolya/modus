@@ -44,25 +44,11 @@ class Brand extends MY_Model {
 		return $this->db->get($this->table)->result();
 	}
 
-	public function get_distinct($products) {
+	public function get_from_ids($ids) {
 
-		/*$brands = array();
-
-		foreach($products as $p) {
-			$brands[] = $p->brand;
-		}
-
-		if(!empty($brands)) {
-			$this->db->where_in('id', $brands);
-		}
-
-		else {
-			return NULL;
-		}*/
-
-		//$this->db->distinct();
-
-		return parent::get_list();
+		if(empty($ids)) $ids = [0];
+		$this->db->where_in('id', $ids);
+		return $this->get_localized_list();
 	}
 
 	public function get_localized_list($limit = NULL, $offset = NULL) {

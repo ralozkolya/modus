@@ -41,13 +41,13 @@ class Site extends MY_Controller {
 
 		$get = $this->input->get();
 		$get['page'] = $page;
+		$category = $get['category'];
 
 		$this->load->model(['Product', 'Category', 'Brand']);
 		$this->load->library('pagination');
 		$this->config->load('pagination');
 
 		$this->data['categories'] = $this->Category->get_list_with_subcategories();
-		$this->data['brands'] = $this->Brand->get_localized_list();
 
 		$products = $this->Product->get_filtered($get);
 
@@ -64,6 +64,23 @@ class Site extends MY_Controller {
 		}
 
 		$this->pagination->initialize($config);
+
+		if(!empty($category) && is_numeric($category)) {
+
+			$categories = $this->Category->get_subcategories($category);
+			$category_ids = [$category];
+
+			foreach($categories as $c) {
+				$category_ids[] = $c->id;
+			}
+
+			$brand_ids = $this->Product->get_distinct_brands($category_ids);
+			$this->data['brands'] = $this->Brand->get_from_ids($brand_ids);
+		}
+
+		else {
+			$this->data['brands'] = $this->Brand->get_localized_list();
+		}
 
 		$this->data['highlighted'] = 'products';
 

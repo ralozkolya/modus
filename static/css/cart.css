@@ -30,6 +30,7 @@ tr:first-child > td {
 
 .remove, .remove:hover, .remove:focus {
 	color: #bc0000;
+	text-decoration: none;
 }
 
 .order-button, .order-button:hover, .order-button:focus {

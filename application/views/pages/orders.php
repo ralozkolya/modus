@@ -25,7 +25,7 @@
 							</div>
 							<br>
 							<?php foreach($orders as $o): ?>
-								<div class="row">
+								<div class="row order">
 									<div class="col-xs-8">
 										<strong><?php echo str_replace("\n", "<br>", $o->order); ?></strong>
 									</div>

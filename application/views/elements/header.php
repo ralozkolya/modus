@@ -1,13 +1,11 @@
 <div class="header">
 	<div class="header-top clearfix hidden-xs white">
-		<a href="#" class="unstyled pull-left">
+		<a target="_blank" href="https://www.facebook.com/Modus-%E1%83%9B%E1%83%9D%E1%83%93%E1%83%A3%E1%83%A1%E1%83%98-1116926668398592/" class="unstyled pull-left">
 			<span class="fa fa-facebook"></span>
 		</a>
 		<span class="pull-right">
 			<span class="fa fa-map-marker"></span>
 			<span class="bpg-excelsior-caps"><?php echo lang('address_1'); ?></span>
-			<span class="fa fa-map-marker"></span>
-			<span class="bpg-excelsior-caps"><?php echo lang('address_2'); ?></span>
 		</span>
 	</div><!-- header-top -->
 

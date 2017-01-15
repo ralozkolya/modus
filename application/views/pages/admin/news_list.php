@@ -2,7 +2,6 @@
 <html>
 <head>
 	<?php $this->load->view('elements/admin/head'); ?>
-	<link rel="stylesheet" href="<?php echo static_url('css/admin/brands.css?v='.V); ?>">
 </head>
 <body>
 	<?php $this->load->view('elements/admin/sidebar'); ?>

@@ -2,7 +2,6 @@
 <html>
 <head>
 	<?php $this->load->view('elements/admin/head'); ?>
-	<link rel="stylesheet" href="<?php echo static_url('css/admin/brands.css?v='.V); ?>">
 </head>
 <body>
 	<?php $this->load->view('elements/admin/sidebar'); ?>
@@ -22,7 +21,6 @@
 
 			<div class="row">
 				<div class="col-sm-6">
-					<h3><?php echo lang('add_news'); ?></h3>
 					<form method="post" enctype="multipart/form-data">
 						<?php
 							$fields = [

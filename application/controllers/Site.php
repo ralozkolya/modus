@@ -334,6 +334,14 @@ class Site extends MY_Controller {
 		print_r($table);
 		echo '</pre>';
 	}
+
+	public function sitemap() {
+		header('Content-Type: text/xml');
+		$this->load->model(['Product', 'News']);
+		$this->data['products'] = $this->Product->get_list();
+		$this->data['news'] = $this->News->get_list();
+		$this->load->view('xml/sitemap', $this->data);
+	}
 }
 
 /* End of file Site.php */

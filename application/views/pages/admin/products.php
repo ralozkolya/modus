@@ -21,10 +21,12 @@
 
 			<div class="row">
 				<div class="col-sm-6">
+					<div class="text-center"><?php echo $this->pagination->create_links(); ?></div>
 					<h3><?php echo lang('existing_products'); ?></h3>
 					<?php echo admin_table('Product', $items, [
 						'name', 'category', 'brand',
 					]); ?>
+					<div class="text-center"><?php echo $this->pagination->create_links(); ?></div>
 				</div>
 				<div class="col-sm-6">
 					<h3><?php echo lang('add_product'); ?></h3>

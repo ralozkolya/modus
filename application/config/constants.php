@@ -45,6 +45,7 @@ define('USER', 'user');
 
 define('PRODUCTS_PER_PAGE', 24);
 define('NEWS_PER_PAGE', 12);
+define('ITEMS_PER_PAGE_ADMIN', 50);
 
 define('SUCCESS', 'success_message');
 define('ERROR', 'error_message');

@@ -159,6 +159,10 @@ class MY_Model extends CI_Model {
 		}
 	}
 
+	public function row_count() {
+		return $this->db->get($this->table)->num_rows();
+	}
+
 	protected function delete_image($id) {
 
 		$item = $this->get($id);

@@ -37,17 +37,24 @@ class Admin extends MY_Controller {
 		$this->products();
 	}
 
-	public function products() {
+	public function products($page = 1) {
 
 		$this->data['type'] = $type = 'Product';
 
 		$this->modify($type);
 
-		$this->data['items'] = $this->get_items($type);
+		$this->data['items'] = $this->get_items($type, $page);
 		$this->data['highlighted'] = 'products';
 		$this->data['categories'] = $this->Category->get_localized_list();
 		$this->data['brands'] = $this->Brand->get_localized_list();
 		$this->data['stock'] = $this->Stock->get_list();
+
+		$this->config->load('pagination');
+		$config = $this->config->item('pagination');
+		$config['base_url'] = base_url('admin/products');
+		$config['per_page'] = ITEMS_PER_PAGE_ADMIN;
+		$config['total_rows'] = $this->get_rows($type);
+		$this->load->library('pagination', $config);
 
 		$this->load->view('pages/admin/products', $this->data);
 	}
@@ -374,9 +381,19 @@ class Admin extends MY_Controller {
 		$this->message($message, ERROR, FALSE);
 	}
 
-	private function get_items($type) {
+	private function get_items($type, $page = NULL) {
 
-		$items = $this->$type->get_localized_list();
+		$items;
+
+		if($page) {
+			$offset = abs($page - 1) * ITEMS_PER_PAGE_ADMIN;
+			$items = $this->$type->get_localized_list(ITEMS_PER_PAGE_ADMIN, $offset);
+		}
+
+		else {
+			$items = $this->$type->get_localized_list();
+		}
+
 		return $items;
 	}
 
@@ -390,6 +407,11 @@ class Admin extends MY_Controller {
 		}
 
 		return $item;
+	}
+
+	private function get_rows($type) {
+		$this->load->model($type);
+		return $this->$type->row_count();
 	}
 
 }

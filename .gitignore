@@ -29,3 +29,5 @@ static/uploads/
 sftp-config-alt.json
 sftp-config.json
 .htaccess
+google*.html
+robots.txt

@@ -41,7 +41,7 @@ class Site extends MY_Controller {
 
 		$get = $this->input->get();
 		$get['page'] = $page;
-		$category = $get['category'];
+		$category = @$get['category'];
 
 		$this->load->model(['Product', 'Category', 'Brand']);
 		$this->load->library('pagination');

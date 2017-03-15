@@ -56,6 +56,12 @@ class Category extends MY_Model {
 		return parent::get_list();
 	}
 
+	public function get_subcategories_admin($id) {
+		$this->select_localized();
+		$this->db->where('parent', $id);
+		return parent::get_list();
+	}
+
 	public function get_localized_list($limit = NULL, $offset = NULL) {
 
 		$this->select_localized();

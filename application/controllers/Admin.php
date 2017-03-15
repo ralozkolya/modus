@@ -94,6 +94,8 @@ class Admin extends MY_Controller {
 
 		$this->data['item'] = $this->get_item($type, $id);
 		$this->data['parents'] = $this->Category->get_top();
+		$this->data['products'] = $this->Product->get_for_category($this->data['item']->id);
+		$this->data['subcategories'] = $this->Category->get_subcategories_admin($this->data['item']->id);
 		$this->data['highlighted'] = 'categories';
 
 		$this->load->view('pages/admin/category', $this->data);

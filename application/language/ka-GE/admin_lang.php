@@ -79,5 +79,6 @@ $lang['email'] = 'ელ. ფოსტა';
 $lang['password_repeat'] = 'პაროლი განმეორებით';
 
 $lang['existing_categories'] = 'არსებული კატეგორიები';
+$lang['existing_subcategories'] = 'არსებული ქვეკატეგორიები';
 $lang['add_category'] = 'კატეგორიის დამატება';
 $lang['parent'] = 'ზე-კატეგორია';

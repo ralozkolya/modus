@@ -107,6 +107,36 @@ class Product extends MY_Model {
 		return $response;
 	}
 
+	public function get_for_category($category) {
+
+		$c = $this->Category->get($category);
+
+		if(!empty($c->parent)) {
+			$this->db->where('category', $category);
+		}
+
+		else {
+			$subs = $this->Category->get_subcategories($category);
+			$ids = array();
+			
+			foreach($subs as $s) {
+				$ids[] = $s->id;
+			}
+
+			$this->db->group_start();
+
+			if(!empty($ids)) {
+				$this->db->where_in('category', $ids);
+			}
+
+			$this->db->or_where('category', $category);
+
+			$this->db->group_end();
+		}
+
+		return $this->get_localized_list();
+	}
+
 	public function get_cart($cart) {
 
 		$cart = array_keys($cart);

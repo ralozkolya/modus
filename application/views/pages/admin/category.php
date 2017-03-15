@@ -46,7 +46,23 @@
 					<img alt="<?php echo $item->image; ?>"
 						src="<?php echo static_url("uploads/categories/{$item->image}"); ?>">
 				</div>
-			</div>	
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<h3><?php echo lang('existing_products'); ?></h3>
+					<?php echo admin_table('Product', $products, [
+						'name', 'category', 'brand',
+					]); ?>
+				</div>
+				<?php if(!$item->parent) { ?>
+					<div class="col-sm-6">
+						<h3><?php echo lang('existing_subcategories'); ?></h3>
+						<?php echo admin_table('Category', $subcategories, [
+							'name', 
+						], static_url('uploads/categories/')); ?>
+					</div>
+				<?php } ?>
+			</div>
 		</div>
 	</div>
 </body>

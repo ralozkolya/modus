@@ -71,9 +71,8 @@
 									'type' => 'select',
 								],
 								[
-									'name' => 'stock',
-									'value' => $stock,
-									'type' => 'chosen',
+									'name' => 'quantity',
+									'value' => set_value('quantity'),
 								],
 								[
 									'name' => 'price',

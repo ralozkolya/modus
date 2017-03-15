@@ -11,10 +11,10 @@ class Admin extends MY_Controller {
 
 		$this->load->language('admin');
 		$this->load->library(['Auth_admin' => 'auth', 'form_validation']);
-		$this->load->helper('view');
+		$this->load->helper(['view', 'purifier']);
 		$this->load->model([
 			'User_admin', 'Product', 'Page',
-			'Category', 'Brand', 'Stock', 'Product_images',
+			'Category', 'Brand', 'Product_images',
 			'Banner', 'News', 'Agent',
 		]);
 
@@ -47,7 +47,6 @@ class Admin extends MY_Controller {
 		$this->data['highlighted'] = 'products';
 		$this->data['categories'] = $this->Category->get_localized_list();
 		$this->data['brands'] = $this->Brand->get_localized_list();
-		$this->data['stock'] = $this->Stock->get_list();
 
 		$this->config->load('pagination');
 		$config = $this->config->item('pagination');
@@ -69,7 +68,6 @@ class Admin extends MY_Controller {
 		$this->data['highlighted'] = 'products';
 		$this->data['categories'] = $this->Category->get_localized_list();
 		$this->data['brands'] = $this->Brand->get_localized_list();
-		$this->data['stock'] = $this->Stock->get_list();
 		$this->data['gallery'] = $this->Product_images->get_for_product($id);
 
 		$this->load->view('pages/admin/product', $this->data);

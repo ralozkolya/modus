@@ -42,6 +42,7 @@ $lang['ka_description'] = 'აღწერა ქართულად';
 $lang['en_description'] = 'აღწერა ინგლისურად';
 $lang['ru_description'] = 'აღწერა რუსულად';
 $lang['stock'] = 'პროდუქტი საწყობში';
+$lang['quantity'] = 'რაოდენობა საწყობში';
 $lang['category'] = 'კატეგორია';
 $lang['brand'] = 'ბრენდი';
 $lang['price'] = 'ფასი';

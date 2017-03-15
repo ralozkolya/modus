@@ -154,13 +154,13 @@ $parent = [
 $config['add_Product'] = [
 	$ka_name, $en_name, $ru_name,
 	$ka_description, $en_description, $ru_description,
-	$category, $brand, $stock,
+	$category, $brand,
 ];
 
 $config['edit_Product'] = [
 	$id, $ka_name, $en_name, $ru_name,
 	$ka_description, $en_description, $ru_description,
-	$category, $brand, $stock,
+	$category, $brand,
 ];
 
 $config['add_Product_images'] = [

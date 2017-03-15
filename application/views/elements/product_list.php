@@ -24,7 +24,7 @@
 					<?php if(mb_strlen($p->name) <= 17): ?>
 						<div class="text-right"><?php echo $p->name; ?></div>
 					<?php else: ?>
-						<?php $name = mb_substr($p->name, 0, 16).'...'; ?>
+						<?php $name = mb_substr($p->name, 0, 14).'...'; ?>
 						<div class="text-right"><?php echo $name; ?></div>
 					<?php endif; ?>
 				</div>

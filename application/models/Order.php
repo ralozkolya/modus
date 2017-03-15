@@ -9,6 +9,7 @@ class Order extends MY_Model {
 
 		$this->select_localized();
 		$this->db->where('user', $user);
+		$this->db->order_by('id DESC');
 
 		return parent::get_list();
 	}

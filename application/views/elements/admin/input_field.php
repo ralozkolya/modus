@@ -6,7 +6,7 @@
 			type="<?php echo $type; ?>"
 			name="<?php echo $name; ?>"
 			id="<?php echo $name; ?>"
-			value="<?php echo $value; ?>">
+			value="<?php echo htmlentities($value); ?>">
 	</div>
 <?php elseif($type === 'textarea'): ?>
 	<div class="form-group">
@@ -86,7 +86,7 @@
 	</div>
 <?php elseif($type === 'hidden'): ?>
 	<input type="hidden" name="<?php echo $name; ?>"
-		value="<?php echo $value; ?>">
+		value="<?php echo htmlentities($value); ?>">
 <?php elseif($type === 'submit'): ?>
 	<div class="form-group">
 		<input class="btn btn-default" type="submit" value="<?php echo $value; ?>">
@@ -114,6 +114,6 @@
 			type="email"
 			name="<?php echo $name; ?>"
 			id="<?php echo $name; ?>"
-			value="<?php echo $value; ?>">
+			value="<?php echo htmlentities($value); ?>">
 	</div>
 <?php endif; ?>
